@@ -1,0 +1,111 @@
+## Generated mta.yaml based on template version 0.2.0
+## appName = BusinessPartnerValidation
+## language=nodejs; multiTenant=false
+## approuter=
+_schema-version: '3.1'
+ID: BusinessPartnerValidation
+version: 1.0.0
+description: "A simple CAP project."
+parameters:
+  enable-parallel-deployments: true  
+build-parameters:
+  before-all:
+   - builder: custom
+     commands:
+      - npm install
+      - npx -p @sap/cds-dk cds build --production
+
+modules:
+ # --------------------- SERVER MODULE ------------------------
+ - name: BusinessPartnerValidation-srv
+ # ------------------------------------------------------------
+   type: nodejs
+   path: gen/srv
+   parameters:
+     memory: 256MB
+   properties:
+     EXIT: 1  # required by deploy.js task to terminate 
+   requires:
+    # Resources extracted from CAP configuration
+    - name: BusinessPartnerValidation-db
+    - name: BusinessPartnerValidation-xsuaa
+    - name: BusinessPartnerValidation-dest
+    - name: BusinessPartnerValidation-ems
+    - name: BusinessPartnerValidation-cs
+   provides:
+    - name: srv-binding      # required by consumers of CAP services (e.g. approuter)
+      properties:
+        srv-url: ${default-url}
+
+ # -------------------- SIDECAR MODULE ------------------------
+ - name: db
+ # ------------------------------------------------------------
+   type: hdb
+   path: gen/db  
+   parameters:
+     app-name: BusinessPartnerValidation-db
+     memory: 128MB  
+   requires:
+    # 'hana' and 'xsuaa' resources extracted from CAP configuration
+    - name: BusinessPartnerValidation-db
+
+#UI Module
+ - name: BusinessPartnerValidation-ui
+   type: html5
+   path: app/BusinessPartners
+   parameters:
+     disk-quota: 1024MB
+     memory: 128MB
+   build-parameters:
+     builder: npm
+    # commands:
+     #  - npm run-script build
+   requires:
+     - name: BusinessPartnerValidation-dest # <-- Destination Service
+     - name: BusinessPartnerValidation-xsuaa # <-- User Authentication and Authorization
+     - name: srv-binding
+       group: destinations
+       properties:
+         forwardAuthToken: true
+         name: srv-binding
+         url: '~{srv-url}'
+
+resources:
+ # services extracted from CAP configuration
+ # 'service-plan' can be configured via 'cds.requires.<name>.vcap.plan'
+# ------------------------------------------------------------
+ - name: BusinessPartnerValidation-db
+# ------------------------------------------------------------
+   type: com.sap.xs.hdi-container
+   parameters:
+     service: hana  # or 'hanatrial' on trial landscapes
+     service-plan: hdi-shared
+   properties:
+     hdi-service-name: ${service-name}
+
+  # User Authentication and Authorization
+ - name: BusinessPartnerValidation-xsuaa
+   parameters:
+     path: ./xs-security.json
+     service-plan: application
+     service: xsuaa
+   type: org.cloudfoundry.managed-service
+  # Destination Service
+ - name: BusinessPartnerValidation-dest
+   parameters:
+     service: destination
+     service-plan: lite
+   type: org.cloudfoundry.managed-service
+# Enterprise Messaging Service
+ - name: BusinessPartnerValidation-ems
+   parameters:
+     path: ./em.json 
+     service: enterprise-messaging
+     service-plan: default
+   type: org.cloudfoundry.managed-service
+# Enterprise Messaging Service
+ - name: BusinessPartnerValidation-cs
+   parameters:
+     service: connectivity
+     service-plan: lite
+   type: org.cloudfoundry.managed-service
