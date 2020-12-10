@@ -120,7 +120,7 @@
 
     ![](./images/demo-10.png)
 
-- If you get the following error in the demo application log, check your the [Virus Scan setup](https://help.sap.com/doc/saphelp_nw751abap/7.51.0/en-US/b5/5d22518bc72214e10000000a44176d/frameset.htm) of your backend.
+- If you get the following error in the demo application log, check the [Virus Scan setup](https://help.sap.com/doc/saphelp_nw751abap/7.51.0/en-US/b5/5d22518bc72214e10000000a44176d/frameset.htm) of your ERP backend.
     
      ![](./images/virusscan.jpg)
 
