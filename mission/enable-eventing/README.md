@@ -11,6 +11,7 @@ In this section, we describe steps how to configure events in the on-premise bac
 ## Step-by-Step
 
 ### Requirements
+
 - A working instance of Enterprise Messaging.
 
 ### Download Enterprise Messaging Certificate 
@@ -272,7 +273,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
     - In the column, 'Header Attributes', Enter 'SAP_EM_QOS'
     - In the column, 'Header Attributes Value', Enter '0'
     - In the column, 'Header Attributes', Enter 'SAP_EM_TOPIC'
-    - In the column, 'Header Attributes Value', Enter 'refappscf/ecc/123/BO/BusinessPartner/Created' (Enter the topic name created in CP Enterprise Messaging Dashboard thorugh CAP Application)
+    - In the column, 'Header Attributes Value', Enter 'refappscf/ecc/123/BO/BusinessPartner/Created' (Enter the topic name created in CP Enterprise Messaging Dashboard through CAP Application)
     - Click 'Save' icon
     
       ![header Attribute Create](./images/headerAttributeCreated.png)
@@ -346,3 +347,14 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    - Click 'Save' icon to save your changes.
         
      ![change Event Linkage](./images/changeEventLinkage.png)  	
+
+
+## Summary
+
+We have estabilished a trust between our SAP ERP backend and the Enterprise Messaging Service and set up the eventing. Now we are ready to run the reference application.
+
+**Additional Resources:**
+
+* [SAP Enterprise Messaging for SAP ERP: HowTo-Guide (Part 1 – Connectivity)](https://blogs.sap.com/2020/10/02/sap-enterprise-messaging-for-sap-erp-howto-guide-part-1-connectivity/)
+
+* [SAP Enterprise Messaging for SAP ERP: HowTo-Guide (Part 2 – First use case)](https://blogs.sap.com/2020/10/08/sap-enterprise-messaging-for-sap-erp-howto-guide-part-2-first-use-case/)

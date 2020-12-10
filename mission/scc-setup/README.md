@@ -1,10 +1,19 @@
 # Configure systems in Cloud Connector
 
-In this section you will configure the Cloud Connector for connecting the on premise backend system to the SAP Cloud Platform.
+In this section you will configure the SAP Cloud Connector for connecting the on premise backend system to the SAP Cloud Platform.
 
 **Persona:** Backend (ERP) Admin and SCP Admin
 
 ## Preparations
+
+### SAP Cloud Connector
+For the installation of the SAP Cloud Connector please follow the steps in the SAP Help document - for this mission the Portable Scenario would be sufficient.
+
+[SAP Help: Cloud Connector Installation](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/57ae3d62f63440f7952e57bfcef948d3.html)
+
+ You can find detail information on installing the Cloud Connector in your system landscape here: [Install the Cloud Connector in your System Landscape](https://developers.sap.com/tutorials/cp-connectivity-install-cloud-connector.html)
+
+### Subaccount Info
 
 In your SAP Cloud Platform Subaccount under "Overview" you can find both, your **API Endpoint** and the Subaccount **ID**, that you will need later.
 
@@ -21,10 +30,6 @@ In your SAP Cloud Platform Subaccount under "Overview" you can find both, your *
 
     Enter User Name and Password.
     Click Login.
-
-    You can find detail information on installing the Cloud Connector in your system landscape here:
-    https://developers.sap.com/tutorials/cp-connectivity-install-cloud-connector.html
-
 
 2.	Choose **Add Subaccount** and then fill out the needed input:
 3.	Enter the following data:

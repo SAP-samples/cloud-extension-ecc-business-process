@@ -1,7 +1,7 @@
 # Step by Step Creation and Registration of Business Partner OData Service
 
 ## Introduction
-As the SAP ERP 6.0 system doesn't has API OData services by default we have to create a custom service using the SAP Gateway Service Builder.
+As the SAP ERP 6.0 system doesn't has an API OData services by default, we have to create a custom service using the SAP Gateway Service Builder.
 
 **Persona:** ABAP Developer
 
