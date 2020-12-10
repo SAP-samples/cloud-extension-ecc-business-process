@@ -1,0 +1,14 @@
+{
+	"welcomeFile": "webapp/index.html",
+	"routes": [{
+			"source": "^/sales/(.*)$",
+			"destination": "srv-binding"
+		},
+
+		{
+	      "source": "^/webapp/(.*)$",
+	      "target": "$1",
+	      "localDir": "webapp"
+	    }
+	]
+}

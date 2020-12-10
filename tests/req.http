@@ -1,0 +1,16 @@
+
+POST http://localhost:4004/api-business-partner/A_BusinessPartner
+Content-Type: application/json
+
+{
+    "BusinessPartner":"17100005",
+    "BusinessPartnerIsBlocked":true,
+    "BusinessPartnerFullName": "first lastname"
+}
+###
+PATCH http://localhost:4004/api-business-partner/A_BusinessPartner('17100005')
+Content-Type: application/json
+
+{
+    "BusinessPartnerIsBlocked":false
+}

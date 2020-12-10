@@ -1,0 +1,63 @@
+{
+  "name": "BusinessPartnerValidation",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "license": "ISC",
+  "dependencies": {
+    "@sap/audit-logging": "^3.1.0",
+    "@sap/cds": "^4.1.9",
+    "@sap/hana-client": "^2.4.182",
+    "@sap/xb-msg-amqp-v100": "^0.9.39",
+    "@sap/xsenv": "^2.1.0",
+    "@sap/xssec": "^2.2.3",
+    "express": "^4",
+    "grunt": "^1.1.0",
+    "passport": "^0.4.1",
+    "postcode-validator": "^3.1.0",
+    "@sap-cloud-sdk/core": "^1.31.0",
+    "@sap/cloud-sdk-vdm-business-partner-service": "^1.23.0"
+  },
+  "scripts": {
+    "start": "npx cds run",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "sqlite3": "^4.1.1",
+    "jest": "*"
+  },
+  "cds": {
+    "hana": {
+      "deploy-format": "hdbtable"
+    },
+    "requires": {
+      "messaging": {
+        "kind": "local-messaging",
+        "[production]": {
+          "kind": "enterprise-messaging"
+        }
+      },
+      "[production]": {
+        "db": {
+          "kind": "hana",
+          "model": [
+            "db",
+            "srv"
+          ]
+        }
+      },
+      "API_BUSINESS_PARTNER": {
+        "kind": "odata",
+        "model": "srv/external/API_BUSINESS_PARTNER",
+        "[production]": {
+          "credentials": {
+            "destination": "bupa-ecc",
+            "requestTimeout": 18000000
+          }
+        }
+      },
+      "uaa": {
+        "kind": "xsuaa"
+      }
+    }
+  }
+}

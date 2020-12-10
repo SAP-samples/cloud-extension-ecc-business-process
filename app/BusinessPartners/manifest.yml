@@ -1,0 +1,13 @@
+---
+applications:
+- name: BusinessPartnerValidation-ui
+  path: .
+  memory: 128M
+  buildpack: nodejs_buildpack
+  env:
+    destinations: >
+      [
+        {"name": "srv-binding", "url":"https://businesspartnervalidation-srv.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true}
+      ]
+  services:
+  - my-xsuaa

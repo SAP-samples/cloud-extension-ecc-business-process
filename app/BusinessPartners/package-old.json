@@ -1,0 +1,37 @@
+{
+	"name": "businesspartners",
+	"version": "0.0.1",
+	"private": true,
+	"sapux": true,
+	"description": "fiori elements application for s4 extension business partner validation",
+	"keywords": [
+		"ui5",
+		"openui5",
+		"sapui5"
+	],
+	"main": "webapp/index.html",
+	"scripts": {
+		"start": "ui5 serve --open index.html#fe-lrop-v4",
+		"build": "rimraf dist && ui5 build -a --include-task=generateManifestBundle generateCachebusterInfo"
+	},
+	"remarkConfig": {
+		"plugins": [
+			"remark-preset-lint-consistent"
+		]
+	},
+	"devDependencies": {
+		"rimraf": "3.0.0",
+		"@ui5/logger": "^1.0.1",
+		"@ui5/cli": "1.13.0",
+		"@sap-ux/ui5-tooling": "^0.0.80",
+		"@sap-ux/specification": "1.76.6"
+	},
+	"optionalDependencies": {
+		"fsevents": "1.2.9"
+	},
+	"ui5": {
+		"dependencies": [
+			"@sap-ux/ui5-tooling"
+		]
+	}
+}

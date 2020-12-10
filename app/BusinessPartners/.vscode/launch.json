@@ -1,0 +1,55 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Start businesspartners",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "cwd": "/Users/i332371/git/node-webhook-queue/cloud-sdk-sample/CAP/BusinessPartnerValidation/app/businesspartners",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "noDebug": true,
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect"
+            }
+        },
+        {
+            "name": "Start businesspartners with UI5 Version",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "cwd": "/Users/i332371/git/node-webhook-queue/cloud-sdk-sample/CAP/BusinessPartnerValidation/app/businesspartners",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start",
+                "${input:UI5VersionV4}"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "noDebug": true,
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect"
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "UI5VersionV4",
+            "type": "command",
+            "command": "sap.ux.appGenerator.ui5VersionV4"
+        }
+    ]
+}

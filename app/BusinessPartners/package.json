@@ -1,0 +1,12 @@
+{
+        "name": "business-partners",
+        "version": "1.0.0",
+        "description": "",
+        "scripts": {
+                "start": "node node_modules/@sap/approuter/approuter.js"
+        },
+        "license": "ISC",
+        "dependencies": {
+                "@sap/approuter": "^6.5.0"
+        }
+}
