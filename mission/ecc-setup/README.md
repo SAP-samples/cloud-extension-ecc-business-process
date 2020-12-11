@@ -2,25 +2,6 @@
 
 Before starting the development of the OData services we have to do some preconfigurations.
 
-## Activate IWBEP Service
-1. Call transaction /nSICF
-   
-   ![SICF](images/eccsetup-1.png)
-
-2. Select the DEFAULT_HOST and click OK
-   
-   ![Default Host](images/eccsetup-2.png)
-
-3. In the service list select SAP -- iwbep
-   
-   ![Default Host](images/eccsetup-3.png)
-   
-4. Right-click on iwbep and activate the service
-   
-    ![Default Host](images/eccsetup-4.png)
-    ![Default Host](images/eccsetup-5.png)
-
-
 ## Add Development User
 
 1. Call transaction /nSU01
@@ -44,7 +25,7 @@ Before starting the development of the OData services we have to do some preconf
 
    ![Default Host](images/eccsetup-16.png)
 
-This user can than also be used as technical user for the connection between the ERP system and your SAP Cloud Platform account. We will do this in later section.
+This user can than also be used as technical user for the connection between the ERP system and your SAP Cloud Platform account - just for testing not for production usage. We will do this in a later section.
 
 ## Activate HTTP ports and TLS v1.2
 
