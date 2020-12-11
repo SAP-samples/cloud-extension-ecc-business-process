@@ -1,5 +1,7 @@
 # ECC Extend Business Process Scenario
 
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-extension-ecc-business-process)](https://api.reuse.software/info/github.com/SAP-samples/cloud-extension-ecc-business-process)
+
 ## Description
 The main intent of this scenario is to complement an existing business process in an SAP solution – currently SAP ECC (ERP Central Component) - with additional business process steps. This involves adding major logic and/or additional data and goes beyond simple UI changes.
 
