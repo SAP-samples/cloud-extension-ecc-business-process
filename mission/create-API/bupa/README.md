@@ -41,7 +41,7 @@ As the SAP ERP 6.0 system doesn't has an API OData services by default, we have 
 
    ![](./images/segw_4.png)
 
->Note: You might face issue of importing EDMX error due to conversion of data type. Please ignore it for this sceanrio. Continue for generation.
+>Note: You might face issue of importing EDMX error due to conversion of data type. Please ignore it for this scenario. Continue for generation.
 
 6. Click on **Generate** to enable **DPC**, **MPC**, **Model and Service** successfully. Save in **Local Package** or in **Transport**.
    Clicking on **Generate**, you will get a dialog box with message *Do You still want to generate runtime artifacts (yes/no)*. Here Select **Yes** to continue.
@@ -52,13 +52,11 @@ As the SAP ERP 6.0 system doesn't has an API OData services by default, we have 
 
    ![](./images/segw_6.png)
 
-7. Navigate to **Service -> Runtime Artifacts -> Double Click on runtime artifact 'ZCL_ZAPI_BUSINESS_P_DPC_EXT'**. 
+7. Navigate to **Service -> Runtime Artifacts -> Right-click on 'ZCL_ZAPI_BUSINESS_P_DPC_EXT' -> Select 'Go to ABAP Workbench'**. 
 
     ![](images/pic1.png) 
 
-    Double Click on runtime artifact **ZCL_ZAPI_BUSINESS_P_DPC_EXT**. 
-
-    ![](./images/attach39.png)
+    
 
 8. You will be navigated to **Data Provider Class Builder** where we implement all the CRUD related operation for the required entity set. **Expand Class -> Methods -> Inherited Methods**. This is the location, where you can find all the business entity. To implement the entity, we have to redefined each entity.
 
@@ -77,8 +75,10 @@ METHOD a_businesspartne_get_entity.
 *&----------------------------------------------------------------------------------------------*
 *  & Object         : ZCL_ZAPI_BUSINESS_P_DPC_EXT=========A_BUSINESSPARTNE_GET_ENTITY
 *  &--------------------------------------------------------------------------------------------*
-*  & Purpose        : Retreive the Business lv_partner Full Name from ECC to populate in CAP
+*  & Purpose        : Retreive the Business Partner Full Name from ECC to populate in CAP
+
 *  & Author         : Syed Ejazuddin(SAP)
+
 *  &--------------------------------------------------------------------------------------------*
 *  & Change Log : This Method has a scope for further extension and improvement
 *  &--------------------------------------------------------------------------------------------*
@@ -134,8 +134,10 @@ METHOD a_businesspartne_get_entityset.
 *&----------------------------------------------------------------------------------------------*
 *  & Object         : ZCL_ZAPI_BUSINESS_P_DPC_EXT=========A_BUSINESSPARTNE_GET_ENTITYSET
 *  &--------------------------------------------------------------------------------------------*
-*  & Purpose        : Retreive the Business lv_partner Full Name from ECC to populate in CAP
+*  & Purpose        : Retreive the Business Partner Full Name from ECC to populate in CAP
+
 *  & Author         : Syed Ejazuddin(SAP)
+
 *  &--------------------------------------------------------------------------------------------*
 *  & Change Log : This Method has a scope for further extension and improvement
 *  &--------------------------------------------------------------------------------------------*
@@ -189,7 +191,9 @@ A_BUSINESSPARTNE_UPDATE_ENTITY
 *  &--------------------------------------------------------------------------------------------*
 *  & Purpose         : Once the verification status updated from Cloud Application Programming,
 *                      this method update the Search Term1 Field & Activate the business Partner.
+
 *  & Author         : Syed Ejazuddin(SAP)
+
 *  &--------------------------------------------------------------------------------------------*
 *  & Change Log : This Method has a scope for further extension and improvement
 *  &--------------------------------------------------------------------------------------------*
@@ -235,6 +239,7 @@ A_BUSINESSPARTNE_UPDATE_ENTITY
 
   ENDMETHOD.
 ````````
+
 17. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. Once the activation is successful you will get message in the below for successful activation. Please see the image below. 
 
     >Never do force Activation as it will dump the Object. If activation is giving error, revisit the prevous steps and ensure every steps as done properly.
@@ -255,10 +260,12 @@ METHOD A_BUSINESSPART01_GET_ENTITY.
 *&----------------------------------------------------------------------------------------------*
 *  & Object         : ZCL_ZAPI_BUSINESS_P_DPC_EXT=========A_BUSINESSPART01_GET_ENTITY
 *  &--------------------------------------------------------------------------------------------*
-*  & Purpose        : Retreive Business lv_partner ls_address from ECC for a specific Business lv_partner
+*  & Purpose        : Retreive Business Partner and Address from ECC for a specific Business Partner
 *                     ID which will be requested from Cloud Application Programming. Not Valid
-*                     to mock ls_address of every Business lv_partner in a system.
+*                     to mock Address of every Business Partner in a system.
+
 *  & Author         : Syed Ejazuddin(SAP)
+
 *  &--------------------------------------------------------------------------------------------*
 *  & Change Log : This Method has a scope for further extension and improvement
 *  &--------------------------------------------------------------------------------------------*
@@ -305,6 +312,7 @@ METHOD A_BUSINESSPART01_GET_ENTITY.
     ENDTRY.
 ENDMETHOD.
 `````````````````````
+
 20. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. Once the activation is successful you will get message in the below for successful activation. Please see the image below. 
 
     >Never do force Activation as it will dump the Object. If activation is giving error, revisit the prevous steps and ensure every steps as done properly.
@@ -325,10 +333,12 @@ A_BUSINESSPART01_GET_ENTITYSET
 *&----------------------------------------------------------------------------------------------*
 *  & Object         : ZCL_ZAPI_BUSINESS_P_DPC_EXT=========A_BUSINESSPARTNE_GET_ENTITYSET
 *  &--------------------------------------------------------------------------------------------*
-*  & Purpose        : Retreive Business lv_partner ls_address from ECC for a specific Business lv_partner
+*  & Purpose        : Retreive Business Partner and Address from ECC for a specific Business Partner
 *                     ID which will be requested from Cloud Application Programming. Not Valid
-*                     to mock ls_address of every Business lv_partner in a system.
+*                     to mock Address of every Business Partner in a system.
+
 *  & Author         : Syed Ejazuddin(SAP)
+
 *  &--------------------------------------------------------------------------------------------*
 *  & Change Log : This Method has a scope for further extension and improvement
 *  &--------------------------------------------------------------------------------------------*
@@ -376,6 +386,7 @@ A_BUSINESSPART01_GET_ENTITYSET
 
   ENDMETHOD.
 `````````
+
 23. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. Once the activation is successful you will get message in the below for successful activation. Please see the image below. 
 
     >Never do force Activation as it will dump the Object. If activation is giving error, revisit the prevous steps and ensure every steps as done properly.
@@ -396,9 +407,11 @@ A_BUSINESSPART01_UPDATE_ENTITY
 *&----------------------------------------------------------------------------------------------*
 *  & Object         : ZCL_ZAPI_BUSINESS_P_DPC_EXT=========A_BUSINESSPART01_UPDATE_ENTITY
 *  &--------------------------------------------------------------------------------------------*
-*  & Purpose        : This methods provides the scope for correct wrong ls_address of Business
+*  & Purpose        : This methods provides the scope for correct wrong address of Business Partner
 *                     from Cloud Application Program.
+
 *  & Author         : Syed Ejazuddin(SAP)
+
 *  &--------------------------------------------------------------------------------------------*
 *  & Change Log : This Method has a scope for further extension and improvement
 *  &--------------------------------------------------------------------------------------------*
@@ -446,6 +459,7 @@ A_BUSINESSPART01_UPDATE_ENTITY
     ENDTRY.
   ENDMETHOD.
 ``````````````````````
+
 26. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. Once the activation is successful you will get message in the below for successful activation. Please see the image below. 
 
     >Never do force Activation as it will dump the Object. If activation is giving error, revisit the prevous steps and ensure every steps as done properly.

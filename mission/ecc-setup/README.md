@@ -44,4 +44,27 @@ This user can than also be used as technical user for the connection between the
    
    ![Default Host](images/eccsetup-19.png)
 
+## Make Your Client Modifiable
+>This step is necessary for client 000 when using the SAP CAL instance.
+
+![](./images/trans1.png)
+
+![](./images/trans2.png)
+
+![](./images/trans3.png)
+
+![](./images/trans4.png)
+
+![](./images/trans5.png)
+
+Navogate to Change mode --> Select "Automatic Recording of changes" --> Save it.
+
+![](./images/trans6.png)
+
+## Switch off your Virus Scannner for smooth inflow of update Data from Cloud Application Programming into ECC Business Partner oData API 
+
+> Necessary when using the SAP CAL instance. Please note that this way is just for scenario validation and is not recommended in real productive scenario as this can make system vulnerable.
+
+Naviage to Transaction /N/IWFND/VIRUS_SCAN
+![](images/virus.png)
   
