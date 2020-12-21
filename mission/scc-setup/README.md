@@ -59,7 +59,7 @@ In your SAP Cloud Platform Subaccount under "Overview" you can find both, your *
 
    ![Select Protocol](./images/cloud-connector-4.png)
 
-8.	Enter your values for the fields: **Internal Host** and **Internal Port** then choose **Next**
+8.	To find out the HTTP port number of your ERP system, refer to the [Find your system's HTTP and HTTPS port](../ecc-setup/README.md#check-your-http-and-https-ports-in-smicm).Enter your values for the fields: **Internal Host** and your HTTP port for **Internal Port** then choose **Next**
 
    ![Select Screen](./images/scc-05.png)
 

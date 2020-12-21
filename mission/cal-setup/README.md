@@ -12,7 +12,10 @@ First **logon** and then click on **Create Instance** on the top right.
 
   ![](./images/cal_setup-01.png)
 
-For this mission we will use **client 000**
+For this mission we will use **client 000**.
+
+Also in the section "Access Points" of your CAL image, kindly add the ports for HTTP and HTTPS, we have used for 'HTTP' - '50000' and for HTTPS - 44300 in this mission. Only after you allow these access points, the ports for HTTP and HTTPS will be opened. 
+
 
 You find more information about this image in the [Getting Started Guide](https://caldocs.hana.ondemand.com/caldocs/help/Getting%20started%20guide%20ERP%20608%20on%20Sybase%20ASE.pdf),
 and here more details about the [SAP Cloud Appliance Library](https://www.sap.com/products/cloud-appliance-library.html?btp=42c6e4e7-c8c3-4f02-a263-b319b00c9021)

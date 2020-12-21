@@ -44,6 +44,16 @@ This user can than also be used as technical user for the connection between the
    
    ![Default Host](images/eccsetup-19.png)
 
+## Check your HTTP and HTTPS ports in SMICM
+1. Call transaction '/nsmicm' to open ICM Monitor.
+2. Click on 'Services' 
+
+   ![open smicm](./images/smicm_1.png)
+   
+3. View the HTTP and HTTPS ports and make a note of the port numbers for the next step of SAP Cloud Connector connection setup.
+
+   ![open smicm](./images/smicm_2.png)
+   
 ## Make Your Client Modifiable
 >This step is necessary for client 000 when using the SAP CAL instance.
 
