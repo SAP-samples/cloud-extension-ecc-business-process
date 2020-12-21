@@ -69,11 +69,11 @@ File / Folder | Purpose
 
     ![Open Workspace](./images/dev-cap-app-7.png)
  
-11.	Open the project by selecting projects -> cloud-cap-ecc-bp and click on *Open*
+11.	 Open the project by selecting projects -> cloud-extension-ecc-business-process and click on *Open*
 
  
 
-1.  First you need to login to your SAP Cloud Platform account:
+12.  First you need to login to your SAP Cloud Platform account:
  
    * Check if you are logged in to your Cloud Platform Account from *SAP Business Application Studio*.
      
@@ -99,55 +99,54 @@ File / Folder | Purpose
 
 
 13. For the next steps you need the terminal again. Go to *Terminal* -> *New Terminal*
-         
-   i. First we create a hdi-shared database instance, therefore we need the guid of the SAP HANA Cloud service that we have created at the [SAP Cloud Platform Setup](../scp-setup/README.md). You can find the service name in the list of services
+    - First we create a hdi-shared database instance, therefore we need the guid of the SAP HANA Cloud service that we have created at the [SAP Cloud Platform Setup](../scp-setup/README.md). You can find the service name in the list of services
       
-```bash
- cf services    
-    
- cf service <HANA-Service> --guid
-```
+	   ```bash
+		 cf services    
+		    
+		 cf service <HANA-Service> --guid
+		```
 
- With the guid we can create a hdi-shared database instance:
-      
-   ```bash
-    cf cs hana hdi-shared BusinessPartnerValidation-db -c '{"database_id" : "<guid of HANA Service>"}'
-   ```   
+       With the guid we can create a hdi-shared database instance:
+       
+       ```bash
+       cf cs hana hdi-shared BusinessPartnerValidation-db -c '{"database_id" : "<guid of HANA Service>"}'
+       ```   
             
    
-   ii. In a next step, you will create a number of services e.g. for connection and Enterprise Messaging. You will do this by executing the following Cloud Foundry create service commands.
+    - In a next step, you will create a number of services e.g. for connection and Enterprise Messaging. You will do this by executing the following Cloud Foundry create service commands.
    
-   * Create enterprise-messaging instance using the em.json configuration file in your project.
+      * Create enterprise-messaging instance using the em.json configuration file in your project.
      
      ```bash
      cf cs enterprise-messaging default BusinessPartnerValidation-ems -c em.json
      ```
 
-   * Create a destination instance
+     * Create a destination instance
   
      ```bash
      cf cs destination lite BusinessPartnerValidation-dest
      ```
 
-   * Create a xsuaa instance using the xs-security.json configuration file in your project.
+     * Create a xsuaa instance using the xs-security.json configuration file in your project.
     
      ```bash
      cf cs xsuaa application BusinessPartnerValidation-xsuaa -c xs-security.json
      ```    
 
-  * Create a connectivity instance for accessing SAP Cloud Connector.  
+    * Create a connectivity instance for accessing SAP Cloud Connector.  
 
     ```bash
     cf cs connectivity lite BusinessPartnerValidation-cs        
     ```
 
-  * Generate a service key we will this later for binding services 
+    * Generate a service key we will this later for binding services 
    
      ```bash
      cf create-service-key BusinessPartnerValidation-ems emkey
     ```
 
-  * Build the application  
+    * Build the application  
     
     ```bash
     cds build --production
@@ -155,16 +154,15 @@ File / Folder | Purpose
 
 > HINT: there is an additional way of deployment - either execute the steps before or the two below to achieve the same result: Run *mbt build -p=cf* followed by cf *deploy mta_archives/BusinessPartnerValidation_1.0.0.mtar*
 
-     
-
-13.	Open the gen/srv/manifest.yaml file and add your service names / replace existing ones with your services: ems, dest, xsuaa, database.  
+    
+14.	Open the gen/srv/manifest.yaml file and add your service names / replace existing ones with your services: ems, dest, xsuaa, database.  
 Set the Memory as 256MB.
 
-> Hint: to make sure that the services names match, execute the CF command *CF services* which lists the services you have created including their names.
+> Hint: to make sure that the services names match, execute the CF command **cf services** which lists the services you have created including their names.
 
  ![Edit manifest](./images/dev-cap-app-12.png)
  
-14. Create a queue in Enterprise Messaging for the application to read events from SAP S/4HANA.
+15. Create a queue in Enterprise Messaging for the application to read events from SAP S/4HANA.
 
 - Go to the SAP Cloud Platform Cockpit
 - Click on Subscriptions

@@ -109,7 +109,7 @@ In this section, we describe steps how to configure events in the on-premise bac
 
     ![create RFC Destination23](./images/createRFCDestination23.png)
     
-15. Click on 'Connection Test' and Connection Test gives a response of 'Status HTTP Response' as '401' and 'Status Text' as 'Unauthorized' which is fine.
+15. Click on 'Connection Test' and Connection Test gives a response of 'Status HTTP Response' as '401' and 'Status Text' as 'Unauthorized' which is fine. Click on 'Cancel' as this is expected here.
 
     ![create RFC Destination24](./images/createRFCDestination24.png)
 
@@ -139,7 +139,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 
    ![create Transport Request](./images/createTransportRequest1.png)
 
-5. Click 'Ok' in the screens to save the Object in Transport. Once Transport is created, for any further cross object changes, you can capture the change in the same transport number/Request which you have created now.
+5. Click the 'Green tick mark' icon in the screen to save the Object in Transport. Once Transport is created, for any further cross object changes, you can capture the change in the same transport number/Request which you have created now. You will be prompted with similar "Transport Request"/ "Customizing Request" in the next steps, you can reuse the same Transport request which you created now.
 
    ![create Transport Request](./images/createTransportRequest2.png)
    

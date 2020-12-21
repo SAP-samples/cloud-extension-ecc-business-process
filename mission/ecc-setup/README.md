@@ -17,7 +17,7 @@ Before starting the development of the OData services we have to do some preconf
 
    ![Default Host](images/eccsetup-9.png)
 
-5. In the Roles section add the SAP_BC_DWB_APPDEVELOPER role.
+5. In the Roles section add the SAP_BC_DWB_ABAPDEVELOPER role.
 
    ![Default Host](images/eccsetup-13.png)
 
