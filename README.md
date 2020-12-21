@@ -118,7 +118,7 @@ File / Folder | Purpose
 
 6. Login to the SAP ECC system
 
-![ECC login](./documentation/images/GuiLogin.JPG)
+![ECC login](./documentation/images/logon.png)
 
 7. Enter transaction code 'bp'
 
