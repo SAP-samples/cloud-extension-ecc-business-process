@@ -71,20 +71,20 @@ In your SAP Cloud Platform Subaccount under "Overview" you can find both, your *
 
 11. Select **Host in header** 'Use Virtual Host' and choose **Next**
 
-    ![Select Host](./images/cloud-connector-6.png)
+   ![Select Host](./images/cloud-connector-6.png)
 
-12.	 Add a **Description** for your system mapping
+12.	Add a **Description** for your system mapping
 
-    ![Add Description](./images/cloud-connector-7.png)
+   ![Add Description](./images/cloud-connector-7.png)
 
-13.	 Make sure all the values are correct in the summary and don´t forget to check the Internal Host checkmark.
-14.	 Choose **Finish**
+13.	Make sure all the values are correct in the summary and don´t forget to check the Internal Host checkmark.
+14.	Choose **Finish**
 
-    ![Check values](./images/scc-07.png)
+   ![Check values](./images/scc-07.png)
 
-15.	 Click on Button **'+'** to Add resource
+15.	Click on Button **'+'** to Add resource
 
-    ![Button](./images/scc-08.png)
+   ![Button](./images/scc-08.png)
 
 16. Enter the following data:
     - URL Path
