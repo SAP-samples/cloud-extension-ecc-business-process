@@ -48,50 +48,50 @@ In your SAP Cloud Platform Subaccount under "Overview" you can find both, your *
 4.	Navigate to **Cloud to On-Premise**
 5.	To add a new system mapping click on the **'+'** on the right site of the screen
 
- ![System Mapping](./images/scc-04.png)
+   ![System Mapping](./images/scc-04.png)
 
-6.	In the pop-up window select 'ABAP System' as a **Backend Type** and then choose **Next**
+6. In the pop-up window select 'ABAP System' as a **Backend Type** and then choose **Next**
 
- ![Select Backend Type](./images/cloud-connector-3.png)
+   ![Select Backend Type](./images/cloud-connector-3.png)
 
 
-7.	Select 'HTTPS' as a **Protocol** and then choose **Next**
+7. Select 'HTTP' as a **Protocol** and then choose **Next**
 
-![Select Protocol](./images/cloud-connector-4.png)
+   ![Select Protocol](./images/cloud-connector-4.png)
 
 8.	Enter your values for the fields: **Internal Host** and **Internal Port** then choose **Next**
 
-![Select Screen](./images/scc-05.png)
+   ![Select Screen](./images/scc-05.png)
 
 9.	Enter values for: **Virtual Host** and **Virtual Port** then choose **Next**
 
-![Select Host](./images/scc-06.png)
+   ![Select Host](./images/scc-06.png)
 
 10.	Choose **Principal Type** 'None' and press **Next**
 
-11.	Select **Host in header** 'Use Virtual Host' and choose **Next**
+11. Select **Host in header** 'Use Virtual Host' and choose **Next**
 
-![Select Host](./images/cloud-connector-6.png)
+    ![Select Host](./images/cloud-connector-6.png)
 
-12.	Add a **Description** for your system mapping
+12.	 Add a **Description** for your system mapping
 
-![Add Description](./images/cloud-connector-7.png)
+    ![Add Description](./images/cloud-connector-7.png)
 
-13.	Make sure all the values are correct in the summary and don´t forget to check the Internal Host checkmark.
-14.	Choose **Finish**
+13.	 Make sure all the values are correct in the summary and don´t forget to check the Internal Host checkmark.
+14.	 Choose **Finish**
 
-![Check values](./images/scc-07.png)
+    ![Check values](./images/scc-07.png)
 
-14.	Click on Button **'+'** to Add resource
+15.	 Click on Button **'+'** to Add resource
 
- ![Button](./images/scc-08.png)
+    ![Button](./images/scc-08.png)
 
-15.	Enter the following data:
+16. Enter the following data:
     - URL Path
     - Check **Path and all sub-paths**
     - Description
 
-![Enter data](./images/scc-09.png)
+   ![Enter data](./images/scc-09.png)
 
 ## Create Cloud Foundry Destination
 

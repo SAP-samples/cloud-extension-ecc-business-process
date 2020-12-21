@@ -5,7 +5,16 @@ As the SAP ERP 6.0 system doesn't has an API OData services by default, we have 
 
 **Persona:** ABAP Developer
 
-## Step-by-step Guide                
+## Step-by-step Guide 
+
+### Create Developer Access Key
+1. Open in your browser "service.sap.com".
+2. Search for 'Keys & Requests' and select and open link 'https://launchpad.support.sap.com/#/sscr'.
+3. 	Register Developer - to get developer key ( Give your SAP user ID or your customer ID) A developer key will be generated towards your SAP user id.
+4. Register object - to get Object key ( Give your SAP user id or your customer ID) A object key will be generated towards your SAP user id.   
+5. Copy the keys which will be needed for the next step.
+
+### Create a custom Service using SAP Gateway Servic Builder            
 1. Navigate to [SAP API Hub - Business Partner (A2X) API ](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) for  downloading EDMX file of Business Partner from API Business Hub. We will use this as a template for creating a custom OData service.
 
    * Click Download API Specifiation
@@ -43,7 +52,7 @@ As the SAP ERP 6.0 system doesn't has an API OData services by default, we have 
 
 >Note: You might face issue of importing EDMX error due to conversion of data type. Please ignore it for this scenario. Continue for generation.
 
-6. Click on **Generate** to enable **DPC**, **MPC**, **Model and Service** successfully. Save in **Local Package** or in **Transport**.
+6. Click on **Generate** to enable **DPC**, **MPC**, **Model and Service** successfully.  When you are prompted for Access key, enter the Access key which you generated in the previous step. Save in **Local Package** or in **Transport**.
    Clicking on **Generate**, you will get a dialog box with message *Do You still want to generate runtime artifacts (yes/no)*. Here Select **Yes** to continue.
 
    ![](./images/segw_5.png)
@@ -114,7 +123,7 @@ METHOD a_businesspartne_get_entity.
 ENDMETHOD.
 ````````````
 
-11. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. When you activate the objects, you get a popup with all the inactive objects. Select all the objects and click the 'green tick icon' to Activate all the objects.
+11. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. When you activate the objects, you will get a pop-up with all the inactive objects. Select all the inactive objects and click the 'green tick icon' to Activate all the objects.
 
    ![](images/activation.png)
 
@@ -172,7 +181,7 @@ METHOD a_businesspartne_get_entityset.
   ENDTRY.
 ENDMETHOD.
 `````
-14. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. When you activate the objects, you get a popup with all the inactive objects. Select all the objects and click the 'green tick icon' to Activate all the objects. Once the activation is successful you will get message in the below for successful activation. Please see the image below. 
+14. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. When you activate the objects, you will get a popup with all the inactive objects. Select all the inactive objects and click the 'green tick icon' to Activate all the objects. Once the activation is successful you will get message in the below for successful activation. Please see the image below. 
 
     >Never do force Activation as it will dump the Object. If activation is giving error, revisit the prevous steps and ensure every steps as done properly.
 
@@ -244,7 +253,7 @@ A_BUSINESSPARTNE_UPDATE_ENTITY
   ENDMETHOD.
 ````````
 
-17. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. When you activate the objects, you get a popup with all the inactive objects. Select all the objects and click the 'green tick icon' to Activate all the objects. Once the activation is successful you will get message in the below for successful activation. Please see the image below. 
+17. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. When you activate the objects, you will get a popup with all the inactive objects. Select all the inactive objects and click the 'green tick icon' to Activate all the objects. Once the activation is successful you will get message in the below for successful activation. Please see the image below. 
 
     >Never do force Activation as it will dump the Object. If activation is giving error, revisit the prevous steps and ensure every steps as done properly.
 
@@ -317,7 +326,7 @@ METHOD A_BUSINESSPART01_GET_ENTITY.
 ENDMETHOD.
 `````````````````````
 
-20. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. When you activate the objects, you get a popup with all the inactive objects. Select all the objects and click the 'green tick icon' to Activate all the objects. Once the activation is successful you will get message in the below for successful activation. Please see the image below. 
+20. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. When you activate the objects, you will get a popup with all the inactive objects. Select all the inactive objects and click the 'green tick icon' to Activate all the objects. Once the activation is successful you will get message in the below for successful activation. Please see the image below. 
 
     >Never do force Activation as it will dump the Object. If activation is giving error, revisit the prevous steps and ensure every steps as done properly.
 
@@ -391,7 +400,7 @@ A_BUSINESSPART01_GET_ENTITYSET
   ENDMETHOD.
 `````````
 
-23. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. When you activate the objects, you get a popup with all the inactive objects. Select all the objects and click the 'green tick icon' to Activate all the objects. Once the activation is successful you will get message in the below for successful activation. Please see the image below. 
+23. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. When you activate the objects, you will get a popup with all the inactive objects. Select all the inactive objects and click the 'green tick icon' to Activate all the objects. Once the activation is successful you will get message in the below for successful activation. Please see the image below. 
 
     >Never do force Activation as it will dump the Object. If activation is giving error, revisit the prevous steps and ensure every steps as done properly.
 
@@ -464,7 +473,7 @@ A_BUSINESSPART01_UPDATE_ENTITY
   ENDMETHOD.
 ``````````````````````
 
-26. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. When you activate the objects, you get a popup with all the inactive objects. Select all the objects and click the 'green tick icon' to Activate all the objects. Once the activation is successful you will get message in the below for successful activation. Please see the image below. 
+26. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. When you activate the objects, you will get a popup with all the inactive objects. Select all the inactive objects and click the 'green tick icon' to Activate all the objects. Once the activation is successful you will get message in the below for successful activation. Please see the image below. 
 
     >Never do force Activation as it will dump the Object. If activation is giving error, revisit the prevous steps and ensure every steps as done properly.
 
@@ -476,7 +485,7 @@ A_BUSINESSPART01_UPDATE_ENTITY
 
 28. Follow the below steps to register newly created Business Partner in Gateway.
     * **Set System-Alias** = *LOCAL*
-    * Search for ***API_BUSINESS_PARTNER***
+    * Search for ***API_BUSINESS_PARTNER*** with a '*' in the beginning and end of search term, e.g \*API_BUSINESS_PARTNER\*. 
     * Add selected service
     * Click on **ZAPI_BUSINESS_PARTNER_SRV**
 

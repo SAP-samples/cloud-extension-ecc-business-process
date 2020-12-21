@@ -105,29 +105,31 @@ Before running the booster please check for which regions and infrastructures th
 ### B: Create a SAP HANA Cloud Instance
 For this mission a SAP HANA Cloud Instance is necessary. Use the following steps for activating it:
 
-1.  Select Services - Service Marketplace - SAP HANA Cloud
+1. Select Services - Service Marketplace and click on the tile 'SAP HANA Cloud'. If you do not see the 'SAP HANA Cloud' Tile, click 'Entitlements' and click on 'Configure Entitlements and then click 'Add Service Plans' and assign the 'SAP HANA Cloud' service with 'hana' service plan.
+
     ![HANA](./images/hana-01.png)
 
-2.  Click on Create Instance 
+2. Click on the icon 'Create Instance'.
    
     ![HANA](./images/hana-02.png)
 
-3.  In the "New Instance" screen select 
+3. In the "New Instance" screen select 
     * Service = SAP HANA Cloud
     * Service Plan = Hana
     * Runtime Environment = Cloud Foundry
     * Space = the space you have created with the Booster
    
-    click on **here**
+    click on the link **here** to create a Database first before creating an instance.
    
 
     ![HANA](./images/hana-03.png)
 
-4.  Click on Create Instance
+4. Click the button 'Create Database'.
 
-    ![HANA](./images/hana-04.png)
+    ![HANA](./images/createDatabase.png)
 
-5.  Enter an instance name - description and password. if everything is correct the "Step 2" button appear - click on it.
+
+5.  Enter an 'Instance Name','Description' and 'Password'. if everything is correct then the "Step 2" button appear - click on it.
 
     ![HANA](./images/hana-05.png)
 

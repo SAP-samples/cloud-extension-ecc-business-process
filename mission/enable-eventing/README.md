@@ -26,7 +26,7 @@ In this section, we describe steps how to configure events in the on-premise bac
    
    ![copy EM Token Endpoint](./images/copyEMTokenEndpoint.png)
    
-5. Click on Cancel in the popup and Click on view site information button (lock symbol on top left corner) and click on 'Certificate'.
+5. Once you open the Token Endpoint URL, Click on Cancel in the popup and Click on view site information button (lock symbol on top left corner) and click on 'Certificate'.
 
    ![download Certificate1](./images/downloadCertificate1.png)
    
@@ -51,6 +51,17 @@ In this section, we describe steps how to configure events in the on-premise bac
     ![download Certificate6](./images/downloadCertificate6.png)
     
 	
+### Create a Node for standard SSL Client
+1. Open your SAP Backend system and Go to transcaction - '/nSTRUST'. 
+2. Click on 'Display/Change icon' and right Click on 'SSL client SSL Client (Standard) Node' and Select 'Create'.
+
+   ![Standard-1](./images/Standard-1.png)
+3. A Popup “Create PSE” will comes. Click on Continue(Enter).
+
+   ![Standard-2](./images/Standard-2.png)
+ 
+ 
+ 
 ### Import Certificate in on-premise system
 
 
@@ -59,16 +70,20 @@ In this section, we describe steps how to configure events in the on-premise bac
 
    ![download Certificate5](./images/openStrust.png)
    
-3. Click on continue and Click on 'Import Certificate' (under 'Certificate').
+3. A Popup “Create PSE” will comes. Click on Continue(Enter).
+
+   ![Anonymous-2](./images/Anonymous-2.png)
+   
+4. Click on 'Import Certificate' (under 'Certificate').
 
     ![import certificate1](./images/importcertificate1.png)
 
-4. Enter file path to certificate file which is stored in local system.
+5. Enter file path to certificate file which is stored in local system.
    
    ![import certificate2](./images/importCertificate2.png)
    
-5. 	Click on 'Continue' and Click on 'Allow' for the 'SAP GUI Security' popup asking to allow access to the file. 
-6. 	Now you can see the Certificate imported, Click on 'Add to Certificate List' and Click on the 'Save' icon.
+6. 	Click on 'Continue' and Click on 'Allow' for the 'SAP GUI Security' popup asking to allow access to the file. 
+7. 	Now you can see the Certificate imported, Click on 'Add to Certificate List' and Click on the 'Save' icon.
 	
    ![add To Certificate](./images/addToCertificate.png)
 
