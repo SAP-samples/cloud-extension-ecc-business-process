@@ -1,6 +1,6 @@
 # ECC Extend Business Process Scenario with SAP NetWeaver® Event Enablement Add-on 1.0
 
-[Mission: Extend SAP ERP 6.0 (ECC) business processes on SAP Cloud Platform](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3338/3384)
+[Mission: Extend SAP ERP 6.0 (ECC) business processes on SAP Cloud Platform](https://discovery-center.cloud.sap/missiondetail/3338/3384)
 
 [Scenario and Mission Description](./scenario/README.md)
 
