@@ -131,7 +131,7 @@ For this mission a SAP HANA Cloud Instance is necessary. Use the following steps
 
 5.  Enter an 'Instance Name','Description' and 'Password'. if everything is correct then the "Step 2" button appear - click on it.
 
-    ![HANA](./images/hana-05.png)
+    ![HANA](./images/createDatabase02.png)
 
 6.  Here you can setup the size of the SAP HANA Cloud instance - for the mission you can keep the minimum settings - click on "Step 3"
 
