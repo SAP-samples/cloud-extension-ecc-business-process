@@ -9,9 +9,9 @@ Detailed steps of the S/4 HANA on premise Extension Scenario can be found [here]
 
 This application showcases:
 
-- Building application on SAP Cloud Platform using SAP Cloud Application Programming Model (CAP)
-- Consuming Events from SAP ECC using SAP CP Enterprise Messaging
-- Consuming REST API's from SAP ECC using SAP CP Connectivity Service
+- Building application on SAP Business Technology platform using SAP Cloud Application Programming Model (CAP)
+- Consuming Events from SAP ECC using SAP BTP Enterprise Messaging
+- Consuming REST API's from SAP ECC using SAP BTP Connectivity Service
 
 ## Business Scenario
 
@@ -33,11 +33,11 @@ As an employee of Business Partner Validation Firm iCredible, which is a third-p
 
 ![solution diagram](./documentation/images/Architecture.png)
 
-The Business Partner Validation application is developed using [SAP Cloud Application programming Model (CAP)](https://cap.cloud.sap/docs/) and runs on the SAP Cloud Platform Cloud Foundry Environment. It consumes platform services like Enterprise Messaging, SAP HANA and Connectivity. The events generated in SAP ECC are inserted into the Enterprise messaging queue. The application running in Cloud Foundry polls the queue for these messages and inserts them into the HANA database. It uses SAP ECC REST API's to read Business Partner Data from SAP ECC system. It also updates the address and removes central block on the Business Partner once verified. 
+The Business Partner Validation application is developed using [SAP Cloud Application programming Model (CAP)](https://cap.cloud.sap/docs/) and runs on the SAP Business Technology platform, Cloud Foundry Environment. It consumes platform services like Enterprise Messaging, SAP HANA and Connectivity. The events generated in SAP ECC are inserted into the Enterprise messaging queue. The application running in Cloud Foundry polls the queue for these messages and inserts them into the HANA database. It uses SAP ECC REST API's to read Business Partner Data from SAP ECC system. It also updates the address and removes central block on the Business Partner once verified. 
 
 ## Requirements
 * SAP ECC on premise system.
-* SAP Cloud Platform account with [Enterprise Messaging](https://help.sap.com/viewer/product/SAP_ENTERPRISE_MESSAGING/Cloud/en-US) service. The 'default' plan for Enterprise Messaging service is required.
+* SAP Business Technology platform account with [Enterprise Messaging](https://help.sap.com/viewer/product/SAP_ENTERPRISE_MESSAGING/Cloud/en-US) service. The 'default' plan for Enterprise Messaging service is required.
 
 ### For local development you would require the following:
 * [Node js](https://nodejs.org/en/download/)
@@ -56,7 +56,7 @@ The Business Partner Validation application is developed using [SAP Cloud Applic
 
 ### Entitlements
 
-The application requires below set of SAP Cloud Platform Entitlements/Quota
+The application requires below set of SAP Business Technology platform Entitlements/Quota
 
 | Service                           | Plan       | Number of Instances |
 |-----------------------------------|------------|:-------------------:|
