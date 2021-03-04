@@ -33,7 +33,7 @@
       "messaging": {
         "kind": "local-messaging",
         "[production]": {
-          "kind": "enterprise-messaging"
+          "kind": "enterprise-messaging-shared"
         }
       },
       "[production]": {
