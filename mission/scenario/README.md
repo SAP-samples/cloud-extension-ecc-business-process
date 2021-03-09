@@ -1,12 +1,12 @@
 # SAP ERP 6.0 (ECC) Extend Business Process Scenario
 
 ## Description
-The main intent of this scenario is to complement an existing business process in an SAP solution – currently, SAP ERP 6.0,  SAP S/4HANA, SAP SuccessFactors or selected SAP Cloud solutions - with additional business process steps. This involves adding major logic and/or additional data and goes beyond simple UI changes.
+The main intent of this scenario is to complement an existing business process in an SAP solution – currently, SAP ERP 6.0, SAP S/4HANA, SAP SuccessFactors or selected SAP Cloud solutions - with additional business process steps. This involves adding major logic and/or additional data and goes beyond simple UI changes.
 
 This application showcases:
 
 - Building application on SAP Cloud Platform using SAP Cloud Application Programming Model(CAP)
-- Consuming Events from SAP ERP 6.0 on premise using SAP CP Enterprise Messaging
+- Consuming Events from SAP ERP 6.0 on premise using SAP Event Mesh
 - Consuming REST API's from SAP ERP 6.0 on premise using SAP CP Connectivity Service
 
 
@@ -34,7 +34,7 @@ For the complete installation, configuration and implementation of this scenario
 
   ![solution diagram](./images/solution-diagram.png)
 
-The Business Partner Validation application is developed using [SAP Cloud Application programming Model (CAP)](https://cap.cloud.sap/docs/) and runs on the SAP Cloud Platform Cloud Foundry Environment. It consist of 3 modules: database, service and UI. It consumes platform services like Enterprise Messaging, SAP HANA and Connectivity. The events generated in the SAP ERP on premise are inserted into the Enterprise messaging queue. The application running in Cloud Foundry polls the queue for these messages and inserts them into the HANA database. The Business Partner Validation Application uses custom OData services to read data from Business Partner Data from SAP ERP system - thoses services uses the S/4HANA APIs as a template. The Business Partner Validation App also places the processed events into a Enterprise Message Queue from where a Serverless Application consumes it and posts it back to SAP ERP on premise system
+The Business Partner Validation application is developed using [SAP Cloud Application programming Model (CAP)](https://cap.cloud.sap/docs/) and runs on the SAP Cloud Platform Cloud Foundry Environment. It consist of 3 modules: database, service and UI. It consumes platform services like Event Mesh, SAP HANA and Connectivity. The events generated in the SAP ERP on premise are inserted into the Event Mesh queue. The application running in Cloud Foundry polls the queue for these messages and inserts them into the HANA database. The Business Partner Validation Application uses custom OData services to read data from Business Partner Data from SAP ERP system - thoses services uses the S/4HANA APIs as a template. The Business Partner Validation App also places the processed events into a Enterprise Message Queue from where a Serverless Application consumes it and posts it back to SAP ERP on premise system
 
 
    ![solution diagram](./images/TAM-diagram.png)
@@ -42,7 +42,7 @@ The Business Partner Validation application is developed using [SAP Cloud Applic
 
 ## Requirements
 * SAP ERP 6.0 on premise system with Netweaver 7.31 or later  - in this mission we use SAP Netweaver 7.5
-* SAP Cloud Platform account with [Enterprise Messaging](https://help.sap.com/viewer/product/SAP_ENTERPRISE_MESSAGING/Cloud/en-US) service. The 'default' plan for Enterprise Messaging service is required.
+* SAP Cloud Platform account with [Event Mesh](https://help.sap.com/viewer/product/SAP_ENTERPRISE_MESSAGING/Cloud/en-US) service. The 'default' plan for Event Mesh service is required.
 
 ### For local development you would require the following (this is not part of the mission):
 * [Node js](https://nodejs.org/en/download/)
@@ -63,7 +63,7 @@ The application requires below set of SAP Cloud Platform Entitelements/Quota
 
 | Service                           | Plan       | Number of Instances |
 |-----------------------------------|------------|:-------------------:|
-| Enterprise Messaging              | default    |          1          |
+| Event Mesh                        | default    |          1          |
 | SAP Hana Cloud                    | 64standard |          1          |
 | SAP HANA Schemas & HDI Containers | hdi-shared |          1          |
 | Application Runtime               |            |          3          |

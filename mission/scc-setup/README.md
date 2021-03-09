@@ -1,8 +1,10 @@
 # Configure systems in Cloud Connector
 
-In this section you will configure the SAP Cloud Connector for connecting the on premise backend system to the SAP Cloud Platform.
+In this section you will configure the SAP Cloud Connector for connecting the on premise backend system to the SAP Business Technology Platform (BTP).
 
-**Persona:** Backend (ERP) Admin and SCP Admin
+**Persona:** Backend (ERP) Admin and Cloud Administrator (SAP BTP)
+
+**Abbreviation:** SAP Business Technology Platform = SAP BTP
 
 ## Preparations
 
@@ -15,7 +17,7 @@ For the installation of the SAP Cloud Connector please follow the steps in the S
 
 ### Subaccount Info
 
-In your SAP Cloud Platform Subaccount under "Overview" you can find both, your **API Endpoint** and the Subaccount **ID**, that you will need later.
+In your SAP BTP Subaccount under "Overview" you can find both, your **API Endpoint** and the Subaccount **ID**, that you will need later.
 
   ![Subaccount Overview](./images/scc-01.png)
 
@@ -43,7 +45,7 @@ In your SAP Cloud Platform Subaccount under "Overview" you can find both, your *
 
     ![Add Subaccount](./images/scc-02.png)
 
-    You can look up the required data in the SAP Cloud Platform Cockpit as described in the preparations step.
+    You can look up the required data in the SAP BTP Cockpit as described in the preparations step.
 
 4.	Navigate to **Cloud to On-Premise**
 5.	To add a new system mapping click on the **'+'** on the right site of the screen
@@ -95,7 +97,7 @@ In your SAP Cloud Platform Subaccount under "Overview" you can find both, your *
 
 ## Create Cloud Foundry Destination
 
-1.	Open your **SAP Cloud Platform Account** and navigate to your **Subaccount**
+1.	Open your **SAP BTP Account** and navigate to your **Subaccount**
 2.	Choose **Connectivity** in the menu on the left then choose **Cloud Connectors** to check the host details
 
 ![Check host detail](./images/scc-10.png)
@@ -129,4 +131,4 @@ In your SAP Cloud Platform Subaccount under "Overview" you can find both, your *
 
 ##Summary
 
-We have established a connection between the ECC on-premise system and your SAP Cloud Platform account.
+We have established a connection between the ECC on-premise system and your SAP BTP account.

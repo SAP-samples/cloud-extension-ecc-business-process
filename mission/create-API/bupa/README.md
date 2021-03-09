@@ -8,11 +8,12 @@ As the SAP ERP 6.0 system doesn't has an API OData services by default, we have 
 ## Step-by-step Guide 
 
 ### Create Developer Access Key
-1. Open in your browser "service.sap.com".
-2. Search for 'Keys & Requests' and select and open link 'https://launchpad.support.sap.com/#/sscr'.
-3. 	Register Developer - to get developer key ( Give your SAP user ID or your customer ID) A developer key will be generated towards your SAP user id.
-4. Register object - to get Object key ( Give your SAP user id or your customer ID) A object key will be generated towards your SAP user id.   
-5. Copy the keys which will be needed for the next step.
+
+1. To get a Developer Access Key open link 'https://launchpad.support.sap.com/#/sscr'.
+2. 	Register Developer - to get developer key ( Give your SAP Backend User ID or your customer ID), A developer key will be generated towards your SAP user id.
+3. Register object - to get Object key ( Give your SAP user id or your customer ID) A object key will be generated towards your SAP user id.   
+4. Copy the keys which will be needed for the next step.
+5. [Look for external videos](https://www.youtube.com/watch?v=iKVRX0Kvz14) for more information to generate the Access Key.
 
 ### Create a custom Service using SAP Gateway Servic Builder            
 1. Navigate to [SAP API Hub - Business Partner (A2X) API ](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) for  downloading EDMX file of Business Partner from API Business Hub. We will use this as a template for creating a custom OData service.

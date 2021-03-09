@@ -1,8 +1,13 @@
 # Test Entire Business Scenario End to End
-----------------
+
+Let us test the end-end cloud application and also understand the entire flow to verify the scenario. 
+
+
+**Abbreviation:** SAP Business Technology Platform = SAP BTP
+
 ## Access Frontend Application
 
-1. Go to your **SAP Cloud Platform Subaccount** and go to corresponding **Space**
+1. Go to your **SAP BTP Subaccount** and go to corresponding **Space**
 
    ![](./images/demo-01.png)
 
@@ -114,7 +119,7 @@
 
     ![](./images/slg1_transaction-04.png)
 
-- The regular SAP Cloud Platform Logs might also be helpful. Access the corresponding **Space** in your **Subaccount**. Then choose your Application and **Logs**.
+- The regular SAP BTP Logs might also be helpful. Access the corresponding **Space** in your **Subaccount**. Then choose your Application and **Logs**.
 
     ![](./images/demo-09.png)
 
