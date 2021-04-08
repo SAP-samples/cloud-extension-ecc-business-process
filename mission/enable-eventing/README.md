@@ -20,7 +20,7 @@ In this section, we describe steps how to configure events in the on-premise bac
 2. Navigate to your Subaccount -> Services and click **Service Instances**.
 3. Select your already created Event Mesh instance and view the Service key. Also copy this Service Key to a text editor of your choice.
    
-   ![Open EM Servicekey](./images/openEMServiceKey.png)
+   ![Open EM Servicekey](./images/ems-1.png)
    
 4. Copy the Event Mesh Token Endpoint URL and open this URL in a browser of your choice. Here the following screenshots are shown with Internet Explorer and might differ for other browsers.
    
