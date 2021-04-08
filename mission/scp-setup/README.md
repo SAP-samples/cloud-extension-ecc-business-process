@@ -6,7 +6,7 @@ For running the ECC extension mission you will need the following services in yo
 * SAP Business Application Studio
 * Event Mesh
 * Enterprise Messaging Hub
-* SAP Application Runtime
+* Cloud Foundry Runtime
 * SAP HANA service for SAP BTP
 * SAP Continuous Integration & Delivery Service (optional)
 
