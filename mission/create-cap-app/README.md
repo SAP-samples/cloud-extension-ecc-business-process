@@ -44,14 +44,14 @@ File / Folder | Purpose
 
      ![Create Dev Space](./images/dev-cap-app-3.png)
  
-5.	On the next screen enter a Dev space name e.g **mission**, select the type *SAP Cloud Business Application*. Click on the button *Create Dev Space*
+5.	On the next screen enter a Dev space name e.g **mission**, select the type **Full Stack Cloud Application**. Choose **Create Dev Space**
 
       ![Configure Dev Space](./images/dev-cap-app-4.png)
       
  
-6.	Your Dev Space is now being created. As soon as the Dev Space is available you can click on your Dev Spaces name to  access
+6.	Your Dev Space is now being created. As soon as the Dev Space is available you can choose your Dev Spaces name to access it.
 
-7.	Choose *Terminal -> New Terminal* in the menu on the top of your screen.
+7.	Choose **Terminal -> New Terminal** in the menu on the top of your screen.
 
     ![Open Terminal](./images/dev-cap-app-5.png)
  
@@ -67,17 +67,16 @@ File / Folder | Purpose
     git clone https://github.com/SAP-samples/cloud-extension-ecc-business-process.git 
      ```
  
-10.	Click on *File* in the menu on the top and choose *Open Workspace* in the drop down.
+10.	Choose **File** in the menu on the top and then choose **Open Workspace** in the drop down.
 
     ![Open Workspace](./images/dev-cap-app-7.png)
  
-11.	 Open the project by selecting projects -> cloud-extension-ecc-business-process and click on *Open*
-
+11.	 Open the project by selecting projects -> cloud-extension-ecc-business-process and choose **Open**
  
 
-12.  First you need to login to your SAP BTP account:
+12.  Next you need to login to your SAP BTP account:
  
-   * Check if you are logged in to your BTP Account from *SAP Business Application Studio*.
+   * Check if you are logged in to your BTP Account from **SAP Business Application Studio***
      
    * To login to Cloud Foundry, In the tabs, click on View-> Select **Find Command**.
     
@@ -100,7 +99,7 @@ File / Folder | Purpose
    * Select the space name which you have noted down. Once you have selected the Org and Space, you would login to your Cloud Foundry account from SAP Business Application Studio.
 
 
-13. For the next steps you need the terminal again. Go to *Terminal* -> *New Terminal*
+13. For the next steps you need the terminal again. Go to **Terminal** -> **New Terminal**
     - First we create a hdi-shared database instance, therefore we need the guid of the SAP HANA Cloud service that we have created at the [SAP BTP Setup](../scp-setup/README.md). You can find the service name in the list of services
       
 	 ```bash
