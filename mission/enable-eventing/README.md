@@ -85,7 +85,7 @@ In this section, we describe steps how to configure events in the on-premise bac
 6. Click on **Continue** and Click on **Allow** for the **SAP GUI Security** popup asking to allow access to the file. 
 7. Now you can see the Certificate imported, Click on **Add to Certificate List** and Click on the **Save** icon.
    
-   >Hint: Note the valid-to date of your certificate and update it in advance.	
+   >Hint: Note the valid-to date of the certificate and update it in advance.	
    
    ![add To Certificate](./images/addToCertificate.png)
 
