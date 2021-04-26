@@ -66,7 +66,7 @@ The application requires below set of SAP Cloud Platform Entitelements/Quota
 | Event Mesh                        | default    |          1          |
 | SAP Hana Cloud                    | 64standard |          1          |
 | SAP HANA Schemas & HDI Containers | hdi-shared |          1          |
-| Application Runtime               |            |          3          |
+| Cloud Foundry Runtime             |            |          3          |
 | Destination                       | lite       |          1          |
 | SAP Cloud Platform Continuous Integration and Delivery (Optional)|            |          1          |
 
