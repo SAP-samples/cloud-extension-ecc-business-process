@@ -80,7 +80,7 @@ As the SAP ERP 6.0 system doesn't has an API OData services by default, we have 
 
 A_BUSINESSPARTNE_GET_ENTITY
 ------------------------
-`````
+`````abap
 METHOD a_businesspartne_get_entity.
 *&----------------------------------------------------------------------------------------------*
 *  & Object         : ZCL_ZAPI_BUSINESS_P_DPC_EXT=========A_BUSINESSPARTNE_GET_ENTITY
@@ -143,7 +143,7 @@ Once the activation is successful you will get message in the below for successf
 
 A_BUSINESSPARTNE_GET_ENTITYSET
 -----------------------
-`````
+`````abap
 METHOD a_businesspartne_get_entityset.
 *&----------------------------------------------------------------------------------------------*
 *  & Object         : ZCL_ZAPI_BUSINESS_P_DPC_EXT=========A_BUSINESSPARTNE_GET_ENTITYSET
@@ -198,7 +198,7 @@ ENDMETHOD.
 A_BUSINESSPARTNE_UPDATE_ENTITY
 --------------------
 
-````````
+`````abap
   METHOD a_businesspartne_update_entity.
 *&----------------------------------------------------------------------------------------------*
 *  & Object         : ZCL_ZAPI_BUSINESS_P_DPC_EXT=========A_BUSINESSPARTNE_UPDATE_ENTITY
@@ -269,7 +269,7 @@ A_BUSINESSPARTNE_UPDATE_ENTITY
 
 A_BUSINESSPART01_GET_ENTITY
 ------------------------
-`````
+`````abap
 METHOD A_BUSINESSPART01_GET_ENTITY.
 *&----------------------------------------------------------------------------------------------*
 *  & Object         : ZCL_ZAPI_BUSINESS_P_DPC_EXT=========A_BUSINESSPART01_GET_ENTITY
@@ -342,7 +342,7 @@ ENDMETHOD.
 A_BUSINESSPART01_GET_ENTITYSET
 -----------------
 
-````````
+`````abap
   METHOD a_businesspart01_get_entityset.
 *&----------------------------------------------------------------------------------------------*
 *  & Object         : ZCL_ZAPI_BUSINESS_P_DPC_EXT=========A_BUSINESSPARTNE_GET_ENTITYSET
@@ -416,7 +416,7 @@ A_BUSINESSPART01_GET_ENTITYSET
 A_BUSINESSPART01_UPDATE_ENTITY
 -----------------
 
-````````
+`````abap
   METHOD a_businesspart01_update_entity.
 *&----------------------------------------------------------------------------------------------*
 *  & Object         : ZCL_ZAPI_BUSINESS_P_DPC_EXT=========A_BUSINESSPART01_UPDATE_ENTITY

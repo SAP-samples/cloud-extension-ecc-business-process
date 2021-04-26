@@ -163,29 +163,8 @@ Set the Memory as 256MB.
 
    ![Edit manifest](./images/dev-cap-app-12.png)
  
-15. Create a queue in Event Mesh for the application to read events from SAP S/4HANA.
 
-    - Go to the SAP BTP cockpit
-    - Select **Instances and Subscriptions**
-    - Go to the Subscriptions section and select the 3 dots at **Event Mesh**
-    - Select **Go to Application** 
-
-      ![Event Mesh](./images/serverless15-1.png)
-
-    - Login using email and password
-
-      ![Event Mesh](./images/serverless15-2.png)
-
-    - Click on your message client
-
-      ![Event Mesh](./images/serverless15-3.png)
-
-    - Click on Queues.
-    - Click on Create Queue
-    - Provide name for the queue - BusinessPartnerValidation-srv/a75c. Including the namespace, the name would be **refappscf/ecc/123/BusinessPartnerValidation-srv/a75c**
-    - Click on Create
-
-16. Go back to the terminal and run following commands:
+15. Go back to the terminal and run following commands:
 
     ```bash
     
@@ -196,7 +175,7 @@ Set the Memory as 256MB.
        cf p -f gen/srv --random-route
     ```
  
-17. Check if the mta.yaml file exist in the project root - if not create one
+16. Check if the mta.yaml file exist in the project root - if not create one
      
     ```bash
        cds add mta 
@@ -204,13 +183,13 @@ Set the Memory as 256MB.
     
     Then replace the content with this [mta](./mta.yaml) 
 
-18. Generate the mtar file
+17. Generate the mtar file
     
     ```bash
       mbt build -p=cf
     ```
 
-19. Deploy the UI and service to your Cloud Foundry space with the mtar.
+18. Deploy the UI and service to your Cloud Foundry space with the mtar.
     
     ```bash
     cf deploy mta_archives/BusinessPartnerValidation_1.0.0.mtar
