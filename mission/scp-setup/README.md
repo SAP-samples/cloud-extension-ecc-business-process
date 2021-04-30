@@ -5,7 +5,6 @@ For running the ECC extension mission you will need the following services in yo
 
 * SAP Business Application Studio
 * Event Mesh
-* Enterprise Messaging Hub
 * Cloud Foundry Runtime
 * SAP HANA service for SAP BTP
 * SAP Continuous Integration & Delivery Service (optional)
@@ -56,11 +55,19 @@ Before running the booster please check for which regions and infrastructures th
 4. Check Prerequisites. If Ok press Next - otherwise check 
    ![Booster](./images/booster-04.png)
 
+
+   > Hint: If you get a warning check which services are affected. If they are not relevant for this mission (see the next step) you can just ignore it.
+            ![Booster Warning](./images/booster-04a.png)
+
 5. Setup Subaccount
    
-   You find the list of the services that will acctivated by the Booster. For this mission the **Countinuous Integration & Delivery** service is optional. Remove it if you don't want to use it. **Application Logging**, the **Extension Center**, the **Extension Factory serveless runtime** and the **Launchpad** are not used in this  mission - therefore you can remove them.
+   You find the list of the services that will acctivated by the Booster. For this mission the **Countinuous Integration & Delivery** service is optional. Remove it if you don't want to use it.**Alert Notification**, **Application Logging**, the **Extension Center**, the **Extension Factory serveless runtime**, the **Launchpad** and the **SAP Cloud Transport Management Service** are not used in this  mission - therefore you can remove them. We will install the  **SAP HANA Cloud** DB in a separate step - so remove it also. 
    
    ![Booster](./images/booster-05.png)
+
+   >By using a subscription-based SAP BTP account you have to set the quota of the **Cloud Foundry Runtime** to 3
+   ![Booster](./images/booster-05a.png)
+ 
 
     1. In the sub section enter a meaningful Subaccount name - in general it reflects the organisation of your team etc.
     2. Select your Provider
@@ -111,7 +118,7 @@ For this mission a SAP HANA service for SAP BTP is necessary. Use the following 
 
     ![HANA](./images/hana-01.png)
 
-2. Click on the icon 'Create Instance'.
+2. Select **Create**.
    
     ![HANA](./images/hana-02.png)
 
@@ -149,5 +156,5 @@ For this mission a SAP HANA service for SAP BTP is necessary. Use the following 
 
 With that the setup of your SAP BTP account is done.
 
- 
+
 
