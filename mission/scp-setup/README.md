@@ -89,7 +89,7 @@ Before running the booster please check for which regions and infrastructures th
    
    ![Booster](./images/booster-08.png)
 
-8.  Check the Progess - all sections should get green
+8.  Check the progess - all sections should get green
    
     ![Booster](./images/booster-09.png)
 
