@@ -96,17 +96,6 @@ Let us test the end-end cloud application and also understand the entire flow to
 - Additionally you can check the logs of SAP NetWeaver Add-On for Event enablement as described in the chapter [Monitoring and Logging](https://help.sap.com/viewer/e966e6c0e61443ebaa0270a4bae4b363/1.0/en-US/cff1acd831f744d59697525702ed0d3e.html).
 
 
-
-- Logs for your Serverless Function can be found in the Extension Center:
-
-    ![](./images/demo-04.png)
-
-    ![](./images/demo-05.png)
-
-    ![](./images/demo-06.png)
-
-    ![](./images/ds23.png)
-
 - To monitor the Events from ECC open Transaction **SLG1** on your Backend
 
     ![](./images/slg1_transaction-01.png)
