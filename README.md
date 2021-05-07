@@ -81,7 +81,8 @@ File / Folder | Purpose
 #### Steps to deploy locally
 
 - Open terminal in VSCode
-- Run `cds watch`
+- Run `npm install` from the project root directory
+- Run `cds watch` from the project root directory
 
 #### Steps to deploy the application on Cloud Foundry
 
