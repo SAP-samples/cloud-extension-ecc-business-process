@@ -117,7 +117,7 @@ In this section, we describe steps how to configure events in the on-premise bac
     ![create RFC Destination21](./images/createRFCDestination21.png)
    
 11. Click on **Continue** for the popup that says information **HTTP Connections may not be secure**.
-12. Switch to the text editor where you have copied the Service Key of Event Mesh in the first section above. Copy the value of **tokenendpoint** excluding **https://** and **oauth/token** from the URL.	
+12. Switch to the text editor where you have copied the Service Key of Event Mesh in the first section above. Copy the value of **tokenendpoint** excluding **https://** and **/oauth/token** from the URL.	
 13. Switch back to the RFC Destination tab and for field **Target Host**, enter the copied URL for example: **xxxxxx.authentication.eu10.hana.ondemand.com**. Enter for field **Path Prefix** value as **oauth/token**.
 
     ![create RFC Destination22](./images/createRFCDestination22.png)
@@ -298,7 +298,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 12. Now, double click on **Outbound Object** and click **New Entries**.
 13. In the opened screen, **Change View Outbound Objects: Details**, enter the following values:
    - Enter Object as **BUSINESSPARTNER_CHANGED**
-   - Enter Extraction Function Module Name as**/ASADEV/ACI_SIMPLE_NOTIFY**
+   - Enter Extraction Function Module Name as **/ASADEV/ACI_SIMPLE_NOTIFY**
    - Enter Message Type as **Z_ACI_MSG_CHANGED**
    - Select Load Type as **Incremental Load**
    - Enter Event **API**
@@ -332,7 +332,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 
      ![maintain Cloud Secret](./images/maintainCloudSecret.png)
 
-   - Click on Execute ( Will see suucess Message---> Shared Secret for ** was created successfully**)
+   - Click on Execute ( You will see a success Message---> Shared Secret for ** was created successfully**)
    	
      ![execute Cloud Secret](./images/executeCloudSecret.png)
      
