@@ -1,4 +1,3 @@
-
 module.exports = async srv => {
   const {BusinessPartnerAddress, Notifications, Addresses, BusinessPartner} = srv.entities;
   const bupaSrv = await cds.connect.to("API_BUSINESS_PARTNER");
@@ -12,34 +11,46 @@ module.exports = async srv => {
 
   messaging.on("refappscf/ecc/123/BO/BusinessPartner/Created", async msg => {
     console.log("<< event caught", msg);
-    const data = JSON.parse(msg.data);
-    const BUSINESSPARTNER = data.objectId;
-    console.log(BUSINESSPARTNER);
-    if(data.event === "CREATED"){
+    let BUSINESSPARTNER = "";
+    if(msg.headers && msg.headers.type == "sap.nw.ee.BusinessPartner.Created.v1"){
+       //> SP3 version
+      BUSINESSPARTNER = msg.data.BusinessPartner;
+    }
+    else{
+      //> SP1 version
+      BUSINESSPARTNER = JSON.parse(msg.data).objectId;  
+    }
+    console.log("<<< Received Created Business Partner Id" + BUSINESSPARTNER);
       const bpEntity = await bupaSrv.tx(msg).run(SELECT.one(BusinessPartner).where({businessPartnerId: BUSINESSPARTNER}));
       console.log("bpEntityyy", bpEntity);
-      const result = await cds.tx(msg).run(INSERT.into(Notifications).entries({businessPartnerId:bpEntity.businessPartnerId, verificationStatus_code:'N', businessPartnerName:bpEntity.businessPartnerName}));
+      const result = await cds.tx(msg).run(INSERT.into(Notifications).entries({businessPartnerId:bpEntity.businessPartnerId, verificationStatus_code:'N', businessPartnerName:bpEntity.businessPartnerName}));     
       const address = await bupaSrv.tx(msg).run(SELECT.one(BusinessPartnerAddress).where({businessPartnerId: bpEntity.businessPartnerId}));
       // for the address to notification association - extra field
+      if(address) {  
       const notificationObj = await cds.tx(msg).run(SELECT.one(Notifications).columns("ID").where({businessPartnerId: bpEntity.businessPartnerId}));
       address.notifications_id=notificationObj.ID;
       const res = await cds.tx(msg).run(INSERT.into(Addresses).entries(address));
       console.log("Address inserted", result);
-    }
+      }  
   });
 
-
   messaging.on("refappscf/ecc/123/BO/BusinessPartner/Changed", async msg => {
-    console.log("<< event caught", msg);
-    const data = JSON.parse(msg.data);
-    const BUSINESSPARTNER = (+data.objectId).toString();
-    if(data.event === "CHANGED"){
+    let BUSINESSPARTNER = "";
+    if(msg.headers && msg.headers.type == "sap.nw.ee.BusinessPartner.Changed.v1"){
+       //> SP3 version
+      BUSINESSPARTNER = msg.data.BusinessPartner;
+    }
+    else{
+      //> SP1 version
+      BUSINESSPARTNER = JSON.parse(msg.data).objectId;  
+    }
+    BUSINESSPARTNER = (+BUSINESSPARTNER).toString()
+    console.log("<<< Received Changed Business Partner Id" + BUSINESSPARTNER);
       const bpIsAlive = await cds.tx(msg).run(SELECT.one(Notifications, (n) => n.verificationStatus_code).where({businessPartnerId: BUSINESSPARTNER}));
       if(bpIsAlive && bpIsAlive.verificationStatus_code == "V"){
         const bpMarkVerified= await cds.tx(msg).run(UPDATE(Notifications).where({businessPartnerId: BUSINESSPARTNER}).set({verificationStatus_code:"C"}));
-      }    
-      console.log("<< BP marked verified >>")
-    }
+        console.log("<< BP marked verified >>")  
+    }    
   });
 
   srv.after("UPDATE", "Notifications", (data, req) => {
@@ -96,7 +107,5 @@ module.exports = async srv => {
       destinationName: 'bupa-ecc'
     });
     console.log("Search Term update", res);
-  }
-
-  
+  } 
 }
