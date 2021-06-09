@@ -17,6 +17,9 @@
     "passport": "^0.4.1",
     "postcode-validator": "^3.1.0"
   },
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "npx cds run",
     "test": "jest"
