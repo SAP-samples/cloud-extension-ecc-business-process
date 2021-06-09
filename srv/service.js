@@ -5,7 +5,6 @@ module.exports = async srv => {
   const namespace = messaging.options.credentials && messaging.options.credentials.namespace
   const {postcodeValidator} = require('postcode-validator');
   const {BusinessPartner: sdkBusinessPartner, BusinessPartnerAddress: sdkBusinessPartnerAddress}  = require('@sap/cloud-sdk-vdm-business-partner-service');
-  const packageJson = require("../package.json");
   
   srv.on("READ", BusinessPartnerAddress, req => bupaSrv.tx(req).run(req.query))
   srv.on("READ", BusinessPartner, req => bupaSrv.tx(req).run(req.query))
@@ -93,7 +92,7 @@ module.exports = async srv => {
       payloadBuilder.addressId = resultJoin.addressId
 
       let res = await sdkBusinessPartnerAddress.requestBuilder().update(payloadBuilder).withCustomServicePath("/").execute({
-        destinationName: packageJson.cds.requires.API_BUSINESS_PARTNER.credentials.destination
+        destinationName: bupaSrv.destination
       });
       console.log("address update to ECC", res);
     }
@@ -105,7 +104,7 @@ module.exports = async srv => {
     let payloadBuilder = sdkBusinessPartner.builder().fromJson(payload);
     payloadBuilder.businessPartner = resultJoin.businessPartnerId;
     let res = await sdkBusinessPartner.requestBuilder().update(payloadBuilder).withCustomServicePath("/").execute({
-      destinationName: packageJson.cds.requires.API_BUSINESS_PARTNER.credentials.destination
+      destinationName: bupaSrv.destination
     });
     console.log("Search Term update", res);
   } 
