@@ -3,7 +3,7 @@
 
 ## Introduction
 
-In this section, we describe steps how to configure events in the on-premise backend system. This tutorial shows the configuration steps for the SAP NetWeaver Add-On for Event enablement Service Pack SP03. If you have installed only Service Pack SP01 or SP02 please use the [SP01 Setup Guide](./SETUP_SP01.md). In SP03 the setup has been simplified and the events are now compatible to standard SAP S/4HANA events.
+In this section, we describe steps how to configure events in the on-premise backend system
 
 **Persona:** Basis ABAP Administrator 
 
@@ -62,10 +62,10 @@ In this section, we describe steps how to configure events in the on-premise bac
  
  
  
-### Import SAP Mesh certificate in on-premise system
+### Import Certificate in on-premise system
 
 
-1. Still in transaction - **/nSTRUST**. 	
+1. Open your SAP Backend system and Go to transcaction - **/nSTRUST**. 	
 2. Click on **Display/Change icon** and right Click on **SSL client SSL Client (Anonymous)  Node** and Select **Create**.
 
    ![download Certificate5](./images/openStrust.png)
@@ -179,41 +179,10 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 4. For the screen with **Prompt with Customization Request**, you have to create a new transport request and then choose **Ok** to save.
  
    ![activate Change Pointer3](./images/activateChangePointer3.png)
-
-### Maintain Event Type Linkage 
-
-1. Enter the Transaction **/nSWE2** and select **New Entries**.
    
-     ![execute Cloud Secret](./images/eventLinkageCreated2.png)
-  
-   We now map the BusinessObjects events:
-   
-2. In the opened screen, enter the following values:
-   - For field **Object Category**, select **BOR Object Type**
-   - For field **Object Type**, select **BUS1006**
-   - For field **Event**, select **CREATED**
-   - For field **Receiver type**, select **Z_ACI_MSG_CREATE**
-   - For field **Receiver Function Module**, select **/ASADEV/ACI_EVENTS_TRIGGER**
-   - Check the checkbox **Linkage Activated**
-   - Click **Save** icon
-        
-     ![createEventLinkage](./images/eventLinkageChanged2.png)
-     
-3. Click **New Entries**
-4. In the opened screen, enter the following values:
-   - For field **Object Category**, select **BOR Object Type**
-   - For field **Object Type**, select **BUS1006**
-   - For field **Event**, select **CHANGED**
-   - For field **Receiver type**, select **Z_ACI_MSG_CHANGED**
-   - For field **Receiver Function Module**, select **/ASADEV/ACI_EVENTS_TRIGGER**
-   - Check the checkbox **Linkage Activated**
-   - Click **Save** icon and then the **OK** (green-tick) icon for Transport Request.
-        
-     ![change Event Linkage](./images/changeEventLinkage.png)
-
 ### Set ISO standard with UTF-8
 
-1. Enter Transaction **/nSPRO** and select the **SAP Reference IMG** icon.
+1. Enter Transaction /nSPRO and click on **SAP Reference IMG** icon.
 
    ![display Reference Img](./images/displayReferenceImg.png)
    
@@ -232,9 +201,9 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 
 ### Load Events into Cloud
 
-1. Expand **SAP Customization Implementation Guide** --> **Integration with Other SAP components** --> **SAP NetWeaver AddOn for Event enablement** --> and click on the clock icon with tooltip **IMG:Activity** next to **Maintain Import Events**. 
+1. Expand **SAP Customization Implementation Guide** --> **Integration with Other SAP components** --> **SAP NetWeaver AddOn for Event enablement** --> ALE Delta Customizing and click on the clock icon with tooltip **IMG:Activity** next to **ACI: Import Events**. 
 
-   ![open Import Events](./images/openImportEventsv3.png)
+   ![open Import Events](./images/openImportEvents.png)
    
 2. Click on **Display/Change** icon and click on **New Entries**.
 
@@ -246,12 +215,10 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    
 5. Click on **Back** Button to go to previous screen.
 
-
-
 ### Connection Customizing File Transfer		
-1. Go back to transaction **/nSPRO**, expand **SAP Customization Implementation Guide** --> **Integration with other SAP components** --> **SAP NetWeaver AddOn for Event enablement**  and click on clock icon with tooltip **IMG:Activity** next to **Connection and Replication Object Customizing**.
+1. Expand **SAP Customization Implementation Guide** --> **Integration with other SAP components** --> **SAP NetWeaver AddOn for Event enablement** --> **ALE Delta Customizing** and click on clock icon with tooltip **IMG:Activity** next to **ACI: Connection Customizing File Transfer**.
    
-   ![open Conn Customization](./images/openConnCustomizationv3.png)
+   ![open Conn Customization](./images/openConnCustomization.png)
    
 2. Click on New Entries.
 
@@ -277,14 +244,14 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    - For the **Default Attribute value**, copy and paste the value of **clientid** from the Event Mesh Service Key which you copied in the beginning of this document.
    - In the colum **Default Attribute**, enter **SAP_EM_TOKEN_DESTINATION**  
    - For this **Default Attribute value**, enter  **ACI_SAP_EM_TOKEN**
-   - Select **Save** icon
-   
+   - Click on **Save** icon
+   - Click on **Error Type Mapping	**
 
      ![new Entry Default Values2](./images/newEntryDefaultValues2.png)
    
-6. In the **Dialog Structure** select **Error Type Mapping**, in the screen **Change View Error Type Mapping: Overview** click on **New Entries**.
+6. In the screen **Change View Error Type Mapping: Overview**, Click on **New Entries**.
    
-7. In the opened screen, **Change View Error Type Mapping: Overview**, enter the following values: 
+7. 	In the opened screen, **Change View Error Type Mapping: Overview**, enter the following values: 
    - In the column **Resp Code**, enter **200**.
    - In the column **Message Type**, select Success**
    - In the column **Resp Code**, enter **201**
@@ -293,7 +260,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    - In the column **Message Type**, select **Success**
    - Click on **Save** icon.
 
-     ![error Type Mapping](./images/errorTypeMapping2.png)
+     ![error Type Mapping](./images/errorTypeMapping.png)
 
 8. Click **Outbound Objects** and Click **New Entries**
 
@@ -316,41 +283,20 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
     ![new Entry Header Attribute](./images/newEntryHeaderAttribute.png)
 	
 11. In the opened screen, enter the following values:
-    - In the column, **Header Attributes**, enter **CLOUDEVENTS_OBJECT_NAME**
-    - In the column, **Header Attributes Value**, enter **BusinessPartner**
-    - In the column, **Header Attributes**, enter **CLOUDEVENTS_OPERATION**
-    - In the column, **Header Attributes Value**, enter **Created**
-    - In the column, **Header Attributes**, enter **CLOUDEVENTS_VERSION**
-    - In the column, **Header Attributes Value**, enter **v1**
     - In the column, **Header Attributes**, enter **SAP_EM_CALL_METHOD**
     - In the column, **Header Attributes Value**, enter **POST**
     - In the column, **Header Attributes**, enter **SAP_EM_CONT_TYPE**
     - In the column, **Header Attributes Value**, enter **application/json**
-    - In the column, **Header Attributes**, enter **SAP_EM_KEY_NAME**
-    - In the column, **Header Attributes Value**, enter **BusinessPartner**
     - In the column, **Header Attributes**, enter **SAP_EM_QOS**
     - In the column, **Header Attributes Value**, enter **0**
     - In the column, **Header Attributes**, enter **SAP_EM_TOPIC**
     - In the column, **Header Attributes Value**, enter **refappscf/ecc/123/BO/BusinessPartner/Created** (enter the topic name created in Event Mesh Dashboard through CAP Application)
     - Click **Save** icon
     
-      ![header Attribute Create](./images/headerAttributeCreatedv3.png)
+      ![header Attribute Create](./images/headerAttributeCreated.png)
 
-12. Select **Event Linkage** and verifiy the values from transaction SWE2:
-       
-      - In the column, **Object Category** = **BOR Object Type**
-      - In the column, **Object Type** = **BUS1006**
-      - In the column, **Event** = **CREATED**
-      - In the column, **Receiver Function Module** = **/ASADEV/ACI_EVENTS_TRIGGER**
-      - The field **Global** is checked
-      - The field **Type linkage active** is checked
-      
-      
-      ![header Attribute Create](./images/eventLinkageCreated.png)
-
-
-13. Now, double click on **Outbound Object** and click **New Entries**.
-14. In the opened screen, **Change View Outbound Objects: Details**, enter the following values:
+12. Now, double click on **Outbound Object** and click **New Entries**.
+13. In the opened screen, **Change View Outbound Objects: Details**, enter the following values:
    - Enter Object as **BUSINESSPARTNER_CHANGED**
    - Enter Extraction Function Module Name as**/ASADEV/ACI_SIMPLE_NOTIFY**
    - Enter Message Type as **Z_ACI_MSG_CHANGED**
@@ -362,43 +308,24 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    	
      ![enter Outbound Object Changed](./images/enterOutboundObjectChanged.png)
 
-15. Select **Header Attributes**, select **New Entries**.
-16. In the opened screen, enter the following values:
-    - In the column, **Header Attributes**, enter **CLOUDEVENTS_OBJECT_NAME**
-    - In the column, **Header Attributes Value**, enter **BusinessPartner**
-    - In the column, **Header Attributes**, enter **CLOUDEVENTS_OPERATION**
-    - In the column, **Header Attributes Value**, enter **Changed**
-    - In the column, **Header Attributes**, enter **CLOUDEVENTS_VERSION**
-    - In the column, **Header Attributes Value**, enter **v1**
+14. Click **Header Attributes**, Click **New Entries**.
+15. In the opened screen, enter the following values:
     - In the column, **Header Attributes**, enter **SAP_EM_CALL_METHOD**
     - In the column, **Header Attributes Value**, enter **POST**
     - In the column, **Header Attributes**, enter **SAP_EM_CONT_TYPE**
     - In the column, **Header Attributes Value** enter **application/json**
-    - In the column, **Header Attributes**, enter **SAP_EM_KEY_NAME**
-    - In the column, **Header Attributes Value**, enter **BusinessPartner**
     - In the column, **Header Attributes**, enter **SAP_EM_QOS**
     - In the column, **Header Attributes Value**, enter **0**
     - In the column, **Header Attributes**, enter **SAP_EM_TOPIC**
     - In the column, **Header Attributes Value**, enter **refappscf/ecc/123/BO/BusinessPartner/Changed** (enter the topic name created in Event Mesh Dashboard through CAP Application)
     - Click **Save** icon
     
-      ![header Attribute Changed](./images/headerAttributeChangedv3.png)
-
-17. Select **Event Linkage** and verifiy the values from transaction SWE2:
-       
-      - In the column, **Object Category** = **BOR Object Type**
-      - In the column, **Object Type** = **BUS1006**
-      - In the column, **Event** = **CHANGED**
-      - In the column, **Receiver Function Module** = **/ASADEV/ACI_EVENTS_TRIGGER**
-      - The field **Global** is checked
-      - The field **Type linkage active** is checked
-     
-      ![event linkage changed](./images/eventLinkageChanged.png)
+      ![header Attribute Changed](./images/headerAttributeChanged.png)
 
 ### Enter Cloud Connection Secret
 
 1. Click on **Back** Button to go to previous screen of **Display IMG**.
-2. Expand the following path: **SAP Customization Implementation Guide** --> **Integration with Other SAP components** --> **SAP NetWeaver AddOn for Event Enablement** and click on clock icon with tooltip **IMG:Activity** next to **Set the Cloud Connection Password**.
+2. Expand the following path: **SAP Customization Implementation Guide** --> **Integration with Other SAP components** --> **SAP NetWeaver AddOn for Event Enablement** --> **ALE Delta Customizing** and click on clock icon with tooltip **IMG:Activity** next to **ACI: Set the Cloud Connection Password**.
 3. In the screen, **Maintain the Cloud Shared Secret**:
    - Select Cloud Instance **ACI_SAP_EM_CAL**.
    - For the field **Cloud Shared Secret**, copy and paste the value of **clientsecret** from the Event Mesh Service Key which you copied in the beginning of this document.
@@ -408,7 +335,35 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    - Click on Execute ( Will see suucess Message---> Shared Secret for ** was created successfully**)
    	
      ![execute Cloud Secret](./images/executeCloudSecret.png)
- 
+     
+### Maintain Event Type Linkage 
+
+1. Enter the Transaction **/nSWE2** and select **New Entries**.
+   
+   ![execute Cloud Secret](./images/eventTypeLinkage.png)
+   
+2. In the opened screen, enter the following values:
+   - For field **Object Category**, select **BOR Object Type**
+   - For field **Object Type**, select **BUS1006**
+   - For field **Event**, select **CREATED**
+   - For field **Receiver type**, select **Z_ACI_MSG_CREATE**
+   - For field **Receiver Function Module**, select **/ASADEV/ACI_EVENTS_SYNCH**
+   - Check the checkbox **Linkage Activated**
+   - Click **Save** icon
+        
+     ![createEventLinkage](./images/createEventLinkage.png)
+     
+3. Click **New Entries**
+4. In the opened screen, enter the following values:
+   - For field **Object Category**, select **BOR Object Type**
+   - For field **Object Type**, select **BUS1006**
+   - For field **Event**, select **CHANGED**
+   - For field **Receiver type**, select **Z_ACI_MSG_CHANGED**
+   - For field **Receiver Function Module**, select **/ASADEV/ACI_EVENTS_SYNCH**
+   - Check the checkbox **Linkage Activated**
+   - Click **Save** icon and then the **OK** (green-tick) icon for Transport Request.
+        
+     ![change Event Linkage](./images/changeEventLinkage.png)  	
 
 
 ## Summary
@@ -417,7 +372,6 @@ We have estabilished a trust between our SAP ERP backend and the Event Mesh serv
 
 **Additional Resources:**
 
-* [SAP Event Mesh for SAP ERP: HowTo-Guide (Part 1 – Connectivity)](https://blogs.sap.com/2020/10/02/sap-enterprise-messaging-for-sap-erp-howto-guide-part-1-connectivity/)
+* [SAP Enterprise Messaging for SAP ERP: HowTo-Guide (Part 1 – Connectivity)](https://blogs.sap.com/2020/10/02/sap-enterprise-messaging-for-sap-erp-howto-guide-part-1-connectivity/)
 
-* [SAP Event Mesh for SAP ERP: HowTo-Guide (Part 2 – First use case)](https://blogs.sap.com/2020/10/08/sap-enterprise-messaging-for-sap-erp-howto-guide-part-2-first-use-case/)
-* [SAP Help - SAP NetWeaver Add-On for Event enablement](https://help.sap.com/viewer/e966e6c0e61443ebaa0270a4bae4b363/1.0/en-US/3eba827c531344eb879d8e35022d90ba.html)
+* [SAP Enterprise Messaging for SAP ERP: HowTo-Guide (Part 2 – First use case)](https://blogs.sap.com/2020/10/08/sap-enterprise-messaging-for-sap-erp-howto-guide-part-2-first-use-case/)

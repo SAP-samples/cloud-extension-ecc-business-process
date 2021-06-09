@@ -2,13 +2,14 @@
 
 This guide gives you a rough overview of the installations steps for the SAP NetWeaver® Event Enablement Add-on 1.0 for a Netweaver 7.5 system. 
 
-For the installation you will need the installation package SAPK-100COINASANWEE from [SAP Support Portal]( https://launchpad.support.sap.com/#/softwarecenter)
-with the following files:
+For the installation you will need the installation package SAPK-100COINASANWEE and the service packs 1-3 from [SAP Support Portal]( https://launchpad.support.sap.com/#/softwarecenter):
 
-* K-100COINASANWEE.SAR  SP00
-* K-10001INASANWEE.SAR  SP01
+* **SAPK-100COINASANWEE**  Add-On Installation
+* **SAPK-10001INASANWEE**  SP01
+* **SAPK-10002INASANWEE**  SP02
+* **SAPK-10003INASANWEE**  SP03
 
-Feature Package 1 (SP02) is not needed for this mission, but it could be necessary if you also want to receive and handle messages in the ERP backend - see [overview](https://help.sap.com/viewer/e966e6c0e61443ebaa0270a4bae4b363/1.0/en-US/4bd8777d7a674f1ba93e1da405e4b9df.html). 
+see [overview in SAP Help](https://help.sap.com/viewer/e966e6c0e61443ebaa0270a4bae4b363/1.0/en-US/4bd8777d7a674f1ba93e1da405e4b9df.html). 
 
 In addition it could also be necessary to update the SPAM transaction to the latest version
 
@@ -71,6 +72,11 @@ Then run the installation:
    
    ![](images/ecc16.png)
    
+   Repeat the steps from section 3 also for the SP2 K-10002INASANWEE.SAR and SP3 K-10003INASANWEE.SAR. 
+
+   Now your ECC system is ready for messaging.
+
+
    
 
    
