@@ -10,7 +10,7 @@ module.exports = async srv => {
   srv.on("READ", BusinessPartner, req => bupaSrv.tx(req).run(req.query))
 
   messaging.on("refappscf/ecc/123/BO/BusinessPartner/Created", async msg => {
-    console.log("<< event caught", msg);
+    console.log("<< event caught", msg.event);
     let BUSINESSPARTNER = "";
     if(msg.headers && msg.headers.type == "sap.nw.ee.BusinessPartner.Created.v1"){
        //> SP3 version
@@ -30,7 +30,7 @@ module.exports = async srv => {
       const notificationObj = await cds.tx(msg).run(SELECT.one(Notifications).columns("ID").where({businessPartnerId: bpEntity.businessPartnerId}));
       address.notifications_id=notificationObj.ID;
       const res = await cds.tx(msg).run(INSERT.into(Addresses).entries(address));
-      console.log("Address inserted", result);
+      console.log("Address inserted");
       }  
   });
 
