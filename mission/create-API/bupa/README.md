@@ -62,7 +62,7 @@ As the SAP ERP 6.0 system doesn't has an API OData services by default, we have 
 
    ![](./images/segw_6.png)
 
-7. Navigate to **Service -> Runtime Artifacts -> Right-click on 'ZCL_ZAPI_BUSINESS_P_DPC_EXT' -> Select 'Go to ABAP Workbench'**. 
+7. Navigate to **Service -> Runtime Artifacts -> Right-click on 'ZCL_ZAPI_BUSINESS_PART_DPC_EXT' -> Select 'Go to ABAP Workbench'**. 
 
     ![](images/pic1.png) 
 
