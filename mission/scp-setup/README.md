@@ -48,7 +48,7 @@ Before running the booster please check for which regions and infrastructures th
 
    ![Booster](./images/booster-02.png)
  
-3. Select Components to get an overview of them. Press Start
+3. Select Components to get an overview of them. You can also view the cost estimate for running this scenario in a productive account. Choose **Start**
 
    ![Booster](./images/booster-03.png)
 
@@ -57,24 +57,25 @@ Before running the booster please check for which regions and infrastructures th
 
 
    > Hint: If you get a warning check which services are affected. If they are not relevant for this mission (see the next step) you can just ignore it.
-            ![Booster Warning](./images/booster-04a.png)
+   
+   ![Booster Warning](./images/booster-04a.png)
 
 5. Setup Subaccount
    
-   You find the list of the services that will acctivated by the Booster. For this mission the **Countinuous Integration & Delivery** service is optional. Remove it if you don't want to use it.**Alert Notification**, **Application Logging**, the **Extension Center**, the **Extension Factory serveless runtime**, the **Launchpad** and the **SAP Cloud Transport Management Service** are not used in this  mission - therefore you can remove them. We will install the  **SAP HANA Cloud** DB in a separate step - so remove it also. 
+   - You find the list of the services that will acctivated by the Booster. For this mission the **Countinuous Integration & Delivery** service is optional. Remove it if you don't want to use it.
+   - Services like **Alert Notification**, **Application Logging**, the **Extension Center**, the **Extension Factory serveless runtime**, **Launchpad** and the **SAP Cloud Transport Management Service** are not used in this  mission - therefore you can remove them. We will install the  **SAP HANA Cloud** DB in a separate step - so remove it also. 
    
    ![Booster](./images/booster-05.png)
 
    >By using a subscription-based SAP BTP account you have to set the quota of the **Cloud Foundry Runtime** to 3
    ![Booster](./images/booster-05a.png)
- 
-
-    1. In the sub section enter a meaningful Subaccount name - in general it reflects the organisation of your team etc.
-    2. Select your Provider
-    3. Select the Region
-    4. Enter a meaningful Org Name
-    5. Enter a space name - this should reflect the name of your project
-    6. Press Next   
+   
+   1. In the sub section enter a meaningful Subaccount name - in general it reflects the organisation of your team etc.
+   2. Select your Provider
+   3. Select the Region
+   4. Enter a meaningful Org Name
+   5. Enter a space name - this should reflect the name of your project
+   6. Press Next   
   
    ![Booster](./images/booster-06.png)
 
