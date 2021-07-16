@@ -34,6 +34,9 @@ Before running the booster please check for which regions and infrastructures th
 
 ## Step-by-step
 
+> The Booster **Prepare an account for Developing Extension Applications** is not available for trial accounts, if you're using a SAP BTP trial account please go to [section C for the manual setup](#manualSetup).  
+
+
 ### A: Run the Booster
 
 1. Start the Booster
@@ -158,4 +161,28 @@ For this mission a SAP HANA service for SAP BTP is necessary. Use the following 
 With that the setup of your SAP BTP account is done.
 
 
+### C: Manual Setup of Services and Authorization for BTP Trial Account
+<a id="manualSetup"></a>
+For running this mission on a SAP BTP trial account you have to enable the services and manage your authorizations by some manual steps: 
+
+
+[Setup of SAP BTP Environment](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/302b47b11e1749c3aa9478f4123fc216.html) gives you a general overview of a SAP BTP Cloud Foundry account.
+
+For this mission we have to activate the following services:
+  
+* [Setup SAP Business Application Studio](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/6331319fd9ea4f0ea5331e21df329539.html)
+    * Subscribe to SAP Business Application Studio
+    * Manage Authorization and Rules
+
+* [Setup SAP Event Mesh](https://help.sap.com/viewer/bf82e6b26456494cbdd197057c09979f/Cloud/en-US/7e504322652d4791ade0ca2bbc5a6443.html)
+    * See the setup for the deprecated Lite Service Plan  
+
+* [Setup SAP Continous Integration and Delivery](https://help.sap.com/viewer/99c72101f7ee40d0b2deb4df72ba1ad3/Cloud/en-US/719acaf61e4b4bf0a496483155c52570.html)
+  
+    * Enabling the service
+    * Assigning Roles and Permissions
+
+* [Setup HANA Cloud Trial](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html)
+  
+    * For the setup see **Section B**
 
