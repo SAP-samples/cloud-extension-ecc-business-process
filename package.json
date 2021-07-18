@@ -22,11 +22,14 @@
   },
   "scripts": {
     "start": "npx cds run",
-    "test": "jest"
+    "test": "mocha tests/chai-test.js --timeout 15000 --exit"
   },
   "devDependencies": {
     "sqlite3": "^5.0.2",
-    "jest": "*"
+    "jest": "*",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.0.0"
   },
   "cds": {
     "hana": {
