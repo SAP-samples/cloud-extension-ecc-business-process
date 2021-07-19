@@ -116,12 +116,43 @@ File / Folder | Purpose
             
    
     - In a next step, you will create a number of services e.g. for connection and Event Mesh. You will do this by executing the following Cloud Foundry create service commands.
+    
+
    
       * Create enterprise-messaging instance using the em.json configuration file in your project.
      
         ```bash
          cf cs enterprise-messaging default BusinessPartnerValidation-ems -c em.json
         ```
+        
+        > **SAP BTP trial** You have to use the dev service plan. The em.json file should have below parameters to work with Event Mesh (dev plan). Change "\<emname\> to a meaningful value e.g. eccevent
+        >   ```json
+        >   { "emname": "<emname>",
+        >     "options": {
+        >       "management": true,
+        >       "messagingrest": true,
+        >       "messaging": true
+        >   }
+        > }
+        > ```
+        >
+        >```bash
+        >   cf cs enterprise-messaging dev BusinessPartnerValidation-ems -c em.json
+        
+      
+        
+        > **BTP Trial only:** Open srv>service.js file and search for messaging.on and replace the topic name (refappscf/ecc/123/BO/BusinessPartner/Changed) with the customized one.
+        > Ex:- \<emname\>/BO/BusinessPartner/Created and \<emname\>/BO/BusinessPartner/Changed
+        
+        > **BTP Trial only:** In mta.yml file change the service plan name to dev for BusinessPartnerValidation-ems
+        >```
+        >  - name: BusinessPartnerValidation-ems
+        >    parameters:
+        >    path: ./em.json 
+        >    service: enterprise-messaging
+        >    service-plan: default
+        > type: org.cloudfoundry.managed-service 
+        > ```
 
       * Create a destination instance
   
@@ -164,7 +195,7 @@ Set the Memory as 256MB.
    ![Edit manifest](./images/dev-cap-app-12.png)
  
 
-15. Go back to the terminal and run following commands:
+1.  Go back to the terminal and run following commands:
 
     ```bash
     
@@ -175,7 +206,7 @@ Set the Memory as 256MB.
        cf p -f gen/srv --random-route
     ```
  
-16. Check if the mta.yaml file exist in the project root - if not create one
+2.  Check if the mta.yaml file exist in the project root - if not create one
      
     ```bash
        cds add mta 
@@ -183,13 +214,13 @@ Set the Memory as 256MB.
     
     Then replace the content with this [mta](./mta.yaml) 
 
-17. Generate the mtar file
+3.  Generate the mtar file
     
     ```bash
       mbt build -p=cf
     ```
 
-18. Deploy the UI and service to your Cloud Foundry space with the mtar.
+4.  Deploy the UI and service to your Cloud Foundry space with the mtar.
     
     ```bash
     cf deploy mta_archives/BusinessPartnerValidation_1.0.0.mtar
