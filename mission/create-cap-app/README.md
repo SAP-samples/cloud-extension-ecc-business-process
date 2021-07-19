@@ -125,7 +125,7 @@ File / Folder | Purpose
          cf cs enterprise-messaging default BusinessPartnerValidation-ems -c em.json
         ```
         
-        > **SAP BTP trial** You have to use the dev service plan. The em.json file should have below parameters to work with Event Mesh (dev plan). Change "\<emname\> to a meaningful value e.g. eccevent
+        > When you are using **SAP BTP trial** then you have to use the dev service plan. The em.json file should have below parameters to work with Event Mesh (dev plan). Change "\<emname\> to a meaningful value e.g. eccevent
         >   ```json
         >   { "emname": "<emname>",
         >     "options": {
@@ -139,12 +139,10 @@ File / Folder | Purpose
         >```bash
         >   cf cs enterprise-messaging dev BusinessPartnerValidation-ems -c em.json
         
-      
-        
-        > **BTP Trial only:** Open srv>service.js file and search for messaging.on and replace the topic name (refappscf/ecc/123/BO/BusinessPartner/Changed) with the customized one.
+        > **SAP BTP Trial only:** Open srv>service.js file and search for messaging.on and replace the topic name (refappscf/ecc/123/BO/BusinessPartner/Changed) with the customized one.
         > Ex:- \<emname\>/BO/BusinessPartner/Created and \<emname\>/BO/BusinessPartner/Changed
         
-        > **BTP Trial only:** In mta.yml file change the service plan name to dev for BusinessPartnerValidation-ems
+        > **SAP BTP Trial only:** In the mta.yml file change the service plan name to dev for BusinessPartnerValidation-ems
         >```
         >  - name: BusinessPartnerValidation-ems
         >    parameters:
