@@ -286,7 +286,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    
 7. In the opened screen, **Change View Error Type Mapping: Overview**, enter the following values: 
    - In the column **Resp Code**, enter **200**.
-   - In the column **Message Type**, select Success**
+   - In the column **Message Type**, select **Success**
    - In the column **Resp Code**, enter **201**
    - In the column **Message Type**, select **Success**
    - In the column **Resp Code**, enter **204**
@@ -352,7 +352,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 13. Now, double click on **Outbound Object** and click **New Entries**.
 14. In the opened screen, **Change View Outbound Objects: Details**, enter the following values:
    - Enter Object as **BUSINESSPARTNER_CHANGED**
-   - Enter Extraction Function Module Name as**/ASADEV/ACI_SIMPLE_NOTIFY**
+   - Enter Extraction Function Module Name as **/ASADEV/ACI_SIMPLE_NOTIFY**
    - Enter Message Type as **Z_ACI_MSG_CHANGED**
    - Select Load Type as **Incremental Load**
    - Enter Event **API**
