@@ -118,7 +118,7 @@ Before running the booster please check for which regions and infrastructures th
 
 For this mission a SAP HANA service for SAP BTP is necessary. Use the following steps for activating it:
 
-1. Select Services - Service Marketplace and click on the tile 'SAP HANA Cloud'. If you do not see the 'SAP HANA Cloud' Tile, click 'Entitlements' and click on 'Configure Entitlements and then click 'Add Service Plans' and assign the 'SAP HANA Cloud' service with 'hana' service plan.
+1. Select Services - Service Marketplace and choose the tile **SAP HANA Cloud**. If you do not see the **SAP HANA Cloud** tile, select **Entitlements** and choose **Configure Entitlements** and then choose **Add Service Plans** and assign the **SAP HANA Cloud** service with the **hana** service plan.
 
     ![HANA](./images/hana-01.png)
 
@@ -126,7 +126,7 @@ For this mission a SAP HANA service for SAP BTP is necessary. Use the following 
    
     ![HANA](./images/hana-02.png)
 
-3. In the "New Instance" screen select 
+3. In the **New Instance** screen select 
     * Service = SAP HANA Cloud
     * Service Plan = Hana
     * Runtime Environment = Cloud Foundry
@@ -137,22 +137,22 @@ For this mission a SAP HANA service for SAP BTP is necessary. Use the following 
 
     ![HANA](./images/hana-03.png)
 
-4. Click the button 'Create Database'.
+4. Choose the button **Create Database**.
 
     ![HANA](./images/createDatabase.png)
 
 
-5.  Enter an 'Instance Name','Description' and 'Password'. if everything is correct then the "Step 2" button appear - click on it.
+5.  Enter an 'Instance Name','Description' and 'Password'. if everything is correct then the **Step 2** button appear - choose it.
 
     ![HANA](./images/createDatabase02.png)
 
-6.  Here you can setup the size of the SAP HANA Cloud instance - for the mission you can keep the minimum settings - click on "Step 3"
+6.  Here you can setup the size of the SAP HANA Cloud instance - for the mission you can keep the minimum settings - select **Step 3**
 
     ![HANA](./images/hana-06.png)
 
-7.  Keep the Advanced Settings and click on "Create Instance"
+7.  Keep the Advanced Settings and select **Create Instance**
 
-    ![HANA](./images/hana-07.png)
+    ![HANA](./images/hana07b.png)
 
 8.  After some minutes the HANA instace is created and you should see a similar card.
 
