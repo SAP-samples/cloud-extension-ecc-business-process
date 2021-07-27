@@ -18,15 +18,15 @@ As the SAP ERP 6.0 system doesn't has an API OData services by default, we have 
 ### Create a custom Service using SAP Gateway Servic Builder            
 1. Navigate to [SAP API Hub - Business Partner (A2X) API ](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) for  downloading EDMX file of Business Partner from API Business Hub. We will use this as a template for creating a custom OData service.
 
-   * Click Download API Specifiation
-
-     ![](./images/bupa-1.png)
-
-   * Logon to SAP API Hub using your SAP User
-
+   * Login with your SAP user
+     
+     ![API Hub](./images/bupa-1.png)
+     
+   * In the **Overview** page select **API Specification**
+  
      ![](./images/bupa-2.png)  
 
-   * Select EDMX and save the file.
+   * Download the EDMX file.
 
      ![](./images/bupa-3.png)
 
