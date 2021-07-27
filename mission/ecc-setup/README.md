@@ -72,7 +72,7 @@ This user can than also be used as technical user for the connection between the
 
    ![](./images/trans2.png)
 
-4. Set **Edit** > **Software Components Mofifiable** and **Edit** > **Namespaces Modifiable** 
+4. Set **Edit** > **Software Components Modifiable** and **Edit** > **Namespaces Modifiable** 
    
    ![](./images/trans3.png)
 
