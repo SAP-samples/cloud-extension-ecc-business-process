@@ -118,7 +118,7 @@ In this section, we describe steps how to configure events in the on-premise bac
    
 11. Click on **Continue** for the popup that says information **HTTP Connections may not be secure**.
 12. Switch to the text editor where you have copied the Service Key of Event Mesh in the first section above. Copy the value of **tokenendpoint** excluding **https://** and **oauth/token** from the URL.	
-13. Switch back to the RFC Destination tab and for field **Target Host**, enter the copied URL for example: **xxxxxx.authentication.eu10.hana.ondemand.com**. Enter for field **Path Prefix** value as **oauth/token**.
+13. Switch back to the RFC Destination tab and for field **Target Host**, enter the copied URL for example: **xxxxxx.authentication.eu10.hana.ondemand.com**. Enter for field **Path Prefix** value as **/oauth/token**.
 
     ![create RFC Destination22](./images/createRFCDestination22.png)
 
@@ -405,7 +405,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 
      ![maintain Cloud Secret](./images/maintainCloudSecret.png)
 
-   - Click on Execute ( Will see suucess Message---> Shared Secret for ** was created successfully**)
+   - Click on Execute ( Will see success Message---> Shared Secret for ** was created successfully**)
    	
      ![execute Cloud Secret](./images/executeCloudSecret.png)
  
