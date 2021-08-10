@@ -118,9 +118,12 @@ Before running the booster please check for which regions and infrastructures th
 
 For this mission a SAP HANA service for SAP BTP is necessary. Use the following steps for activating it:
 
-1. Select Services - Service Marketplace and choose the tile **SAP HANA Cloud**. If you do not see the **SAP HANA Cloud** tile, select **Entitlements** and choose **Configure Entitlements** and then choose **Add Service Plans** and assign the **SAP HANA Cloud** service with the **hana** service plan.
+1. Select Services - Service Marketplace and choose the tile **SAP HANA Cloud**. 
 
     ![HANA](./images/hana-01.png)
+    
+    >Note: If you do not see the **SAP HANA Cloud** tile, select **Entitlements** in the BTP cockpit and choose **Configure Entitlements** and then choose **Add Service Plans** and assign the **SAP HANA Cloud** service with the **hana** service plan. Check this [help page](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/784a1dbb421a4da29fb1e3bdf5f198ec.html) for more information. 
+
 
 2. Select **Create**.
    

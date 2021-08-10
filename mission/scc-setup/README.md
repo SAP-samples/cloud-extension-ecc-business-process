@@ -24,17 +24,14 @@ In your SAP BTP Subaccount under "Overview" you can find both, your **API Endpoi
 
 ## Configure Systems in Cloud Connector for access with technical user
 
-1.	Open your Cloud Connector administration UI for the on premise backend system.
+1.	Open your Cloud Connector administration UI for the on premise backend system. Open  https://localhost:8443/ if your cloud connector is running in the default port. 
 
-    Go to https://localhost:8443/   
+    >Hint: adjust the port if you specified another one during the installation. Potentially you might have to use the external IP of your system.
 
-    Hint: adjust the port if you specified another one during the installation. Potentially you might have to use the external IP of your system.
+2. Enter User Name and Password. Click Login.
 
-    Enter User Name and Password.
-    Click Login.
-
-2.	Choose **Add Subaccount** and then fill out the needed input:
-3.	Enter the following data:
+3.	Choose **Add Subaccount** and then fill out the needed input:
+4.	Enter the following data:
     - Region
     - Subaccount ID
     - Display Name (optional)
@@ -47,21 +44,23 @@ In your SAP BTP Subaccount under "Overview" you can find both, your **API Endpoi
 
     You can look up the required data in the SAP BTP Cockpit as described in the preparations step.
 
-4.	Navigate to **Cloud to On-Premise**
-5.	To add a new system mapping click on the **'+'** on the right site of the screen
+5.	Navigate to **Cloud to On-Premise**
+6.	To add a new system mapping click on the **'+'** on the right site of the screen
 
    ![System Mapping](./images/scc-04.png)
 
-6. In the pop-up window select 'ABAP System' as a **Backend Type** and then choose **Next**
+7. In the pop-up window select 'ABAP System' as a **Backend Type** and then choose **Next**
 
    ![Select Backend Type](./images/cloud-connector-3.png)
 
 
-7. Select 'HTTP' as a **Protocol** and then choose **Next**
+8. Select 'HTTP' as a **Protocol** and then choose **Next**
 
    ![Select Protocol](./images/cloud-connector-4.png)
 
-8.	To find out the HTTP port number of your ERP system, refer to the [Find your system's HTTP and HTTPS port](../ecc-setup/README.md#check-your-http-and-https-ports-in-smicm).Enter your values for the fields: **Internal Host** and your HTTP port for **Internal Port** then choose **Next**
+   >Hint: To find out the HTTP port number of your ERP system, refer to the [Find your system's HTTP and HTTPS port](../ecc-setup/README.md#check-your-http-and-https-ports-in-smicm).
+   
+9. Enter your values for the fields: **Internal Host** and your HTTP port for **Internal Port** then choose **Next**. To learn more details about Internal Host, check the [help page](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e7d4927dbb571014af7ef6ebd6cc3511.html). You can also execute transaction **/nOS01** in your SAP backend system to find out the host name of your SAP system.
 
    ![Select Screen](./images/scc-05.png)
 
@@ -129,6 +128,6 @@ In your SAP BTP Subaccount under "Overview" you can find both, your **API Endpoi
 * [SAP Cloud Connector: Guided Answers](https://ga.support.sap.com/dtp/viewer/index.html#/tree/2183/actions/27936)
 
 
-##Summary
+## Summary
 
 We have established a connection between the ECC on-premise system and your SAP BTP account.

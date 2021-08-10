@@ -405,7 +405,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 
      ![maintain Cloud Secret](./images/maintainCloudSecret.png)
 
-   - Click on Execute ( Will see success Message---> Shared Secret for ** was created successfully**)
+   - Click on Execute ( You will see a success Message---> **Shared Secret for ACI_SAP_EM_CAL was created successfully!**)
    	
      ![execute Cloud Secret](./images/executeCloudSecret.png)
  
