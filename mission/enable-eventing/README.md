@@ -184,7 +184,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 
 1. Enter the Transaction **/nSWE2** and select **New Entries**.
    
-     ![execute Cloud Secret](./images/eventLinkageCreated2.png)
+     ![execute Cloud Secret](./images/eventtypelinkage.png)
   
    We now map the BusinessObjects events:
    
@@ -197,7 +197,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    - Check the checkbox **Linkage Activated**
    - Click **Save** icon
         
-     ![createEventLinkage](./images/eventLinkageChanged2.png)
+     ![createEventLinkage](./images/eventLinkageCreated2.png)
      
 3. Click **New Entries**
 4. In the opened screen, enter the following values:
