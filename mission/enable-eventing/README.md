@@ -217,18 +217,18 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 
    ![display Reference Img](./images/displayReferenceImg.png)
    
-2. Expand **SAP Customization Implementation Guide** --> **Integration with Other SAP components** --> **SAP NetWeaver AddOn for Event enablement** --> **ALE Delta Customizing** and click the clock icon with tooltip **IMG:Activity** next to **ACI: Cloud Codepages**.	
+2. Expand **SAP Customization Implementation Guide** --> **Integration with Other SAP components** --> **SAP NetWeaver AddOn for Event enablement** --> **ALE Delta Customizing** and choose the clock icon with tooltip **IMG:Activity** next to **ACI: Cloud Codepages**.	
    ![open ACI Cloud Pages](./images/openACICloudPages.png)
    
-3. Click on **Display/Change** icon and click **New Entries**.
+3. Select **Display/Change** icon and choose **New Entries**.
 
    ![new Entry CloudPages](./images/newEntryCloudPages.png)
    
-4. Enter in the field **ISO** value as **UTF-8** and for the field **Code Page**, enter **4110** and click **Save** icon and then the  **OK** (green-tick) icon for Transport Request.
+4. Enter in the field **ISO** value as **UTF-8** and for the field **Code Page**, enter **4110** and select the **Save** icon and then the **OK** (green-tick) icon for Transport Request.
 
    ![enter UTF8](./images/enterUTF8.png)
    
-5. Click on **Back** Button to go to previous screen.
+5. Enter **Back** button to go to previous screen.
 
 ### Load Events into Cloud
 
