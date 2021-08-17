@@ -217,7 +217,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 
    ![display Reference Img](./images/displayReferenceImg.png)
    
-2. Expand **SAP Customization Implementation Guide** --> **Integration with Other SAP components** --> **SAP NetWeaver AddOn for Event enablement** --> **ALE Delta Customizing** and choose the clock icon with tooltip **IMG:Activity** next to **ACI: Cloud Codepages**.	
+2. Expand **SAP Customization Implementation Guide** --> **Integration with Other SAP components** --> **SAP NetWeaver AddOn for Event enablement** and choose the clock icon with tooltip **IMG:Activity** next to **Maintain Cloud Codepages**.	
    ![open ACI Cloud Pages](./images/openACICloudPages.png)
    
 3. Select **Display/Change** icon and choose **New Entries**.
