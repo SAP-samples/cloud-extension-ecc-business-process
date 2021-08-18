@@ -85,7 +85,7 @@ This user can than also be used as technical user for the connection between the
    
    ![](./images/trans5.png)
 
-7. Navigate to **Change and Transports for Client-Specific Objects**, choose **Automatic Recording of changes** and save it.
+7. Navigate to **Change and Transports for Client-Specific Objects**, select 'Display/Change' icon to change to Edit mode. Then choose  **Automatic Recording of changes** and then **Save** the changes.
 
    ![](./images/trans6.png)
 
