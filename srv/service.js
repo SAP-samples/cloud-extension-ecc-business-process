@@ -28,7 +28,7 @@ module.exports = async srv => {
       // for the address to notification association - extra field
       if(address) {  
       const notificationObj = await cds.tx(msg).run(SELECT.one(Notifications).columns("ID").where({businessPartnerId: bpEntity.businessPartnerId}));
-      address.notifications_id=notificationObj.ID;
+      address.notifications_ID=notificationObj.ID;
       const res = await cds.tx(msg).run(INSERT.into(Addresses).entries(address));
       console.log("Address inserted");
       }  
