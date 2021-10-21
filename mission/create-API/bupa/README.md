@@ -124,15 +124,21 @@ METHOD a_businesspartne_get_entity.
 ENDMETHOD.
 ````````````
 
-11. After Pasting the Code, Save the Code and You will get message that Code is Saved. Then Check the Code that your syntax is correct. Last everything went without error, then Activate the object. When you activate the objects, you will get a pop-up with all the inactive objects. Select all the inactive objects and click the 'green tick icon' to Activate all the objects.
-
-   ![](images/activation.png)
-
-Once the activation is successful you will get message in the below for successful activation. Please see the image below. 
-
-    >Never do force Activation as it will dump the Object. If activation is giving error, revisit the prevous steps and ensure every steps as done properly.
+11. After Pasting the Code, click **Save** to save the Code. You will get message that Code is Saved. Then Check the code that your syntax is correct. Last everything went without error, then **Activate** the object. 
 
    ![](images/act1.png)
+   
+   When you activate the objects, you will get a pop-up with all the inactive objects. Select all the inactive objects and click the 'green tick icon' to Activate all the objects.
+   
+   ![](images/activation.png)
+
+   Once the activation is successful you will get message that the activation was successful. 
+    
+   ![](images/activationSuccess.png)
+   
+   >Never do force Activation as it will dump the Object. If activation is giving error, revisit the prevous steps and ensure every steps as done properly.
+
+   
     
 
 12. Find the Second entity **A_BUSINESSPARTNE_GET_ENTITYSET** and redefine as shown below .
