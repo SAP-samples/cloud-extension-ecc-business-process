@@ -13,7 +13,6 @@ For the installation of the SAP Cloud Connector please follow the steps in the S
 
 [SAP Help: Cloud Connector Installation](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/57ae3d62f63440f7952e57bfcef948d3.html)
 
- You can find detail information on installing the Cloud Connector in your system landscape here: [Install the Cloud Connector in your System Landscape](https://developers.sap.com/tutorials/cp-connectivity-install-cloud-connector.html)
 
 ### Subaccount Info
 
