@@ -59,14 +59,14 @@ The Business Partner Validation application is developed using [SAP Cloud Applic
 
 ### Entitlements
 
-The application requires below set of SAP Cloud Platform Entitelements/Quota
+The application requires below set of SAP Cloud Platform Entitlements/Quota
 
 | Service                           | Plan       | Number of Instances |
 |-----------------------------------|------------|:-------------------:|
 | Event Mesh                        | default    |          1          |
-| SAP Hana Cloud                    | 64standard |          1          |
+| SAP Hana Cloud                    | hana       |          1          |
 | SAP HANA Schemas & HDI Containers | hdi-shared |          1          |
-| Cloud Foundry Runtime             |            |          3          |
+| Cloud Foundry Runtime             | MEMORY     |          3          |
 | Destination                       | lite       |          1          |
 | SAP Cloud Platform Continuous Integration and Delivery (Optional)|            |          1          |
 
