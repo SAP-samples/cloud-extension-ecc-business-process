@@ -68,7 +68,7 @@ The application requires below set of SAP Cloud Platform Entitlements/Quota
 | SAP HANA Schemas & HDI Containers | hdi-shared |          1          |
 | Cloud Foundry Runtime             | MEMORY     |          3          |
 | Destination                       | lite       |          1          |
-| SAP Cloud Platform Continuous Integration and Delivery (Optional)|            |          1          |
+| SAP Cloud Platform Continuous Integration and Delivery (Optional)| default     |          1          |
 
 
 For the development we use SAP Business Application Studio.
