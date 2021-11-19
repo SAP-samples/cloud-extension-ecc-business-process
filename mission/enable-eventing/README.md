@@ -62,7 +62,7 @@ In this section, we describe steps how to configure events in the on-premise bac
  
  
  
-### Import SAP Mesh certificate in on-premise system
+### Import SAP Event Mesh certificate in on-premise system
 
 
 1. Still in transaction - **/nSTRUST**. 	
