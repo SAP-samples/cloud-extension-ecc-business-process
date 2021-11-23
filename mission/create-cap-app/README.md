@@ -203,21 +203,13 @@ Set the Memory as 256MB.
        cf p -f gen/srv --random-route
     ```
  
-2.  Check if the mta.yaml file exist in the project root - if not create one
-     
-    ```bash
-       cds add mta 
-    ```
-    
-    Then replace the content with this [mta](./mta.yaml) 
-
-3.  Generate the mtar file
+2. Generate the mtar file
     
     ```bash
       mbt build -p=cf
     ```
 
-4.  Deploy the UI and service to your Cloud Foundry space with the mtar.
+3.  Deploy the UI and service to your Cloud Foundry space with the mtar.
     
     ```bash
     cf deploy mta_archives/BusinessPartnerValidation_1.0.0.mtar
