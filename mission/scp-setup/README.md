@@ -1,7 +1,7 @@
 # Setup of a SAP Business Technology Platform Account using Boosters
 ## Introduction
 
-For running the ECC extension mission you will need the following services in your SAP Business Technology Platform (BTP) account.
+Let us set up a SAP Business Technology Platform Account (SAP BTP) where you can run your extension applications. You will need the following services in your account.
 
 * SAP Business Application Studio
 * Event Mesh
