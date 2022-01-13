@@ -2,7 +2,7 @@
 
 In this section you will configure the SAP Cloud Connector for connecting the on premise backend system to the SAP Business Technology Platform (BTP).
 
-**Persona:** Backend (ERP) Admin and Cloud Administrator (SAP BTP)
+**Persona:** Backend Administrator (ERP Admin or SAP S/4HANA Admin) and Cloud Administrator (SAP BTP)
 
 **Abbreviation:** SAP Business Technology Platform = SAP BTP
 
@@ -129,4 +129,4 @@ In your SAP BTP Subaccount under "Overview" you can find both, your **API Endpoi
 
 ## Summary
 
-We have established a connection between the ECC on-premise system and your SAP BTP account.
+We have established a connection between the SAP On-premise system and your SAP BTP account.
