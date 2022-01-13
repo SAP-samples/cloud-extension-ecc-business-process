@@ -17,7 +17,7 @@ It could also be necessary to update the SPAM transaction to the latest version
 
 Check also [SAP Note](https://launchpad.support.sap.com/#/notes/2927040) for more details and other SAP Netweaver versions.
 
-**Persona:** ERP Administrator
+**Persona:** ERP Administrator or SAP S/4 HANA Administrator 
 
 ## Step-by-step 
 
