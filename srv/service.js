@@ -12,44 +12,76 @@ module.exports = async srv => {
   messaging.on("refappscf/ecc/123/BO/BusinessPartner/Created", async msg => {
     console.log("<< event caught", msg.event);
     let BUSINESSPARTNER = "";
-    if(msg.headers && msg.headers.type == "sap.nw.ee.BusinessPartner.Created.v1"){
-       //> SP3 version
-      BUSINESSPARTNER = msg.data.BusinessPartner;
+    BUSINESSPARTNER = parseInt(msg.data.BUT000[0].PARTNER);
+    console.log("<<< Received Created Business Partner Id " + BUSINESSPARTNER);
+    let BusinessPartnerName = "";
+    if(msg.data.BUT000[0].NAME1_TEXT == ""){
+      BusinessPartnerName = msg.data.BUT000[0].NAME_FIRST + ' ' + msg.data.BUT000[0].NAME_LAST;
     }
     else{
-      //> SP1 version
-      BUSINESSPARTNER = JSON.parse(msg.data).objectId;  
+      BusinessPartnerName = msg.data.BUT000[0].NAME1_TEXT;  
     }
-    console.log("<<< Received Created Business Partner Id" + BUSINESSPARTNER);
-      const bpEntity = await bupaSrv.tx(msg).run(SELECT.one(BusinessPartner).where({businessPartnerId: BUSINESSPARTNER}));
-      console.log("bpEntityyy", bpEntity);
-      const result = await cds.tx(msg).run(INSERT.into(Notifications).entries({businessPartnerId:bpEntity.businessPartnerId, verificationStatus_code:'N', businessPartnerName:bpEntity.businessPartnerName}));     
-      const address = await bupaSrv.tx(msg).run(SELECT.one(BusinessPartnerAddress).where({businessPartnerId: bpEntity.businessPartnerId}));
-      // for the address to notification association - extra field
+    const result = await cds.run(INSERT.into(Notifications).entries({businessPartnerId:BUSINESSPARTNER, verificationStatus_code:'N', businessPartnerName:BusinessPartnerName}));        
+    let address = {
+            addressId: parseInt(msg.data.BUT000[0].ADRC[0].BUT020[0].ADDRNUMBER),
+            country: msg.data.BUT000[0].ADRC[0].COUNTRY,
+            cityName: msg.data.BUT000[0].ADRC[0].CITY1,
+            streetName: msg.data.BUT000[0].ADRC[0].STREET,
+            postalCode: msg.data.BUT000[0].ADRC[0].POST_CODE1,
+            businessPartnerId: BUSINESSPARTNER
+       }
       if(address) {  
-      const notificationObj = await cds.tx(msg).run(SELECT.one(Notifications).columns("ID").where({businessPartnerId: bpEntity.businessPartnerId}));
-      address.notifications_ID=notificationObj.ID;
-      const res = await cds.tx(msg).run(INSERT.into(Addresses).entries(address));
-      console.log("Address inserted");
-      }  
+       const notificationObj = await cds.run(SELECT.one(Notifications).columns("ID").where({businessPartnerId: BUSINESSPARTNER}));
+       address.notifications_ID=notificationObj.ID
+       const res = await cds.run(INSERT.into(Addresses).entries(address));
+       console.log("Address inserted");
+       }  
   });
 
   messaging.on("refappscf/ecc/123/BO/BusinessPartner/Changed", async msg => {
+
     let BUSINESSPARTNER = "";
-    if(msg.headers && msg.headers.type == "sap.nw.ee.BusinessPartner.Changed.v1"){
-       //> SP3 version
-      BUSINESSPARTNER = msg.data.BusinessPartner;
-    }
-    else{
-      //> SP1 version
-      BUSINESSPARTNER = JSON.parse(msg.data).objectId;  
-    }
+    let fullName = "";
+    BUSINESSPARTNER = parseInt(msg.data.objectId);
     BUSINESSPARTNER = (+BUSINESSPARTNER).toString()
-    console.log("<<< Received Changed Business Partner Id" + BUSINESSPARTNER);
-      const bpIsAlive = await cds.tx(msg).run(SELECT.one(Notifications, (n) => n.verificationStatus_code).where({businessPartnerId: BUSINESSPARTNER}));
-      if(bpIsAlive && bpIsAlive.verificationStatus_code == "V"){
+    console.log("<<< Received Changed Business Partner Id " + BUSINESSPARTNER);    
+    const bpIsAlive = await cds.tx(msg).run(SELECT.one(Notifications , (n) => n.verificationStatus_code).where({businessPartnerId: BUSINESSPARTNER}));
+    const notif = await cds.run(SELECT.from(Notifications).where({businessPartnerId: BUSINESSPARTNER}))
+    let name = notif[0].businessPartnerName
+    var name_split = name.split(" ");
+    let firstname = name_split[0];
+    let lastname = name_split[1];
+
+    if(bpIsAlive && msg.data.NAME_LAST) {
+        console.log("<<< Received last name", msg.data.NAME_LAST)
+        lastname = msg.data.NAME_LAST;
+        fullName = firstname + " " + lastname;
+        const bpMarkVerified= await cds.tx(msg).run(UPDATE(Notifications).where({businessPartnerId: BUSINESSPARTNER}).set({businessPartnerName:fullName}));
+        console.log("<< BP Last Name Updated >>")  
+    }  
+
+    if(bpIsAlive && msg.data.NAME_FIRST) {
+        console.log("<<< Received first name", msg.data.NAME_FIRST)
+        firstname = msg.data.NAME_FIRST;
+        fullName = firstname + " " + lastname;
+        const bpMarkVerified= await cds.tx(msg).run(UPDATE(Notifications).where({businessPartnerId: BUSINESSPARTNER}).set({businessPartnerName:fullName}));
+        console.log("<< BP First Name Updated >>")  
+    }      
+
+
+    if(bpIsAlive && msg.data.XBLCK == "") {
+        bpIsAlive.verificationStatus_code = "V"
+        console.log("<< BP marked Verified >>")  
+    }  
+     
+    if(bpIsAlive && msg.data.XBLCK == "X") {
+        const bpMarkVerified= await cds.tx(msg).run(UPDATE(Notifications).where({businessPartnerId: BUSINESSPARTNER}).set({verificationStatus_code:"P"}));
+        console.log("<< BP marked Processed >>")  
+    }   
+
+    if(bpIsAlive && bpIsAlive.verificationStatus_code == "V") {
         const bpMarkVerified= await cds.tx(msg).run(UPDATE(Notifications).where({businessPartnerId: BUSINESSPARTNER}).set({verificationStatus_code:"C"}));
-        console.log("<< BP marked verified >>")  
+        console.log("<< BP marked Completed >>")  
     }    
   });
 
@@ -94,7 +126,7 @@ module.exports = async srv => {
       let res = await sdkBusinessPartnerAddress.requestBuilder().update(payloadBuilder).withCustomServicePath("/").execute({
         destinationName: bupaSrv.destination
       });
-      console.log("address update to ECC", res);
+      console.log("address update to S4", res);
     }
 
     let payload = {
