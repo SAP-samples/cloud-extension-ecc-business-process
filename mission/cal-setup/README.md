@@ -1,4 +1,4 @@
-# Create a Test ERP 6.0 System using SAP Cloud Appliance Library
+# Create a Test SAP ERP 6.0 System using SAP Cloud Appliance Library
 
 If you don't own an ERP System you could use the 30 day trial version from SAP Cloud Appliance Library.
 As a prerequisite you need either an Azure, AWS or Google account.
@@ -8,7 +8,7 @@ You can create an instance here:
 
 *  [SAP enhancement package 8 for SAP ERP 6.0, version for SAP Adaptive Server Enterprise](https://cal.sap.com/catalog#/solutions/3857f8b3-9f49-48a9-bfb6-68f184299541)
 
-First **logon** and then click on **Create Instance** on the top right.
+First **logon** and then select on **Create Instance** on the top right.
 
   ![](./images/cal_setup-01.png)
 

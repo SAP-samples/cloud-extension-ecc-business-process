@@ -3,7 +3,7 @@
 
 ## Introduction
 
-In this section, we describe steps how to configure events in the on-premise backend system. This tutorial shows the configuration steps for the SAP NetWeaver Add-On for Event enablement Service Pack SP03. If you have installed only Service Pack SP01 or SP02 please use the [SP01 Setup Guide](./SETUP_SP01.md). In SP03 the setup has been simplified and the events are now compatible to standard SAP S/4HANA events.
+In this section, we describe steps how to configure your on-premise backend system to use the SAP NetWeaver Add-On for Event enablement Service Pack SP03. If you have installed only Service Pack SP01 or SP02 please use the [SP01 Setup Guide](./SETUP_SP01.md). In SP03 the setup has been simplified and the events are now compatible to standard SAP S/4HANA events.
 
 **Persona:** Basis ABAP Administrator 
 
@@ -52,11 +52,12 @@ In this section, we describe steps how to configure events in the on-premise bac
     
 	
 ### Create a Node for standard SSL Client
-1. Open your SAP Backend system and Go to transcaction - **/nSTRUST**. 
-2. Click on **Display/Change icon** and right Click on **SSL client SSL Client (Standard) Node** and Select **Create**.
+1. Open your SAP backend system and go to transcaction - **/nSTRUST**. 
+2. Select **Display/Change icon** and right click on **SSL client SSL Client (Standard) Node** and select **Create**.
 
    ![Standard-1](./images/Standard-1.png)
-3. A Popup “Create PSE” will comes. Click on Continue(Enter).
+
+3. A popup **Create PSE** will appear. Select **Continue(Enter)**.
 
    ![Standard-2](./images/Standard-2.png)
  
@@ -66,24 +67,24 @@ In this section, we describe steps how to configure events in the on-premise bac
 
 
 1. Still in transaction - **/nSTRUST**. 	
-2. Click on **Display/Change icon** and right Click on **SSL client SSL Client (Anonymous)  Node** and Select **Create**.
+2. Select **Display/Change icon** and right click on **SSL client SSL Client (Anonymous)  Node**, then select **Create**.
 
    ![download Certificate5](./images/openStrust.png)
    
-3. A Popup “Create PSE” will comes. Click on Continue(Enter).
+3. A Popup **Create PSE** will appear. Select **Continue(Enter)**.
 
    ![Anonymous-2](./images/Anonymous-2.png)
    
-4. Click on **Import Certificate** (under **Certificate**).
+4. Select **Import Certificate** (under **Certificate**).
 
     ![import certificate1](./images/importcertificate1.png)
 
-5. Enter file path to certificate file which is stored in local system.
+5. Enter file path to certificate file which you have stored in your local system.
    
    ![import certificate2](./images/importCertificate2.png)
    
-6. Click on **Continue** and Click on **Allow** for the **SAP GUI Security** popup asking to allow access to the file. 
-7. Now you can see the Certificate imported, Click on **Add to Certificate List** and Click on the **Save** icon.
+6. Select **Continue** and then **Allow** for the **SAP GUI Security** popup asking to allow access to the file. 
+7. Now you can see the certificate as imported, choose **Add to Certificate List** and select the **Save** icon.
    
    >Hint: Note the valid-to date of the certificate and update it in advance.	
    
@@ -92,17 +93,17 @@ In this section, we describe steps how to configure events in the on-premise bac
 ### Configure RFC Destinations
 
 1. Enter Transaction **/nsm59**.	
-2. Click on **Create** icon.
+2. Select **Create**.
 
    ![create RFC Destination1](./images/createRFCDestination1.png)
    
-3. Enter a destination name **ACI_SAP_EM** and Select connection type **G Http connection to External Server** from the popup which appears once you enter **G** in that field, Click on **Save** icon
+3. Enter a destination name **ACI_SAP_EM** and select the connection type **G Http connection to External Server** from the popup which appears once you enter **G** in that field, select the **Save** icon.
    
     ![create RFC Destination11](./images/createRFCDestination11.png)
 
-4. Click on **Continue** for the popup that says information **HTTP Connections may not be secure**.
+4. Choose **Continue** for the popup that says information **HTTP Connections may not be secure**.
 5. Switch to the text editor where you have copied the Service Key of Event Mesh in the first section above. Copy the value of **uri** for the protocol **httprest**
-6. Switch back to the RFC Destination tab and for field **Target Host**, enter the uri which you copied excluding **https://** for example: enterprise-messaging-pubsub.cfapps.eu10.hana.ondemand.com. Click on **Save** icon and click on **Connection Test**.
+6. Switch back to the RFC Destination tab and for field **Target Host**, enter the uri which you copied excluding **https://** for example: enterprise-messaging-pubsub.cfapps.eu10.hana.ondemand.com. Select the **Save** icon and choose **Connection Test**.
 
    ![create RFC Destination12](./images/createRFCDestination12.png)
    
@@ -110,25 +111,25 @@ In this section, we describe steps how to configure events in the on-premise bac
 
    ![create RFC Destination13](./images/createRFCDestination13.png)
    
-8. Click on back icon to create a second RFC Destionation.
-9. Click on **Create** button like in step 2.
-10. Enter a destination name **ACI_SAP_EM_TOKEN** and Select connection type **G Http connection** from the drop down, Click on **Save** icon
+8. Choose back icon to create a second RFC Destionation.
+9. Select the **Create** button like in step 2.
+10. Enter a destination name **ACI_SAP_EM_TOKEN** and choose connection type **G Http connection** from the drop down, select the **Save** icon.
    
     ![create RFC Destination21](./images/createRFCDestination21.png)
    
-11. Click on **Continue** for the popup that says information **HTTP Connections may not be secure**.
+11. Choose **Continue** for the popup that says information **HTTP Connections may not be secure**.
 12. Switch to the text editor where you have copied the Service Key of Event Mesh in the first section above. Copy the value of **tokenendpoint** excluding **https://** and **oauth/token** from the URL.	
 13. Switch back to the RFC Destination tab and for field **Target Host**, enter the copied URL for example: **xxxxxx.authentication.eu10.hana.ondemand.com**. Enter for field **Path Prefix** value as **/oauth/token**.
 
     ![create RFC Destination22](./images/createRFCDestination22.png)
 
-14. Click on tab **Logon & Security** and scroll-down to Security options and Click on radio button **active** for field **SSL** and for field **SSL Certificate**, select **Anonym SSL Certificate (Anonymous)** from dropdown and click on **Save**.
+14. Choose tabulator **Logon & Security** and scroll-down to Security options and select the radio button **active** for field **SSL** and for field **SSL Certificate**, select **Anonym SSL Certificate (Anonymous)** from dropdown and **Save**.
 
     ![create RFC Destination23](./images/createRFCDestination23.png)
     
-15. Click on **Connection Test** and Connection Test gives a response of **Status HTTP Response** as **401** and **Status Text** as **Unauthorized** which is fine. Click on **Cancel** as this is expected here.
+15.Then choose **Connection Test**. Connection Test gives a response of **Status HTTP Response** as **401** and **Status Text** as **Unauthorized** which is fine. Select  **Cancel** as this is expected here.
 
-    ![create RFC Destination24](./images/createRFCDestination24.png)
+   ![create RFC Destination24](./images/createRFCDestination24.png)
 
 ### Configure Logical Message Types
 
@@ -246,14 +247,12 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    
 5. Click on **Back** Button to go to previous screen.
 
-
-
 ### Connection Customizing File Transfer		
-1. Go back to transaction **/nSPRO**, expand **SAP Customization Implementation Guide** --> **Integration with other SAP components** --> **SAP NetWeaver AddOn for Event enablement**  and click on clock icon with tooltip **IMG:Activity** next to **Connection and Replication Object Customizing**.
+1. Go back to transaction **/nSPRO**, expand **SAP Customization Implementation Guide** --> **Integration with other SAP components** --> **SAP NetWeaver AddOn for Event enablement**  and choose the clock icon with tooltip **IMG:Activity** next to **Connection and Replication Object Customizing**.
    
    ![open Conn Customization](./images/openConnCustomizationv3.png)
    
-2. Click on New Entries.
+2. Select **New Entries**.
 
    ![new Entry Connection](./images/newEntryConnection.png)
    
@@ -262,12 +261,12 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    - Enter/select RFC Destination(upload) **ACI_SAP_EM**
    - Enter/Select ISO code as **UTF-8**
    - Enter/Select Cloud Type **SAP_EM**
-   - Click on **Save** icon
-   - Click on **Default Values**.
+   - Press **Save** 
+   - Select **Default Values**.
    
      ![new Connection](./images/newConnection.png)
    
-4. In **Default Values**, Click on **New Entries**
+4. In **Default Values**, choose **New Entries**
 
    ![new Entry Default Values1](./images/newEntryDefaultValues1.png)
    
@@ -277,7 +276,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    - For the **Default Attribute value**, copy and paste the value of **clientid** from the Event Mesh Service Key which you copied in the beginning of this document.
    - In the colum **Default Attribute**, enter **SAP_EM_TOKEN_DESTINATION**  
    - For this **Default Attribute value**, enter  **ACI_SAP_EM_TOKEN**
-   - Select **Save** icon
+   - Select **Save**
    
 
      ![new Entry Default Values2](./images/newEntryDefaultValues2.png)
@@ -307,7 +306,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    - Enter Event **API**
    - Check the **Trace** Checkbox	
    - Enter **Formatting Function**, value as **/ASADEV/ACI_SAP_EM_CLOUDEV_FM** 
-   - Click **Save** icon.
+   - Press **Save**.
    	
      ![enter Outbound Object Created](./images/enterOutboundObjectCreated.png)
 
@@ -332,7 +331,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
     - In the column, **Header Attributes Value**, enter **0**
     - In the column, **Header Attributes**, enter **SAP_EM_TOPIC**
     - In the column, **Header Attributes Value**, enter **refappscf/ecc/123/BO/BusinessPartner/Created** (enter the topic name created in Event Mesh Dashboard through CAP Application)
-    - Click **Save** icon
+    - Press **Save**
     
       ![header Attribute Create](./images/headerAttributeCreatedv3.png)
 
@@ -349,7 +348,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
       ![header Attribute Create](./images/eventLinkageCreated.png)
 
 
-13. Now, double click on **Outbound Object** and click **New Entries**.
+13. Now, double-click on **Outbound Object** and select **New Entries**.
 14. In the opened screen, **Change View Outbound Objects: Details**, enter the following values:
    - Enter Object as **BUSINESSPARTNER_CHANGED**
    - Enter Extraction Function Module Name as **/ASADEV/ACI_SIMPLE_NOTIFY**
@@ -358,7 +357,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    - Enter Event **API**
    - Check the **Trace** Checkbox	
    - Enter **Formatting Function**, value as **/ASADEV/ACI_SAP_EM_CLOUDEV_FM** 
-   - Click **Save** icon.
+   - Press **Save**.
    	
      ![enter Outbound Object Changed](./images/enterOutboundObjectChanged.png)
 
@@ -380,7 +379,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
     - In the column, **Header Attributes Value**, enter **0**
     - In the column, **Header Attributes**, enter **SAP_EM_TOPIC**
     - In the column, **Header Attributes Value**, enter **refappscf/ecc/123/BO/BusinessPartner/Changed** (enter the topic name created in Event Mesh Dashboard through CAP Application)
-    - Click **Save** icon
+    - Press **Save**
     
       ![header Attribute Changed](./images/headerAttributeChangedv3.png)
 
@@ -397,7 +396,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 
 ### Enter Cloud Connection Secret
 
-1. Click on **Back** Button to go to previous screen of **Display IMG**.
+1. Select the **Back** Button to go to previous screen of **Display IMG**.
 2. Expand the following path: **SAP Customization Implementation Guide** --> **Integration with Other SAP components** --> **SAP NetWeaver AddOn for Event Enablement** and click on clock icon with tooltip **IMG:Activity** next to **Set the Cloud Connection Password**.
 3. In the screen, **Maintain the Cloud Shared Secret**:
    - Select Cloud Instance **ACI_SAP_EM_CAL**.
@@ -405,15 +404,13 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 
      ![maintain Cloud Secret](./images/maintainCloudSecret.png)
 
-   - Click on Execute ( You will see a success Message---> **Shared Secret for ACI_SAP_EM_CAL was created successfully!**)
+   - Select **Execute** ( You will see a success Message---> **Shared Secret for ACI_SAP_EM_CAL was created successfully!**)
    	
      ![execute Cloud Secret](./images/executeCloudSecret.png)
  
-
-
 ## Summary
 
-We have estabilished a trust between our SAP ERP backend and the Event Mesh service and set up the eventing. Now we are ready to run the reference application.
+We have established a trust between our SAP ERP backend and the Event Mesh service and set up the eventing. Now we are ready to run the reference application.
 
 **Additional Resources:**
 
@@ -421,3 +418,4 @@ We have estabilished a trust between our SAP ERP backend and the Event Mesh serv
 
 * [SAP Event Mesh for SAP ERP: HowTo-Guide (Part 2 – First use case)](https://blogs.sap.com/2020/10/08/sap-enterprise-messaging-for-sap-erp-howto-guide-part-2-first-use-case/)
 * [SAP Help - SAP NetWeaver Add-On for Event enablement](https://help.sap.com/viewer/e966e6c0e61443ebaa0270a4bae4b363/1.0/en-US/3eba827c531344eb879d8e35022d90ba.html)
+

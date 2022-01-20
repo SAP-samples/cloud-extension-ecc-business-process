@@ -1,92 +1,95 @@
-# Setup the SAP Cloud Application Programming Model Application
+# Set Up the SAP Cloud Application Programming Model Application
 
 ## Introduction
 
-In this section we will configure our reference application, create the necessary service instances for the SAP HANA DB, Event Mesh, security and connectivity. Deploy the application to your SAP BTP account and run a first test.
-
-**Abbreviation:** SAP Business Technology Platform = SAP BTP
+In this section you will configure the reference application, create the necessary service instances for the SAP HANA database, SAP Event Mesh, security and connectivity. You will also deploy the application to your subaccount in SAP Business Technology Platform (SAP BTP) and run a first test.
  
-The application structure is based on the SAP Cloud Application Programming Model (CAP)
- If you want to know how to build such an application from scratch please check the [CAP Documentation](https://cap.cloud.sap/docs/) or take a look at [Mission: Extend SAP S/4HANA On Premise business processes on SAP BTP](https://platformx-ad17b8dc3.dispatcher.hana.ondemand.com/protected/index.html#/missiondetail/3242/3268) where the local development part is shown.
+The application structure is based on the SAP Cloud Application Programming Model.
+If you want to know how to build such an application from scratch, please check the [SAP Cloud Application Programming Model documentation](https://cap.cloud.sap/docs/) or take a look at [Mission: Extend SAP S/4HANA On Premise business processes on SAP BTP](https://platformx-ad17b8dc3.dispatcher.hana.ondemand.com/protected/index.html#/missiondetail/3242/3268) where the local development part is described.
 
-The SAP Cloud Application project contains below folders and files:
+The SAP Cloud Application Programming Model project contains the following files folders:
 
 File / Folder | Purpose
 ---------|----------
-`app/` | content for the UI frontend (Fiori Elements) go here 
-`db/` | your domain cds models and data go here
-`srv/` | your service models and code go here
-`srv/external` | the reference to the external Business Partner service
-`srv/external/data` | some sample data for the demo app
-`srv/service.js` | the implementation of the service model 
-`package.json` | project metadata and configuration
-`em.json` | the configuration file for the Event Mesh service
-`xs-security.json` | the configuration file for the xsuaa service
-`mta.yaml` | the multi target application build file
+`app/` | Contains content for the UI frontend (SAP Fiori elements)
+`db/` | Contains your domain CDS models and data
+`srv/` | Contains your service models and code
+`srv/external` | Contains the reference to the external Business Partner service
+`srv/external/data` | Contains some sample data for the demo application
+`srv/service.js` | Contains the implementation of the service model 
+`package.json` | Contains the project metadata and configuration
+`em.json` | Contains the configuration file for the SAP Event Mesh service
+`xs-security.json` | Contains the configuration file for the SAP Authorization and Trust Management service
+`mta.yaml` | Contains the multitarget application build file
 
 
-**Persona:** Cloud Application Developer
+**Audience:** Cloud Application Developer
 
-## Step-by-step
-### Create a new application in SAP Business Application Studio
+## Step-by-Step
 
-1.	Make sure you have opened your *SAP BTP Account* and navigate to your *Subaccount* 
+### Create a New Application in SAP Business Application Studio
+
+1.	Lon in to the SAP BTP cockpit and navigate to your subaccount.
    
-2.	Select *Instances and Subscriptions*. In the Subscriptions section select **Business Application Studio**. Select **Go to Application**.
+2.	Choose **Instances and Subscriptions**. In the **Subscriptions** section, choose **Business Application Studio**, and then choose **Go to Application**.
 
     ![Open Business Application Studio](./images/dev-cap-app-1.png)
    
-3.	Open the application 'Business Application Studio' and login via your username and password
+3.	Open the application **SAP Business Application Studio** and log in using your username and password.
 
      ![Log in Business Application Studio](./images/dev-cap-app-2.png)
  
-4.	In Business Application Studio click the button *Create Dev Space*
+4.	In the SAP Business Application Studio, choose **Create Dev Space**.
 
-     ![Create Dev Space](./images/dev-cap-app-3.png)
+   ![](./images/createDevSpace.png) 
+   
+   If you already have a Dev space, you will see the following screenshot, click *Create Dev Space*.
+  
+   ![Create Dev Space](./images/dev-cap-app-3.png)
  
-5.	On the next screen enter a Dev space name e.g **mission**, select the type **Full Stack Cloud Application**. Choose **Create Dev Space**
+5.	On the next screen, enter a Dev space name, for example **mission**, and select the **Full Stack Cloud Application** type. Choose **Create Dev Space**.
 
       ![Configure Dev Space](./images/dev-cap-app-4.png)
       
  
-6.	Your Dev Space is now being created. As soon as the Dev Space is available you can choose your Dev Spaces name to access it.
+6.	Your Dev Space is now being created. As soon as the Dev Space is available, you can choose your Dev Space's name to access it.
 
-7.	Choose **Terminal -> New Terminal** in the menu on the top of your screen.
+7.	Choose **Terminal** > **New Terminal** in the menu on the top of your screen.
 
     ![Open Terminal](./images/dev-cap-app-5.png)
  
-8. Go to projects Folder
+8. Go to projects folder.
    
    ```bash 
    cd projects
    ``` 
  
-9.	Clone the project from the SAP samples application repository 
+9.	Clone the project from the SAP samples application repository.
 
     ```bash
     git clone https://github.com/SAP-samples/cloud-extension-ecc-business-process.git 
      ```
  
-10.	Choose **File** in the menu on the top and then choose **Open Workspace** in the drop down.
+10.	Choose **File** in the menu on the top and then select **Open Workspace** from the dropdown menu.
 
     ![Open Workspace](./images/dev-cap-app-7.png)
  
-11.	 Open the project by selecting projects -> cloud-extension-ecc-business-process and choose **Open**
+11.	 Open the project by choosing **projects** > **cloud-extension-ecc-business-process** and choose **Open**.
  
 
-12.  Next you need to login to your SAP BTP account:
+12.  Next you need to login to your Cloud Foundry account from SAP Business Application Studio:
  
-   * Check if you are logged in to your BTP Account from **SAP Business Application Studio***
+   * Check if you are logged in to your account in SAP BTP from **SAP Business Application Studio**.
      
-   * To login to Cloud Foundry, In the tabs, click on View-> Select **Find Command**.
+   * To log in to Cloud Foundry, choose **View** > **Find Command**.
     
    * Search for **CF Login**.
     
-   * Select for **CF: Login on to Cloud Foundry**.
+   * Choose **CF: Login on to Cloud Foundry**.
 
      ![Login to CF](./images/loginToCF.png) 
     
-   * Enter CF API endpoint or take the default suggested API endpoint. You can find the API endpoint of your region by switching into your SAP BTP account browser window and copy the API Endpoint. Also write down the **Org Name** into a text editor of your choice which is needed for the next step.  
+   * Enter CF API endpoint or take the default suggested API endpoint. You can find the API endpoint of your region by switching into your subaccount in the SAP BTP cockpit that you should have opened in another browser tab and copy the API Endpoint. Write down the **Org Name** into a text editor of your choice which is needed for the next step.  
 
      ![copy Cloud Data](./images/copyCloudData.png)
     
@@ -95,12 +98,12 @@ File / Folder | Purpose
      ![copy Space Name](./images/copySpaceName.png)
      
    * Enter **Email** and **Password** when prompted.
-   * Select your Cloud Foundry **Org** which you have noted down in step before 
-   * Select the space name which you have noted down. Once you have selected the Org and Space, you would login to your Cloud Foundry account from SAP Business Application Studio.
+   * Select your Cloud Foundry **Org** which you have noted down in the previous step. 
+   * Select the space name which you have noted down. Once you have selected the Org and Space, log in to your Cloud Foundry account from SAP Business Application Studio.
 
 
-13. For the next steps you need the terminal again. Go to **Terminal** -> **New Terminal**
-    - First we create a hdi-shared database instance, therefore we need the guid of the SAP HANA Cloud service that we have created at the [SAP BTP Setup](../scp-setup/README.md). You can find the service name in the list of services
+13. For the next steps you need the terminal again. Choose **Terminal** > **New Terminal**.
+    - Create a hdi-shared database instance. To do that, you need the guid of the SAP HANA Cloud service that you have created at the [SAP BTP Setup](../scp-setup/README.md). You can find the service name in the list of services.
       
 	 ```bash
 		 cf services    
@@ -115,7 +118,7 @@ File / Folder | Purpose
     ```   
             
    
-    - In a next step, you will create a number of services e.g. for connection and Event Mesh. You will do this by executing the following Cloud Foundry create service commands.
+    - In the next step, you will create a number of service instances such as SAP Connectivity and SAP Event Mesh services. You will do this by executing the following Cloud Foundry create service instance commands.
     
 
    
@@ -125,7 +128,7 @@ File / Folder | Purpose
          cf cs enterprise-messaging default BusinessPartnerValidation-ems -c em.json
         ```
         
-        > When you are using **SAP BTP trial** then you have to use the dev service plan. The em.json file should have below parameters to work with Event Mesh (dev plan). Change "\<emname\> to a meaningful value e.g. eccevent
+        > When you are using **SAP BTP trial** then you have to use the dev service plan. The em.json file should have the following parameters to work with the SAP Event Mesh service (dev plan). Change "\<emname\> to a meaningful value, for example, eccevent.
         >   ```json
         >   { "emname": "<emname>",
         >     "options": {
@@ -139,10 +142,10 @@ File / Folder | Purpose
         >```bash
         >   cf cs enterprise-messaging dev BusinessPartnerValidation-ems -c em.json
         
-        > **SAP BTP Trial only:** Open srv>service.js file and search for messaging.on and replace the topic name (refappscf/ecc/123/BO/BusinessPartner/Changed) with the customized one.
+        > **SAP BTP Trial only:** Open srv >service.js file and search for messaging.on. Replace the topic name (refappscf/ecc/123/BO/BusinessPartner/Changed) with the customized one.
         > Ex:- \<emname\>/BO/BusinessPartner/Created and \<emname\>/BO/BusinessPartner/Changed
         
-        > **SAP BTP Trial only:** In the mta.yml file change the service plan name to dev for BusinessPartnerValidation-ems
+        > **SAP BTP Trial only:** In the mta.yml file, change the service plan name to dev for BusinessPartnerValidation-ems
         >```
         >  - name: BusinessPartnerValidation-ems
         >    parameters:
@@ -152,31 +155,31 @@ File / Folder | Purpose
         > type: org.cloudfoundry.managed-service 
         > ```
 
-      * Create a destination instance
+      * Create a Destination service instance
   
         ```bash
         cf cs destination lite BusinessPartnerValidation-dest
         ```
 
-      * Create a xsuaa instance using the xs-security.json configuration file in your project.
+      * Create an SAP Authorization and Trust Management service instance using the xs-security.json configuration file in your project.
     
         ```bash
         cf cs xsuaa application BusinessPartnerValidation-xsuaa -c xs-security.json
         ```    
 
-      * Create a connectivity instance for accessing SAP Cloud Connector.  
+      * Create an SAP Connectivity service instance for accessing the Cloud Connector.  
  
         ```bash
         cf cs connectivity lite BusinessPartnerValidation-cs        
         ```
 
-      * Generate a service key we will this later for binding services 
+      * Generate a service key that you will need later for binding service intances.
    
         ```bash
          cf create-service-key BusinessPartnerValidation-ems emkey
         ```
 
-      * Build the application  
+      * Build the application.
     
         ```bash
         cds build --production
@@ -185,9 +188,9 @@ File / Folder | Purpose
 
     
 14.	Open the gen/srv/manifest.yaml file and add your service names / replace existing ones with your services: ems, dest, xsuaa, database.  
-Set the Memory as 256MB.
+Set the Memory to 256MB.
 
-   > Hint: to make sure that the services names match, execute the CF command **cf services** which lists the services you have created including their names.
+   > Hint: To make sure that the services names match, execute the CF command **cf services** which lists the services you have created including their names.
 
    ![Edit manifest](./images/dev-cap-app-12.png)
  
@@ -203,13 +206,13 @@ Set the Memory as 256MB.
        cf p -f gen/srv --random-route
     ```
  
-2. Generate the mtar file
+2. Generate the MTAR file.
     
     ```bash
       mbt build -p=cf
     ```
 
-3.  Deploy the UI and service to your Cloud Foundry space with the mtar.
+3.  Deploy the UI and service to your Cloud Foundry space with the MTAR.
     
     ```bash
     cf deploy mta_archives/BusinessPartnerValidation_1.0.0.mtar
@@ -221,19 +224,19 @@ Set the Memory as 256MB.
 
  ![Run command](./images/dev-cap-app-18.png)
 
-2. Copy the BusinessPartnerValidation-ui url.
+2. Copy the BusinessPartnerValidation-ui URL.
 
-3. Open a new browser tab and paste the URL in there.
+3. Open a new browser tab and paste the URL there.
 
  ![Open App](./images/test-app-1.png)
 
-4. Copy the BusinessPartnerValidation-srv url and open it in a new browser tab.
+4. Copy the BusinessPartnerValidation-srv URL and open it in a new browser tab.
 
  ![Open App](./images/dev-cap-app-19.png)
 
  ## Summary
 
- We have done the configuration for the reference application. We created the instances for the required services and deployed the application to our SAP BTP space. In the next steps we configure the eventing on cloud and on-premise and then we are ready to run the application.
+ You have done the configuration for the reference application. You also created the service instances for the required services and deployed the application to your Cloud Foundry space in SAP BTP. In the next steps, you will configure the eventing on the cloud and on-premise and then you are ready to run the application.
 
 
 

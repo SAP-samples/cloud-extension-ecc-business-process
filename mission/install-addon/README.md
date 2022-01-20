@@ -1,6 +1,6 @@
-# SAP NetWeaver® Event Enablement Add-on 1.0 installation at SAP ERP 6.0 with Netweaver 7.5 or SAP S/4HANA
+# Install SAP NetWeaver® Event Enablement Add-on 1.0 at SAP ERP 6.0 with NetWeaver 7.5 or SAP S/4HANA
 
-This guide gives you a rough overview of the installations steps for the SAP NetWeaver® Event Enablement Add-on 1.0 for a Netweaver 7.5 system. 
+This guide gives you a rough overview of the installations steps for the SAP NetWeaver® Event Enablement Add-on 1.0 for SAP NetWeaver 7.5 system. 
 
 For the installation you will need the installation package SAPK-100COINASANWEE and the service packs 1-3 from [SAP Support Portal]( https://launchpad.support.sap.com/#/softwarecenter):
 
@@ -9,20 +9,20 @@ For the installation you will need the installation package SAPK-100COINASANWEE 
 * **SAPK-10002INASANWEE**  SP02
 * **SAPK-10003INASANWEE**  SP03
 
-> For **SAP S/4HANA**: When you face errors during the installation like missing Netweaver 7.31 packages you have also to install the *Attribute Change Package 13 for ASANWEE 100* **ASANWEE===100**
+> For **SAP S/4HANA**: When you face errors during the installation like missing NetWeaver 7.31 packages, you have to install the *Attribute Change Package 13 for ASANWEE 100* **ASANWEE===100**
 
-In addtion see [overview in SAP Help](https://help.sap.com/viewer/e966e6c0e61443ebaa0270a4bae4b363/1.0/en-US/4bd8777d7a674f1ba93e1da405e4b9df.html). 
+In addtion, see the [overview in the SAP Help Portal](https://help.sap.com/viewer/e966e6c0e61443ebaa0270a4bae4b363/1.0/en-US/4bd8777d7a674f1ba93e1da405e4b9df.html). 
 
-It could also be necessary to update the SPAM transaction to the latest version
+It could also be necessary to update the SAP Patch Manager (SPAM) to the latest version.
 
-Check also [SAP Note](https://launchpad.support.sap.com/#/notes/2927040) for more details and other SAP Netweaver versions.
+Check also [SAP Note](https://launchpad.support.sap.com/#/notes/2927040) for more details and other SAP NetWeaver versions.
 
-**Persona:** ERP Administrator or SAP S/4HANA Administrator (depending on the system you use)
+**Audience:** ERP Administrator or SAP S/4HANA Administrator depending on the SAP backend system you use.
 
-## Step-by-step 
+## Step-by-Step 
 
 
-1. Navigate to Transaction SPAM and check the version. If SPAM version is not '0074' then upgrade to it. Download the latest file from SAP Support. See also this [blog](https://blogs.sap.com/2016/03/02/spam-saint-update-2/).
+1. Open SAP Patch Manager by calling transaction SPAM and check its version. If the SPAM version is not '0074', then upgrade to it. Download the latest file from the SAP Support Portal. See also the [SPAM / SAINT Update](https://blogs.sap.com/2016/03/02/spam-saint-update-2/) blog post.
 Then run the installation:
 
    ![](images/ecc3.png)
@@ -33,9 +33,9 @@ Then run the installation:
    
    ![](images/ecc6.png)
    
-   Please note that it will take some time up to 30 min to upgrade the Support Package Manager. Once SPAM get upgraded you can see the upgraded version in header.
+   Note that it will take some time up to 30 minutes to upgrade the Support Package Manager. Once SPAM gets upgraded you can see the upgraded version in the header.
      
-2. Now you can Navigate to Transaction SAINT from the home screen. File name will be be "K-100COINASANWEE.SAR". Click on Continue 2-3 times and then a popup will appear to give a Password. Enter password "76755BF26A".
+2. Navigate to **Transaction SAINT** from the home screen. The file name will be "K-100COINASANWEE.SAR". Choose Continue 2-3 times and then a popup will appear to ask for a password. Enter password **76755BF26A**.
 
    ![](images/ecc8.png)
    
@@ -47,14 +47,14 @@ Then run the installation:
    
    ![](images/ecc15.png)
 
-    Please note that it will take some time up to 15-20 min to install the Add-ons. Once it's installed and you got the message for successful installation , you can assure from seeing the Add-on detail by going again to transaction /nSAINT.
+    Note that it will take some time up to 15-20 minutes to install the add-ons. Once they are installed and you get the message for successful installation, you will see the add-on detail by going again to transaction /nSAINT.
  
    ![](images/ecc12.png)
 
-   Congratulation!! you have downloaded the installation SP0 version.
+   Result: You have downloaded the installation SP0 version.
  
 
-3. Now you have to upgrade to SP1 Pack. For this Navigate to Transaction SPAM. File name will be "K-10001INASANWEE.SAR".
+3. Now you have to upgrade to SP1 Pack. To do this, navigate to transaction SPAM. File name will be "K-10001INASANWEE.SAR".
 
    ![](images/ecc3.png)
    
@@ -70,11 +70,11 @@ Then run the installation:
    
    ![](images/ecc13.png)
    
-   Once it's installed and you got the message for successful installation , you can assure from seeing the Add-on detail by going again to transaction /nSAINT.
+   Once SP1 Pack is installed and you get the message for successful installation, you can see the add-on detail by going again to transaction /nSAINT.
    
    ![](images/ecc16.png)
    
-   Repeat the steps from section 3 also for the SP2 K-10002INASANWEE.SAR and SP3 K-10003INASANWEE.SAR. 
+   Repeat the steps from section 3 for the SP2 K-10002INASANWEE.SAR and SP3 K-10003INASANWEE.SAR. 
 
    Now your SAP System is ready for messaging.
 
