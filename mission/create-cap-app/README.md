@@ -64,11 +64,11 @@ File / Folder | Purpose
    cd projects
    ``` 
  
-9.	Clone the project from the SAP samples application repository.
+9.	Clone the project from the SAP samples application repository, source code for using the SAP Netweaver Event Enablement Add-On with S/4HANA systems is in branch **s4h-addon** so use the following command.
 
     ```bash
-    git clone https://github.com/SAP-samples/cloud-extension-ecc-business-process.git 
-     ```
+    git clone -b s4h-addon https://github.com/SAP-samples/cloud-extension-ecc-business-process.git
+    ```
  
 10.	Choose **File** in the menu on the top and then select **Open Workspace** from the dropdown menu.
 
