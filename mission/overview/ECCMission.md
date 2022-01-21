@@ -27,4 +27,4 @@
 * [Enable Eventing in ERP](./../enable-eventing/ConfigureS4andECC.md)
 * [Create Add-on Instance for Notfications](../add-on-instance/ECCNotificationEvent.md)
 * [Optional: Integrate the SAP Continous Integration & Delivery Service](https://github.com/SAP-samples/cloud-sf-extension-cap-sample/blob/mission/mission/cicd/README.md)
-* [Run the Demo Application](../run-demo/ECCRunDemo.md)
+* [Run the Demo Application](../run-demo/README.md)
