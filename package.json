@@ -56,7 +56,7 @@
         "model": "srv/external/API_BUSINESS_PARTNER",
         "[production]": {
           "credentials": {
-            "destination": "bupa-ecc",
+            "destination": "bupa",
             "requestTimeout": 18000000
           }
         }
