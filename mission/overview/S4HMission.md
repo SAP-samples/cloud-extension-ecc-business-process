@@ -1,6 +1,6 @@
 # Extend SAP S/4HANA on SAP BTP using SAP Netweaver Event Enablement Add-on
 
-[Mission: TODO Link]()
+[Mission: Extend SAP S/4HANA Business Processes Using SAP Netweaver Add-On for Event Enablement](https://discovery-center.cloud.sap/missiondetail/3730/3769/)
 
 [Scenario and Mission Description](../scenario/S4HMission.md)
 
