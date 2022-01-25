@@ -8,6 +8,7 @@ In this section you will configure the Cloud Connector for connecting the on-pre
 ### Cloud Connector
 For the installation of the Cloud Connector, see  [Cloud Connector Installation](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/57ae3d62f63440f7952e57bfcef948d3.html). For this mission, the Portable Scenario is sufficient.
 
+**Hint:** You can skip the installation of Cloud connector, if you are using a SAP Cloud Appliance Library backend system which you setup following steps in [Setup SAP ERP system in SAP CAL](../cal-setup/README.md) or [Setup SAP S/4HANA system in SAP CAL](../cal-setup/CALS4H.md). There is a Cloud Connector pre-installed and ready to be used. Check the **Welcome page** in your CAL system for the links, it usually runs in http://\<IP of your SAP CAL backend\>:8443/.
 
 ### Subaccount Information
 
