@@ -8,6 +8,9 @@ To run the mission, you will need to activate these components:
 * SAP S/4HANA 2020 SP00 & SAP HANA DB 2.0 (based on SAP NetWeaver AS ABAP 7.55)
 * Windows Remote Desktop
 
+In the SAP S/4HANA system use client 100. 
+The SAP S/4HANA 2020 CAL image includes a Windows system which already has SAP GUI and an installed SAP Cloud Connector (see the 'Welcome page' in the Windows Desktop once you activate and run the system).
+
 Also, in the section **Access Points** of your SAP Cloud Appliance Library image, add the ports for HTTP and HTTPS. In this mission, we have used for HTTP - 50000 and for HTTPS - 44300. Only after you allow these access points, the ports for HTTP and HTTPS will be opened. 
 You find more information about the SAP S/4HANA trial systems in the following blog post and the Getting Started Guide:
 
