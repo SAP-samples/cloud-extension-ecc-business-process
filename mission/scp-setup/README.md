@@ -115,8 +115,32 @@ Services like **Application Autoscaler**, **Application Logging**, **Extension C
     * SAP Continuous Integration & Delivery (only when selected in the booster)   
     
     ![Booster](./images/booster-12.png)
+    
+### Configure Entitlements to SAP HANA service
 
-### B: Create a SAP HANA Service Instance
+
+1. In your SAP BTP Cockpit, choose **Entitlements** and choose **Entity Assignments**, select your sub-account and click **Configure Entitlements**.
+
+   ![entitlement01](./images/configureEntitlement1.png)
+   
+2. Choose **Add Service Plans**.
+
+   ![entitlement02](./images/entitlement02.png)
+   
+3. Search for **hana** and select **SAP HANA Cloud** from the list and select the **hana** checkbox from the Available Plans. Choose **Add 1 Service Plan**.
+
+   ![entitlement03](./images/entitlement03.png)
+   
+4. Choose **Save** to save the changes.
+
+   ![entitlement04](./images/entitlement04.png)
+   
+   > For more information, see [Creating SAP HANA Cloud Instances](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/784a1dbb421a4da29fb1e3bdf5f198ec.html).
+
+   
+
+
+### B: Create a SAP HANA Cloud Service Instance
 
 For this mission, an SAP HANA service for SAP BTP is necessary. Use the following steps enable it:
 
@@ -124,8 +148,6 @@ For this mission, an SAP HANA service for SAP BTP is necessary. Use the followin
 
     ![HANA](./images/hana-01.png)
     
-    >Note: If you do not see the **SAP HANA Cloud** tile, select **Entitlements** in the SAP BTP cockpit and choose **Configure Entitlements**. Then choose **Add Service Plans** and assign the **SAP HANA Cloud** service with the **hana** service plan. See [Creating SAP HANA Cloud Instances](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/784a1dbb421a4da29fb1e3bdf5f198ec.html).
-
 
 2. Choose **Create**.
    
