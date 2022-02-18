@@ -59,7 +59,7 @@ File / Folder | Purpose
     ![Open Terminal](./images/dev-cap-app-5.png)
  
 8. Go to projects folder.
-   
+
    ```bash
    cd projects
    ``` 
