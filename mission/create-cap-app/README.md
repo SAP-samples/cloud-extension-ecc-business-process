@@ -60,11 +60,11 @@ File / Folder | Purpose
  
 8. Go to projects folder.
    
-   ```bash 
+   ```bash
    cd projects
    ``` 
  
-9.	Clone the project from the SAP samples application repository. When you are working with [Mission:Extend SAP ERP 6.0 (ECC) business processes on SAP BTP](https://discovery-center.cloud.sap/missiondetail/3338/3384), use the main branch and use the following command:
+9. Clone the project from the SAP samples application repository. When you are working with [Mission:Extend SAP ERP 6.0 (ECC) business processes on SAP BTP](https://discovery-center.cloud.sap/missiondetail/3338/3384), use the main branch and use the following command:
 
     ```bash
     git clone https://github.com/SAP-samples/cloud-extension-ecc-business-process.git
@@ -76,7 +76,7 @@ File / Folder | Purpose
     git clone -b s4h-addon https://github.com/SAP-samples/cloud-extension-ecc-business-process.git
     ```
  
-10.	Choose **File** in the menu on the top and then select **Open Workspace** from the dropdown menu.
+10. Choose **File** in the menu on the top and then select **Open Workspace** from the dropdown menu.
 
     ![Open Workspace](./images/dev-cap-app-7.png)
  
