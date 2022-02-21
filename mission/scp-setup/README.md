@@ -68,7 +68,7 @@ Unfortunately, the booster is not able to check this in advance, so it will fail
 
 5. Set up your subaccount.
    
-You find the list of the services that will be acctivated by this booster. For this mission, the **SAP Countinuous Integration & Delivery** service is optional. Remove it if you don't want to use it.
+You find the list of the services that will be activated by this booster. For this mission, the **SAP Continuous Integration & Delivery** service is optional. Remove it if you don't want to use it.
 Services like **Application Autoscaler**, **Application Logging**, **Extension Center**, **Extension Factory serverless runtime** and the **SAP Cloud Transport Management Service** are not used in this  mission, you can remove them.     
    
    ![Booster](./images/booster-05.png)
