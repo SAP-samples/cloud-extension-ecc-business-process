@@ -105,7 +105,7 @@ In the **Overview** page of your subaccount in the SAP BTP cockpit, you can find
 4.	Enter the following information to the **Destination Configuration**:
     - **Name:**: bupa
     - **Type:** HTTP
-    - **URL:** Enter the URL of the on-premise system. For an SAP ECC system as backend, the name of the OData service for Business Partners is **ZAPI_BUSINESS_PARTNER_SRV**, then the URL would be http://sapsystem:5000/sap/opu/odata/sap/ZAPI_BUSINESS_PARTNER_SRV), for example. If your backend is an SAP S/4HANA system, then the OData service is **API_BUSINESS_PARTNER**, so the URL would be http://sapsystem:5000/sap/opu/odata/sap/API_BUSINESS_PARTNER, for example. You have to adjust the hostname and port according to what you have configured in Cloud Connector in the previous step.
+    - **URL:** Enter the URL of the on-premise system. For an SAP ECC system as backend, the name of the OData service for Business Partners is **ZAPI\_BUSINESS\_PARTNER\_SRV**, then the URL would be http://sapsystem:5000/sap/opu/odata/sap/ZAPI\_BUSINESS\_PARTNER\_SRV), for example. If your backend is an SAP S/4HANA system, then the OData service is **API\_BUSINESS\_PARTNER**, so the URL would be http://sapsystem:5000/sap/opu/odata/sap/API\_BUSINESS\_PARTNER, for example. You have to adjust the hostname and port according to what you have configured in Cloud Connector in the previous step.
     - Select **OnPremise** in the **Proxy Type** dropdown menu
     - Select **Basic Authentication** in the **Authentication:** dropdown menu
     - Set values for the **User** and **Password** fields
