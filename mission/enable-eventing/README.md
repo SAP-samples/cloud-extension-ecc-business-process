@@ -26,27 +26,32 @@ In this section, we describe steps how to configure your on-premise backend syst
    
    ![copy EM Token Endpoint](./images/copyEMTokenEndpoint.png)
    
-5. Once you open the Token Endpoint URL, Click on Cancel in the popup and Click on view site information button (lock symbol on top left corner) and click on **Certificate**.
+5. Once you open the Token Endpoint URL, select **Cancel** in the popup and choose the view site information button (lock symbol on top left corner). Select **Connection is secure**.
 
    ![download Certificate1](./images/downloadCertificate1.png)
    
-6. Click on **Details** and click **Copy to files**.
+6. Choose **Certificate is valid**
+   
+   ![download Certificate1](./images/downloadCertificate1a.png)
+   
+
+7. Select **Details** and choose **Copy to files**.
 
    ![download Certificate2](./images/downloadCertificate2.png)
    
-7. Now **Certificate Export Wizard** opens, click on **Next**.
+8. Now **Certificate Export Wizard** opens, select **Next**.
 
    ![download Certificate3](./images/downloadCertificate3.png)
    
-8. Select the format as **DER encoded binary X.509 (.CER)** and click **Next**.
+9.  Select the format as **DER encoded binary X.509 (.CER)** and choose **Next**.
 
     ![download Certificate4](./images/downloadCertificate4.png)
     
-9. Select a folder to export the certificate and click **Next**.
+10. Select a folder to export the certificate and choose **Next**.
    
    ![download Certificate5](./images/downloadCertificate5.png)
    
-10. Click **Finish** to export the certificate. Now we have exported the Event Mesh certificate.
+11. Choose **Finish** to export the certificate. Now we have exported the Event Mesh certificate.
 
     ![download Certificate6](./images/downloadCertificate6.png)
     
