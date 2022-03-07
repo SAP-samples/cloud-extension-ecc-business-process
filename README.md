@@ -1,6 +1,6 @@
-# ECC Extend Business Process Scenario with SAP NetWeaver® Event Enablement Add-on 1.0
+# Extend Business Process Scenario with SAP NetWeaver® Event Enablement Add-on 1.0
 
-[Mission: Extend SAP ERP 6.0 (ECC) business processes on SAP Business Technology Platform](./mission/README.md)
+[Mission: Extend business processes of SAP ECC or SAP S/4HANA on SAP Business Technology Platform](./mission/README.md)
 
 ## Known Issues
 
