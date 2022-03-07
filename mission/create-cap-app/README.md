@@ -193,17 +193,16 @@ File / Folder | Purpose
 
 
     
-14.	Open the gen/srv/manifest.yaml file and add your service names / replace existing ones with your services: ems, dest, xsuaa, database.  
+14. Open the gen/srv/manifest.yaml file and add your service names / replace existing ones with your services: ems, dest, xsuaa, database.  
 Set the Memory to 256MB.
 
-   > Hint: To make sure that the services names match, execute the CF command **cf services** which lists the services you have created including their names.
+    > Hint: To make sure that the services names match, execute the CF command **cf services** which lists the services you have created including their names.
 
-   ![Edit manifest](./images/dev-cap-app-12.png)
+    ![Edit manifest](./images/dev-cap-app-12.png)
  
-15.  Go back to the terminal and run following commands:
+15. Go back to the terminal and run following commands:
 
     ```bash
-    
        //generate the database instance deploy the database content
        cf p -f gen/db
        
