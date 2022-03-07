@@ -28,6 +28,6 @@
 * [Enable Eventing in ERP](./../enable-eventing/ConfigureS4andECC.md)
 * [Create Add-on Instance for Notfications](../add-on-instance/ECCNotificationEvent.md)
 * [Optional: Integrate the SAP Continous Integration & Delivery Service](https://github.com/SAP-samples/cloud-sf-extension-cap-sample/blob/mission/mission/cicd/README.md)
-* [Optional: Integrate the Application to Central Fiori Launchpad](https://github.com/SAP-samples/cloud-extension-s4hana-business-process/tree/mission/mission/create-launchpad-app)
+* [Optional: Integrate the Application to Central Fiori Launchpad](https://github.com/SAP-samples/cloud-extension-s4hana-business-process/blob/mission/mission/create-launchpad-app/README.md)
 * [Run the Demo Application](../run-demo/README.md)
 
