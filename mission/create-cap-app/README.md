@@ -47,7 +47,7 @@ File / Folder | Purpose
   
    ![Create Dev Space](./images/dev-cap-app-3.png)
  
-5.	On the next screen, enter a Dev space name, for example **mission**, and select the **Full Stack Cloud Application** type. Choose **Create Dev Space**.
+5.	On the next screen, enter a Dev space name, for example **mission**, and select the **Full Stack Cloud Application** type. Choose **Launchpad Module** in the **Additional SAP Extensions** and Choose **Create Dev Space**.
 
       ![Configure Dev Space](./images/dev-cap-app-4.png)
       

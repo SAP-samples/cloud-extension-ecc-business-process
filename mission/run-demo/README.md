@@ -9,15 +9,9 @@ Let us test the end-end cloud application and also understand the entire flow to
 
 1. Go to your **SAP BTP Subaccount** and go to corresponding **Space**
 
-   ![](./images/demo-01.png)
+   ![](./images/openHTML5App.png)
 
-2. Access **Space** and select the **UI Application**
-
-   ![](./images/demo-02.png)
-
-   ![](./images/demo-03.png)
-
-3. Start your Business Partner Validation Application
+2. Start your Business Partner Validation Application
 
    ![](./images/ds1.PNG)
 
