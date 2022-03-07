@@ -200,8 +200,7 @@ Set the Memory to 256MB.
 
    ![Edit manifest](./images/dev-cap-app-12.png)
  
-
-1.  Go back to the terminal and run following commands:
+15.  Go back to the terminal and run following commands:
 
     ```bash
     
@@ -212,17 +211,19 @@ Set the Memory to 256MB.
        cf p -f gen/srv --random-route
     ```
  
-2. Generate the MTAR file.
+16. Generate the MTAR file. Alternatively, you can also right-click on **mta.yaml **file in the Explorer view and select **Build MTA Project** to build the project.
     
     ```bash
       mbt build -p=cf
     ```
 
-3.  Deploy the UI and service to your Cloud Foundry space with the MTAR.
-    
+17. Deploy the application to your Cloud Foundry space with the MTAR. Alternatively, You can expand the folder **mta_archives** in Explorer view and right-click on file **BusinessPartnerValidation_1.0.0.mtar** and choose **Deploy MTA Archive**.
+
     ```bash
     cf deploy mta_archives/BusinessPartnerValidation_1.0.0.mtar
     ```
+    
+18. Check if the deployment finished successfully without giving any errors.
 
 ### Test your application
 
@@ -230,15 +231,12 @@ Set the Memory to 256MB.
 
  ![Run command](./images/dev-cap-app-18.png)
 
-2. Copy the BusinessPartnerValidation-ui URL.
 
-3. Open a new browser tab and paste the URL there.
-
- ![Open App](./images/test-app-1.png)
-
-4. Copy the BusinessPartnerValidation-srv URL and open it in a new browser tab.
+2. Copy the URL of the app BusinessPartnerValidation-srv and open it in a new browser tab.
 
  ![Open App](./images/dev-cap-app-19.png)
+
+3. You can see that the service is deployed and is running. You cannot test or access the data and you will get authorization error (which is fine).
 
  ## Summary
 
