@@ -19,7 +19,9 @@ service SalesService  @(requires:'authenticated-user'){
 
   @readonly entity BusinessPartner as projection on BUPA_API.A_BusinessPartner{
      key BusinessPartner as businessPartnerId,
-      BusinessPartnerFullName as businessPartnerName
+      BusinessPartnerFullName as businessPartnerName,
+      SearchTerm1 as searchTerm1,
+      BusinessPartnerIsBlocked as businessPartnerIsBlocked 
   };
 
   event BusinessPartnerVerified {

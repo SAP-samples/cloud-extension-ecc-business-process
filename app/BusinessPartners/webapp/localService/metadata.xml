@@ -54,7 +54,7 @@
                 <Property Name="streetName" Type="Edm.String" MaxLength="60"/>
                 <Property Name="postalCode" Type="Edm.String" MaxLength="10"/>
             </EntityType>
-            <EntityType Name="Notifications">
+            <EntityType Name="Notification">
                 <Key>
                     <PropertyRef Name="businessPartner"/>
                 </Key>
