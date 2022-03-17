@@ -29,7 +29,7 @@ File / Folder | Purpose
 
 ### Create a New Application in SAP Business Application Studio
 
-1.	Lon in to the SAP BTP cockpit and navigate to your subaccount.
+1.	Log in to the SAP BTP cockpit and navigate to your subaccount.
    
 2.	Choose **Instances and Subscriptions**. In the **Subscriptions** section, choose **Business Application Studio**, and then choose **Go to Application**.
 
@@ -114,8 +114,8 @@ File / Folder | Purpose
 	 ```bash
 		 cf services    
 		    
-		 cf service <HANA-Service> --guid
-    ```
+		 cf service \<HANA-Service\> --guid
+	```
 
     With the guid we can create a hdi-shared database instance:
        
