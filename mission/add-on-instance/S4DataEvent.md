@@ -58,7 +58,7 @@ You have already done the basic connection and configuration steps for the event
 9. In the **Change View Outbound Objects: Details** screen, enter the following values:
    - In the **Object** field, enter **BUSINESSPARTNER_CREATED**.
    - In the **Extraction Func Mod** field, enter **/ASADEV/ACI_GEN_VIEW_EXTRACTOR**.
-   - In the **Message Type** field, enter **Z_ACI_MSG_CREATE**.
+   - In the **Message Type** field, enter **Z_ACI_MSG_CREATED**.
    - In the **Load Type** field, select **Full Load**.
    - In the **Event** field, enter **API**.
    - Select the **Trace** checkbox.
