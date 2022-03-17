@@ -139,7 +139,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
     
 2. Choose field **New Entries**.
 3. Add the following two Message types:
-   - Enter Message Type: **Z_ACI_MSG_CREATE**
+   - Enter Message Type: **Z_ACI_MSG_CREATED**
    - Enter any meaningful text in the field: **Short Text**
    - Add another Message Type: **Z_ACI_MSG_CHANGED**
    - Enter a meaningful short text.	
@@ -181,7 +181,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    ![activate Change Pointer1](./images/activateChangePointer1.png)
 
 3. Add the following 2 change pointers for message types:
-   - Add Message Type **Z_ACI_MSG_CREATE**
+   - Add Message Type **Z_ACI_MSG_CREATED**
    - Select the **Active** checkbox next to the message type
    - Add a second Message Type **Z_ACI_MSG_CHANGED**
    - Select the **Active** checkbox next to also this message type
@@ -205,7 +205,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    - In the field **Object Category**, select **BOR Object Type**
    - In the field **Object Type**, select **BUS1006**
    - In the field **Event**, select **CREATED**
-   - In the field **Receiver type**, select **Z_ACI_MSG_CREATE**
+   - In the field **Receiver type**, select **Z_ACI_MSG_CREATED**
    - In the field **Receiver Function Module**, select **/ASADEV/ACI_EVENTS_TRIGGER**
    - Select the **Linkage Activated** checkbox
    - Choose **Save**
