@@ -21,9 +21,28 @@ New features added:
     - Event Mesh instance binding
     - Change destination content
 
-## Quick start
+## Quick deploy in Cloud Foundry Environment
 
-ToDo
+1. Clone this repository to your SAP Business Application Studio workspace
+2. Open cloned project folder
+3. [Optional] If you already have an Event Mesh instance...
+    - 123
+    - 456
+4. [Optional] If you have (or want to have) a destination to your S/4HANA Instance
+    - 123
+    - 456
+5. Right click on *mta.yaml* file and select **Build MTA Project**
+6. After build is done right click on mta_archives/MOCKrele_1.0.0.mtar and select **Deploy MTA Archive**
+
+## How to use
+
+1. The app is available at ...
+2. You have the following endpoints:
+    - V4 for mission S4HANA
+    - V2 for mission S4HANA
+    - V4 for mission ECC
+    - V2 for mission ECC
+3. 
 
 ## Hybrid test
 
@@ -36,10 +55,12 @@ It contains these folders and files, following our recommended project layout:
 File or Folder | Purpose
 ---------|----------
 `app/` | content for UI frontends goes here
-`db/` | your domain models and data go here
+`img/` | images for README.md
 `srv/` | your service models and code go here
 `package.json` | project metadata and configuration
 `readme.md` | this getting started guide
+`mta.yaml` | ...
+`server.js` | ...
 
 
 - Open a new terminal and run `cds watch` 
