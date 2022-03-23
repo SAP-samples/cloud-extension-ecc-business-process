@@ -20,17 +20,7 @@ modules:
       buildpack: nodejs_buildpack
     build-parameters:
       builder: npm-ci
-    requires:
-      - name: BusinessPartnerValidation-ems
     provides:
       - name: srv-api # required by consumers of CAP services (e.g. approuter)
         properties:
           srv-url: ${default-url}
-
-resources:
-# EVENT MESH SERVICE    
-- name: BusinessPartnerValidation-ems
-  parameters:
-    service: enterprise-messaging
-    service-plan: default
-  type: org.cloudfoundry.managed-service

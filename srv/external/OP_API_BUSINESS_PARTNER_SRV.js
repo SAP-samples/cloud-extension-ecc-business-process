@@ -6,6 +6,11 @@ module.exports = async srv => {
     // Mock events for s4
     srv.after("CREATE", "A_BusinessPartner", data => {
         var payload = {
+            "objectId": data.BusinessPartner,
+            "BusinessPartner": data.BusinessPartner,
+            "KEY": [{
+                "BUSINESSPARTNER": data.BusinessPartner
+            }],
             "BUT000": [{
                 "PARTNER": data.BusinessPartner,
                 "NAME_FIRST": data.FirstName,
@@ -34,7 +39,11 @@ module.exports = async srv => {
             "event": "CHANGED",
             "XBLCK": data.BusinessPartnerIsBlocked ? "X" : "",
             "BU_SORT1": data.SearchTerm1,
-            "objectId": data.BusinessPartner
+            "objectId": data.BusinessPartner,
+            "BusinessPartner": data.BusinessPartner,
+            "KEY": [{
+                "BUSINESSPARTNER": data.BusinessPartner
+            }]
         };
 
         messaging.emit("refappscf/ecc/123/BO/BusinessPartner/Changed", payload);
