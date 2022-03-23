@@ -51,7 +51,8 @@ New features added:
 
 3. On the index page there is also a link to SwaggerUI: *Open API Preview*. Open it and go to the section *POST /A_BusinessPartner*. Click the button *Try it out*. Use the following JSON as a payload (replace the proposed one):
 
-    <code>{  
+```
+    {  
 	"BusinessPartner": "555",  
 	"BusinessPartnerName": "Max Mustermann",  
 	"FirstName": "Max",  
@@ -66,7 +67,8 @@ New features added:
 		"CityName": "Berlin",  
 		"Country": "DE"  
 		}]  
-    }</code>
+    }
+```    
 
 4. Click *Execute*. You should get a response with the code 201. This means that the entry was created in the database and the corresponding event was triggered (if the Event Mesh instance is binded).
 
@@ -112,7 +114,7 @@ To add another service from SAP API Business Hub follow the instructions [here](
 
 Note: old models have incorrect connection between object nodes. In the generated CDS it could look that:
 
-<code>
+```
 entity API_BUSINESS_PARTNER.A_BusinessPartner{    
 
    /**
@@ -121,17 +123,17 @@ entity API_BUSINESS_PARTNER.A_BusinessPartner{
    Association to many API_BUSINESS_PARTNER.A_BusinessPartnerAddress{ }    
 
 }
-</code>
+```
 
 This shoud be changed to:
 
-<code>
+```
 entity API_BUSINESS_PARTNER.A_BusinessPartner{    
 
    Composition of  many API_BUSINESS_PARTNER.A_BusinessPartnerAddress
     on to_BusinessPartnerAddress.BusinessPartner = BusinessPartner;
 
 }
-</code>
+```
 
 The difference between compositions and association read [here](https://cap.cloud.sap/docs/cds/cdl#associations).
