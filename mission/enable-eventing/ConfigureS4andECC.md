@@ -95,7 +95,7 @@ In this section, you will learn how to configure your on-premise backend system 
 
    ![create RFC Destination1](./images/createRFCDestination1.png)
    
-3. Enter a destination name **ACI_SAP_EM** and select the connection type **G Http connection to External Server** from the popup which appears once you enter **G** in that field, choose the **Save** icon.
+3. Enter a destination name **ACI\_SAP\_EM** and select the connection type **G Http connection to External Server** from the popup which appears once you enter **G** in that field, choose the **Save** icon.
    
     ![create RFC Destination11](./images/createRFCDestination11.png)
 
@@ -111,7 +111,7 @@ In this section, you will learn how to configure your on-premise backend system 
    
 8. Choose back icon to create a second RFC Destination.
 9. Choose **Create** like in step 2.
-10. Enter a destination name **ACI_SAP_EM_TOKEN**, choose connection type **G Http connection** from the drop down, and then choose the **Save** icon.
+10. Enter a destination name **ACI\_SAP\_EM\_TOKEN**, choose connection type **G Http connection** from the drop down, and then choose the **Save** icon.
    
     ![create RFC Destination21](./images/createRFCDestination21.png)
    
@@ -131,7 +131,7 @@ In this section, you will learn how to configure your on-premise backend system 
 
 ### Configure Logical Message Types
 
-WE81 (Logical message types) is a standard SAP parameter transaction code that is used to maintain the contents of VEDI_EDMSG database table. It does this by executing the table maintenance t-code SM30 in edit mode, assuming you have the appropriate authorisations.
+WE81 (Logical message types) is a standard SAP parameter transaction code that is used to maintain the contents of VEDI\_EDMSG database table. It does this by executing the table maintenance t-code SM30 in edit mode, assuming you have the appropriate authorisations.
 
 1. Choose the back icon to go to the home screen and enter transaction **/nWE81** and then choose **Display/Change**. For the warning that the change is cross-client, choose **Ok**.
 
@@ -139,9 +139,9 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
     
 2. Choose field **New Entries**.
 3. Add the following two Message types:
-   - Enter Message Type: **Z_ACI_MSG_CREATED**
+   - Enter Message Type: **Z\_ACI\_MSG\_CREATED**
    - Enter any meaningful text in the field: **Short Text**
-   - Add another Message Type: **Z_ACI_MSG_CHANGED**
+   - Add another Message Type: **Z\_ACI\_MSG\_CHANGED**
    - Enter a meaningful short text.	
    - Choose **Save**.
 
@@ -163,15 +163,15 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 > You have to do this once per SAP system.
 
 1. Enter Transaction **/nSCPR20** to add a new BC Set.
-2. As BC Set enter  **/ASADEV/ACI_BCSET_FRAMEWORK_SEM**, then select the **activation** icon.
-   ![add bc set](./images/activate_bc1.png)
+2. As BC Set enter  **/ASADEV/ACI\_BCSET\_FRAMEWORK\_SEM**, then select the **activation** icon.
+   ![add bc set](./images/activate\_bc1.png)
 
 3. Confirm the next two popup screens.
    ![Prompt for Workbench Request](./images/promptWorkbenchRequest.png)
 
    ![Activation Option](./images/activationOptions.png)
     
-4. As BC Set add **/ASADEV/ACI_BCSET_FX_CLIENT_SEM**, select the **activation** icon and again confirm the next two popups.
+4. As BC Set add **/ASADEV/ACI\_BCSET\_FX\_CLIENT\_SEM**, select the **activation** icon and again confirm the next two popups.
    ![add bc set](./images/activate_bc2.png)
 
 ### Activate Change Pointers for Message Types		
@@ -181,9 +181,9 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    ![activate Change Pointer1](./images/activateChangePointer1.png)
 
 3. Add the following 2 change pointers for message types:
-   - Add Message Type **Z_ACI_MSG_CREATED**
+   - Add Message Type **Z\_ACI\_MSG\_CREATED**
    - Select the **Active** checkbox next to the message type
-   - Add a second Message Type **Z_ACI_MSG_CHANGED**
+   - Add a second Message Type **Z\_ACI\_MSG\_CHANGED**
    - Select the **Active** checkbox next to also this message type
    - Choose **Save**.
    
@@ -205,8 +205,8 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    - In the field **Object Category**, select **BOR Object Type**
    - In the field **Object Type**, select **BUS1006**
    - In the field **Event**, select **CREATED**
-   - In the field **Receiver type**, select **Z_ACI_MSG_CREATED**
-   - In the field **Receiver Function Module**, select **/ASADEV/ACI_EVENTS_TRIGGER**
+   - In the field **Receiver type**, select **Z\_ACI\_MSG\_CREATED**
+   - In the field **Receiver Function Module**, select **/ASADEV/ACI\_EVENTS\_TRIGGER**
    - Select the **Linkage Activated** checkbox
    - Choose **Save**
         
@@ -217,8 +217,8 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    - In the field **Object Category**, select **BOR Object Type**
    - In the field **Object Type**, select **BUS1006**
    - In the field **Event**, select **CHANGED**
-   - In the field **Receiver type**, select **Z_ACI_MSG_CHANGED**
-   - In the field **Receiver Function Module**, select **/ASADEV/ACI_EVENTS_TRIGGER**
+   - In the field **Receiver type**, select **Z\_ACI\_MSG\_CHANGED**
+   - In the field **Receiver Function Module**, select **/ASADEV/ACI\_EVENTS\_TRIGGER**
    - Select the **Linkage Activated** checkbox
    - Choose **Save** and then the **OK** (green-tick) icon for Transport Request.
         

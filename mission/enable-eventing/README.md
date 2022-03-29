@@ -102,7 +102,7 @@ In this section, we describe steps how to configure your on-premise backend syst
 
    ![create RFC Destination1](./images/createRFCDestination1.png)
    
-3. Enter a destination name **ACI_SAP_EM** and select the connection type **G Http connection to External Server** from the popup which appears once you enter **G** in that field, select the **Save** icon.
+3. Enter a destination name **ACI\_SAP\_EM** and select the connection type **G Http connection to External Server** from the popup which appears once you enter **G** in that field, select the **Save** icon.
    
     ![create RFC Destination11](./images/createRFCDestination11.png)
 
@@ -118,7 +118,7 @@ In this section, we describe steps how to configure your on-premise backend syst
    
 8. Choose back icon to create a second RFC Destionation.
 9. Select the **Create** button like in step 2.
-10. Enter a destination name **ACI_SAP_EM_TOKEN** and choose connection type **G Http connection** from the drop down, select the **Save** icon.
+10. Enter a destination name **ACI\_SAP\_EM\_TOKEN** and choose connection type **G Http connection** from the drop down, select the **Save** icon.
    
     ![create RFC Destination21](./images/createRFCDestination21.png)
    
@@ -138,7 +138,7 @@ In this section, we describe steps how to configure your on-premise backend syst
 
 ### Configure Logical Message Types
 
-WE81 (Logical message types) is a standard SAP parameter transaction code that is used to maintain the contents of VEDI_EDMSG database table. It does this by executing the table maintenance t-code SM30 in edit mode, assuming you have the appropriate authorisations.
+WE81 (Logical message types) is a standard SAP parameter transaction code that is used to maintain the contents of VEDI\_EDMSG database table. It does this by executing the table maintenance t-code SM30 in edit mode, assuming you have the appropriate authorisations.
 
 1. Click on back icon to goto the home screen and enter transaction **/nWE81** and click on **Display/Change**. For the warning that change is cross-client, click **Ok**.
 
@@ -146,9 +146,9 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
     
 2. Click on field **New Entries**.
 3. Add the following two Message types,
-   - Enter Message Type: **Z_ACI_MSG_CREATE**
+   - Enter Message Type: **Z\_ACI\_MSG\_CREATE**
    - Enter Any Meanigful for field **Short Text**
-   - Add another Message Type: **Z_ACI_MSG_CHANGED**
+   - Add another Message Type: **Z\_ACI\_MSG\_CHANGED**
    - Enter Any Meanigful **Short Text**	
    - Click on **Save**
 
@@ -174,9 +174,9 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    ![activate Change Pointer1](./images/activateChangePointer1.png)
 
 3. Add the following 2 change pointers for message types:
-   - Add Message Type **Z_ACI_MSG_CREATE**
+   - Add Message Type **Z\_ACI\_MSG\_CREATE**
    - Click the checkbox as **Active** next to the message type
-   - Add second Message Type **Z_ACI_MSG_CHANGED**
+   - Add second Message Type **Z\_ACI\_MSG\_CHANGED**
    - Click the checkbox as **Active** next to also this message type
    - Click **Save** icon.
    
@@ -198,8 +198,8 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    - For field **Object Category**, select **BOR Object Type**
    - For field **Object Type**, select **BUS1006**
    - For field **Event**, select **CREATED**
-   - For field **Receiver type**, select **Z_ACI_MSG_CREATE**
-   - For field **Receiver Function Module**, select **/ASADEV/ACI_EVENTS_TRIGGER**
+   - For field **Receiver type**, select **Z\_ACI\_MSG\_CREATE**
+   - For field **Receiver Function Module**, select **/ASADEV/ACI\_EVENTS\_TRIGGER**
    - Check the checkbox **Linkage Activated**
    - Click **Save** icon
         
@@ -210,8 +210,8 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    - For field **Object Category**, select **BOR Object Type**
    - For field **Object Type**, select **BUS1006**
    - For field **Event**, select **CHANGED**
-   - For field **Receiver type**, select **Z_ACI_MSG_CHANGED**
-   - For field **Receiver Function Module**, select **/ASADEV/ACI_EVENTS_TRIGGER**
+   - For field **Receiver type**, select **Z\_ACI\_MSG\_CHANGED**
+   - For field **Receiver Function Module**, select **/ASADEV/ACI\_EVENTS\_TRIGGER**
    - Check the checkbox **Linkage Activated**
    - Click **Save** icon and then the **OK** (green-tick) icon for Transport Request.
         
@@ -262,10 +262,10 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    ![new Entry Connection](./images/newEntryConnection.png)
    
 3. In the screen **New Entries: Details of added entries** enter the following values: 
-   - Enter instance name as **ACI_SAP_EM_CAL**
-   - Enter/select RFC Destination(upload) **ACI_SAP_EM**
+   - Enter instance name as **ACI\_SAP\_EM\_CAL**
+   - Enter/select RFC Destination(upload) **ACI\_SAP\_EM**
    - Enter/Select ISO code as **UTF-8**
-   - Enter/Select Cloud Type **SAP_EM**
+   - Enter/Select Cloud Type **SAP\_EM**
    - Press **Save** 
    - Select **Default Values**.
    
@@ -277,10 +277,10 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    
 
 5. In the opened screen, **New Entries: Overview of Added Entries**, enter the following values: 
-   - In the column **Default Attribute**, enter **SAP_EM_CLIENT_ID**
+   - In the column **Default Attribute**, enter **SAP\_EM\_CLIENT\_ID**
    - For the **Default Attribute value**, copy and paste the value of **clientid** from the Event Mesh Service Key which you copied in the beginning of this document.
-   - In the colum **Default Attribute**, enter **SAP_EM_TOKEN_DESTINATION**  
-   - For this **Default Attribute value**, enter  **ACI_SAP_EM_TOKEN**
+   - In the colum **Default Attribute**, enter **SAP\_EM\_TOKEN\_DESTINATION**  
+   - For this **Default Attribute value**, enter  **ACI\_SAP\_EM\_TOKEN**
    - Select **Save**
    
 
@@ -304,13 +304,13 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    ![new Entry Outbound Object](./images/newEntryOutboundObject.png)
    
 9. In the opened screen, **Change View Outbound Objects: Details**, enter the following values:
-   - Enter Object as **BUSINESSPARTNER_CREATED**
-   - Enter Extraction Function Module Name **/ASADEV/ACI_SIMPLE_NOTIFY**
-   - Enter Message Type as **Z_ACI_MSG_CREATE**
+   - Enter Object as **BUSINESSPARTNER\_CREATED**
+   - Enter Extraction Function Module Name **/ASADEV/ACI\_SIMPLE\_NOTIFY**
+   - Enter Message Type as **Z\_ACI\_MSG\_CREATE**
    - Select Load Type as **Incremental Load**
    - Enter Event **API**
    - Check the **Trace** Checkbox	
-   - Enter **Formatting Function**, value as **/ASADEV/ACI_SAP_EM_CLOUDEV_FM** 
+   - Enter **Formatting Function**, value as **/ASADEV/ACI\_SAP\_EM\_CLOUDEV\_FM** 
    - Press **Save**.
    	
      ![enter Outbound Object Created](./images/enterOutboundObjectCreated.png)
@@ -320,21 +320,21 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
     ![new Entry Header Attribute](./images/newEntryHeaderAttribute.png)
 	
 11. In the opened screen, enter the following values:
-    - In the column, **Header Attributes**, enter **CLOUDEVENTS_OBJECT_NAME**
+    - In the column, **Header Attributes**, enter **CLOUDEVENTS\_OBJECT\_NAME**
     - In the column, **Header Attributes Value**, enter **BusinessPartner**
-    - In the column, **Header Attributes**, enter **CLOUDEVENTS_OPERATION**
+    - In the column, **Header Attributes**, enter **CLOUDEVENTS\_OPERATION**
     - In the column, **Header Attributes Value**, enter **Created**
-    - In the column, **Header Attributes**, enter **CLOUDEVENTS_VERSION**
+    - In the column, **Header Attributes**, enter **CLOUDEVENTS\_VERSION**
     - In the column, **Header Attributes Value**, enter **v1**
-    - In the column, **Header Attributes**, enter **SAP_EM_CALL_METHOD**
+    - In the column, **Header Attributes**, enter **SAP\_EM\_CALL\_METHOD**
     - In the column, **Header Attributes Value**, enter **POST**
-    - In the column, **Header Attributes**, enter **SAP_EM_CONT_TYPE**
+    - In the column, **Header Attributes**, enter **SAP\_EM\_CONT\_TYPE**
     - In the column, **Header Attributes Value**, enter **application/json**
-    - In the column, **Header Attributes**, enter **SAP_EM_KEY_NAME**
+    - In the column, **Header Attributes**, enter **SAP\_EM\_KEY\_NAME**
     - In the column, **Header Attributes Value**, enter **BusinessPartner**
-    - In the column, **Header Attributes**, enter **SAP_EM_QOS**
+    - In the column, **Header Attributes**, enter **SAP\_EM\_QOS**
     - In the column, **Header Attributes Value**, enter **0**
-    - In the column, **Header Attributes**, enter **SAP_EM_TOPIC**
+    - In the column, **Header Attributes**, enter **SAP\_EM\_TOPIC**
     - In the column, **Header Attributes Value**, enter **refappscf/ecc/123/BO/BusinessPartner/Created** (enter the topic name created in Event Mesh Dashboard through CAP Application)
     - Press **Save**
     
@@ -345,7 +345,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
       - In the column, **Object Category** = **BOR Object Type**
       - In the column, **Object Type** = **BUS1006**
       - In the column, **Event** = **CREATED**
-      - In the column, **Receiver Function Module** = **/ASADEV/ACI_EVENTS_TRIGGER**
+      - In the column, **Receiver Function Module** = **/ASADEV/ACI\_EVENTS\_TRIGGER**
       - The field **Global** is checked
       - The field **Type linkage active** is checked
       
@@ -355,34 +355,34 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 
 13. Now, double-click on **Outbound Object** and select **New Entries**.
 14. In the opened screen, **Change View Outbound Objects: Details**, enter the following values:
-   - Enter Object as **BUSINESSPARTNER_CHANGED**
-   - Enter Extraction Function Module Name as **/ASADEV/ACI_SIMPLE_NOTIFY**
-   - Enter Message Type as **Z_ACI_MSG_CHANGED**
+   - Enter Object as **BUSINESSPARTNER\_CHANGED**
+   - Enter Extraction Function Module Name as **/ASADEV/ACI\_SIMPLE\_NOTIFY**
+   - Enter Message Type as **Z\_ACI\_MSG\_CHANGED**
    - Select Load Type as **Incremental Load**
    - Enter Event **API**
    - Check the **Trace** Checkbox	
-   - Enter **Formatting Function**, value as **/ASADEV/ACI_SAP_EM_CLOUDEV_FM** 
+   - Enter **Formatting Function**, value as **/ASADEV/ACI\_SAP\_EM\_CLOUDEV\_FM** 
    - Press **Save**.
    	
      ![enter Outbound Object Changed](./images/enterOutboundObjectChanged.png)
 
 15. Select **Header Attributes**, select **New Entries**.
 16. In the opened screen, enter the following values:
-    - In the column, **Header Attributes**, enter **CLOUDEVENTS_OBJECT_NAME**
+    - In the column, **Header Attributes**, enter **CLOUDEVENTS\_OBJECT\_NAME**
     - In the column, **Header Attributes Value**, enter **BusinessPartner**
-    - In the column, **Header Attributes**, enter **CLOUDEVENTS_OPERATION**
+    - In the column, **Header Attributes**, enter **CLOUDEVENTS\_OPERATION**
     - In the column, **Header Attributes Value**, enter **Changed**
-    - In the column, **Header Attributes**, enter **CLOUDEVENTS_VERSION**
+    - In the column, **Header Attributes**, enter **CLOUDEVENTS\_VERSION**
     - In the column, **Header Attributes Value**, enter **v1**
-    - In the column, **Header Attributes**, enter **SAP_EM_CALL_METHOD**
+    - In the column, **Header Attributes**, enter **SAP\_EM\_CALL\_METHOD**
     - In the column, **Header Attributes Value**, enter **POST**
-    - In the column, **Header Attributes**, enter **SAP_EM_CONT_TYPE**
+    - In the column, **Header Attributes**, enter **SAP\_EM\_CONT\_TYPE**
     - In the column, **Header Attributes Value** enter **application/json**
-    - In the column, **Header Attributes**, enter **SAP_EM_KEY_NAME**
+    - In the column, **Header Attributes**, enter **SAP\_EM\_KEY\_NAME**
     - In the column, **Header Attributes Value**, enter **BusinessPartner**
-    - In the column, **Header Attributes**, enter **SAP_EM_QOS**
+    - In the column, **Header Attributes**, enter **SAP\_EM\_QOS**
     - In the column, **Header Attributes Value**, enter **0**
-    - In the column, **Header Attributes**, enter **SAP_EM_TOPIC**
+    - In the column, **Header Attributes**, enter **SAP\_EM\_TOPIC**
     - In the column, **Header Attributes Value**, enter **refappscf/ecc/123/BO/BusinessPartner/Changed** (enter the topic name created in Event Mesh Dashboard through CAP Application)
     - Press **Save**
     
@@ -393,7 +393,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
       - In the column, **Object Category** = **BOR Object Type**
       - In the column, **Object Type** = **BUS1006**
       - In the column, **Event** = **CHANGED**
-      - In the column, **Receiver Function Module** = **/ASADEV/ACI_EVENTS_TRIGGER**
+      - In the column, **Receiver Function Module** = **/ASADEV/ACI\_EVENTS\_TRIGGER**
       - The field **Global** is checked
       - The field **Type linkage active** is checked
      
@@ -404,12 +404,12 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 1. Select the **Back** Button to go to previous screen of **Display IMG**.
 2. Expand the following path: **SAP Customization Implementation Guide** --> **Integration with Other SAP components** --> **SAP NetWeaver AddOn for Event Enablement** and click on clock icon with tooltip **IMG:Activity** next to **Set the Cloud Connection Password**.
 3. In the screen, **Maintain the Cloud Shared Secret**:
-   - Select Cloud Instance **ACI_SAP_EM_CAL**.
+   - Select Cloud Instance **ACI\_SAP\_EM\_CAL**.
    - For the field **Cloud Shared Secret**, copy and paste the value of **clientsecret** from the Event Mesh Service Key which you copied in the beginning of this document.
 
      ![maintain Cloud Secret](./images/maintainCloudSecret.png)
 
-   - Select **Execute** ( You will see a success Message---> **Shared Secret for ACI_SAP_EM_CAL was created successfully!**)
+   - Select **Execute** ( You will see a success Message---> **Shared Secret for ACI\_SAP\_EM\_CAL was created successfully!**)
    	
      ![execute Cloud Secret](./images/executeCloudSecret.png)
  
