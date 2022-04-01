@@ -1,4 +1,4 @@
-# MOCKrele
+# OData Mock Server
 
 This is a Mock Server for OData API's (e.g. from S/4HANA, ECC etc.).
 
@@ -9,7 +9,7 @@ This is a project fork from [this repo](https://github.tools.sap/refapps/s4hana-
 1. Speed up mission implementation. Customer can get an overview of the scenario even without ERP/Cloud Connector configuration.
 2. Troubleshooting. If something goes wrong it's nice to have an opportunity to limit the scope for cloud services only.
 3. Fully functioning deliverables. If the automated deployment is used (e.g. BTP Setup Automator Tool) it has to be expected that the result is ready to use (even if further configuration is needed)
-4. Automated integration tests?
+4. Automated integration tests
 
 ## Features
 General features:
@@ -35,13 +35,13 @@ New features added:
 1. Clone this repository to your SAP Business Application Studio workspace
 2. Open cloned project folder
 3. Right click on *mta.yaml* file and select **Build MTA Project**. Note: if you have Event Mesh instance created during one of the Extension Missions, please use *mta_em.yaml* instead to build the project (you should rename it to *mta.yaml* beforehand).
-6. After build is done right click on mta_archives/MOCKrele_1.0.0.mtar and select **Deploy MTA Archive**
+6. After build is done right click on mta_archives/Mockserver_1.0.0.mtar and select **Deploy MTA Archive**
 
 ## How to use
 
 1. After the successful deployment you will get the following message:
 
-    <code>Application "MOCKrele-srv" started and available at "..."</code>
+    <code>Application "mock-srv" started and available at "..."</code>
 
 2. Follow the given URL to get the CAP App Index Page. You can find *'/op-api-business-partner-srv'* link there. This URL can be used as OData V4 Endpoint. Use this URL in the corresponding destination for your mission.
 

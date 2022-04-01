@@ -1,7 +1,7 @@
 _schema-version: '3.1'
-ID: MOCKrele
+ID: Mockserver
 version: 1.0.0
-description: "MOCKrele: Mock Server"
+description: "Mock Server"
 parameters:
   enable-parallel-deployments: true
 build-parameters:
@@ -13,7 +13,7 @@ build-parameters:
 
 modules:
   # CAP APPLICATION
-  - name: MOCKrele-srv
+  - name: mock-srv
     type: nodejs
     path: gen/srv
     parameters:
