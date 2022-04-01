@@ -64,13 +64,13 @@ File / Folder | Purpose
    cd projects
    ``` 
  
-9. Clone the project from the SAP samples application repository. When you are working with [Mission:Extend SAP ERP 6.0 (ECC) business processes on SAP BTP](https://discovery-center.cloud.sap/missiondetail/3338/3384), use the main branch and use the following command:
+9. Clone the project from the SAP samples application repository. When you are working with SAP ERP 6.0 (ECC) as a backend system, use the main branch and use the following command:
 
     ```bash
     git clone https://github.com/SAP-samples/cloud-extension-ecc-business-process.git
     ```
-    When you are working with [Mission: Extend SAP S/4HANA Business Processes Using SAP Netweaver Add-On for Event Enablement
-](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3730/3769/) then the sample code is in branch **s4h-addon** and use the following command:
+    
+    When you are working with SAP S/4HANA as a backend system then the sample code is in branch **s4h-addon** and use the following command:
 
     ```bash
     git clone -b s4h-addon https://github.com/SAP-samples/cloud-extension-ecc-business-process.git
