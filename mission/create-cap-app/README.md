@@ -216,7 +216,7 @@ Set the Memory to 256MB.
       mbt build -p=cf
     ```
 
-17. Deploy the application to your Cloud Foundry space with the MTAR. Alternatively, You can expand the folder **mta_archives** in Explorer view and right-click on file **BusinessPartnerValidation_1.0.0.mtar** and choose **Deploy MTA Archive**.
+17. Deploy the application to your Cloud Foundry space with the MTAR. Alternatively, You can expand the folder **mta\_archives** in Explorer view and right-click on file **BusinessPartnerValidation\_1.0.0.mtar** and choose **Deploy MTA Archive**.
 
     ```bash
     cf deploy mta_archives/BusinessPartnerValidation_1.0.0.mtar

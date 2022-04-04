@@ -40,9 +40,9 @@ In this section you will create a database view for a data event and do the addi
    - In the fourth column, **Field name**, enter *ADDRNUMBER*
 
    - In the first column, **Table**, enter *ADRC*
-   - In the second column, **Field name**, enter *DATE_FROM*
+   - In the second column, **Field name**, enter *DATE\_FROM*
    - In the third column, **Table**, enter *BUT020*
-   - In the fourth column, **Field name**, enter *DATE_FROM*
+   - In the fourth column, **Field name**, enter *DATE\_FROM*
 
    - In the first column, **Table**, enter *ADRC*
    - In the second column, **Field name**, enter *NATION*
@@ -69,9 +69,9 @@ In this section you will create a database view for a data event and do the addi
 9.  Find and mark the following fields in the popup screen:
    - *CLIENT*
    - *PARTNER*
-   - *NAME_LAST*
-   - *NAME_FIRST*
-   - *NAME1_TEXT*
+   - *NAME\_LAST*
+   - *NAME\_FIRST*
+   - *NAME1\_TEXT*
 
    ![BUT000 fields](./images/dataevent-06.png)
 
@@ -82,7 +82,7 @@ In this section you will create a database view for a data event and do the addi
 
 12. Repeat the steps *7 to 9* for the table *ADRC* and the following fields:
    - *CITY1*
-   - *POST_CODE1*
+   - *POST\_CODE1*
    - *STREET*
    - *COUNTRY*
 

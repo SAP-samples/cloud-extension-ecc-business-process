@@ -5,11 +5,11 @@ In this section you will link the Change Document for Business Partner with the 
 1. Log in to your SAP S/4HANA system using SAP GUI. Go to transaction **SWEC**.
 
 2. Choose **New Entries** button and fill in the following fields:
-   - In the **Change Doc.Object** field, select **BUPA_BUP**.
+   - In the **Change Doc.Object** field, select **BUPA\_BUP**.
    - In the **Object Category** field, select **BOR Object Type**.
    - In the **Object Type** field, select **BUS1006**.
    - In the **Event** field, select **CHANGED**.
-   - In the **Event Container** field, select **/ASADEV/ACI_CPIDENT_TRANSFER**.
+   - In the **Event Container** field, select **/ASADEV/ACI\_CPIDENT\_TRANSFER**.
    - Select the **On Change** checkbox.
    - Choose **Save**.
 

@@ -14,10 +14,10 @@ You have already done the basic connection and configuration steps for the event
    ![new Entry Connection](./images/newEntryConnection.png)
    
 3. In the **New Entries: Details of added entries** screen, enter the following values: 
-   - In the **Instance** field, enter **ACI_SAP_EM_CAL**.
-   - In the **RFC Dest (Upload)** field, enter **ACI_SAP_EM**.
+   - In the **Instance** field, enter **ACI\_SAP\_EM\_CAL**.
+   - In the **RFC Dest (Upload)** field, enter **ACI\_SAP\_EM**.
    - In the **ISO Code** field, select **UTF-8**.
-   - In the **Cloud Type** field, select **SAP_EM**.
+   - In the **Cloud Type** field, select **SAP\_EM**.
    - Choose **Save**. 
    - Select **Default Values**.
    
@@ -29,10 +29,10 @@ You have already done the basic connection and configuration steps for the event
    
 
 5. In the **New Entries: Overview of Added Entries** screen, enter the following values: 
-   - In the **Default Attribute** column, enter **SAP_EM_CLIENT_ID**
+   - In the **Default Attribute** column, enter **SAP\_EM\_CLIENT\_ID**
    - In the **Default Attribute value** column, copy and paste the value of **clientid** from the Event Mesh Service Key which you copied in the previous steps.
-   - In the **Default Attribute** column, enter **SAP_EM_TOKEN_DESTINATION**.
-   - In the **Default Attribute value** column, enter  **ACI_SAP_EM_TOKEN**.
+   - In the **Default Attribute** column, enter **SAP\_EM\_TOKEN\_DESTINATION**.
+   - In the **Default Attribute value** column, enter  **ACI\_SAP\_EM\_TOKEN**.
    - Choose **Save**.
    
 
@@ -56,13 +56,13 @@ You have already done the basic connection and configuration steps for the event
    ![new Entry Outbound Object](./images/newEntryOutboundObject.png)
    
 9. In the **Change View Outbound Objects: Details** screen, enter the following values:
-   - In the **Object** field, enter **BUSINESSPARTNER_CREATED**.
-   - In the **Extraction Func Mod** field, enter **/ASADEV/ACI_GEN_VIEW_EXTRACTOR**.
-   - In the **Message Type** field, enter **Z_ACI_MSG_CREATED**.
+   - In the **Object** field, enter **BUSINESSPARTNER\_CREATED**.
+   - In the **Extraction Func Mod** field, enter **/ASADEV/ACI\_GEN\_VIEW\_EXTRACTOR**.
+   - In the **Message Type** field, enter **Z\_ACI\_MSG\_CREATED**.
    - In the **Load Type** field, select **Full Load**.
    - In the **Event** field, enter **API**.
    - Select the **Trace** checkbox.
-   - In the **Formatting Function** field, enter **/ASADEV/ACI_GEN_VIEWFRM_SAP_EM**.
+   - In the **Formatting Function** field, enter **/ASADEV/ACI\_GEN\_VIEWFRM\_SAP\_EM**.
    - Choose **Save**.
    	
      ![enter Outbound Object Created](./images/enterOutboundObjectCreatedS4.png)
@@ -72,15 +72,15 @@ You have already done the basic connection and configuration steps for the event
     ![new Entry Header Attribute](./images/newEntryHeaderAttribute.png)
 	
 11. In the opened screen, enter the following values:
-    - In the **Header Attributes** column, enter **ACI_VIEW**.
+    - In the **Header Attributes** column, enter **ACI\_VIEW**.
     - In the **Header Attributes Value** column, enter **ZBUSINESSPARTNER**.
-    - In the **Header Attributes** column, enter **SAP_EM_CALL_METHOD**.
+    - In the **Header Attributes** column, enter **SAP\_EM\_CALL\_METHOD**.
     - In the **Header Attributes Value** column, enter **POST**.
-    - In the **Header Attributes** column, enter **SAP_EM_CONT_TYPE**.
+    - In the **Header Attributes** column, enter **SAP\_EM\_CONT\_TYPE**.
     - In the **Header Attributes Value** column, enter **application/json**.
-    - In the **Header Attributes** column, enter **SAP_EM_QOS**.
+    - In the **Header Attributes** column, enter **SAP\_EM\_QOS**.
     - In the **Header Attributes Value** column, enter **0**.
-    - In the **Header Attributes** column, enter **SAP_EM_TOPIC**.
+    - In the **Header Attributes** column, enter **SAP\_EM\_TOPIC**.
     - In the **Header Attributes Value** column, enter **refappscf/ecc/123/BO/BusinessPartner/Created** (enter the topic name created in Event Mesh Dashboard through the CAP Application)
     - Choose **Save**.
     
@@ -91,7 +91,7 @@ You have already done the basic connection and configuration steps for the event
       - In the **Object Category** column, you should have **BOR Object Type**.
       - In the **Object Type** column, you should have **BUS1006**.
       - In the **Event**  column, you should have **CREATED**.
-      - In the **Receiver Function Module**  column, you should have **/ASADEV/ACI_EVENTS_TRIGGER**.
+      - In the **Receiver Function Module**  column, you should have **/ASADEV/ACI\_EVENTS\_TRIGGER**.
       - The **Global** checkbox should be selected.
       - The **Type linkage active** checkbox should be selected.
       
@@ -101,26 +101,26 @@ You have already done the basic connection and configuration steps for the event
 
 13. Double-click **Outbound Object** and choose **New Entries**.
 14. In the **Change View Outbound Objects: Details** screen, enter the following values:
-   - Enter Object as **BUSINESSPARTNER_CHANGED**
-   - Enter Extraction Function Module Name as **/ASADEV/ACI_SIMPLE_DATA**
-   - Enter Message Type as **Z_ACI_MSG_CHANGED**
+   - Enter Object as **BUSINESSPARTNER\_CHANGED**
+   - Enter Extraction Function Module Name as **/ASADEV/ACI\_SIMPLE\_DATA**
+   - Enter Message Type as **Z\_ACI\_MSG\_CHANGED**
    - Select Load Type as **Incremental Load**
    - Enter Event **API**
    - Check the **Trace** Checkbox	
-   - Enter **Formatting Function**, value as **/ASADEV/ACI_SAP_EM_CLOUDEV_FM** 
+   - Enter **Formatting Function**, value as **/ASADEV/ACI\_SAP\_EM\_CLOUDEV\_FM** 
    - Press **Save**
    	
      ![TODO enter Outbound Object Changed](./images/enterOutboundObjectChangedS4.png)
 
 15. Select **Header Attributes**, select **New Entries**.
 16. In the opened screen, enter the following values:
-    - In the column, **Header Attributes**, enter **SAP_EM_CALL_METHOD**
+    - In the column, **Header Attributes**, enter **SAP\_EM\_CALL\_METHOD**
     - In the column, **Header Attributes Value**, enter **POST**
-    - In the column, **Header Attributes**, enter **SAP_EM_CONT_TYPE**
+    - In the column, **Header Attributes**, enter **SAP\_EM\_CONT\_TYPE**
     - In the column, **Header Attributes Value** enter **application/json**
-    - In the column, **Header Attributes**, enter **SAP_EM_QOS**
+    - In the column, **Header Attributes**, enter **SAP\_EM\_QOS**
     - In the column, **Header Attributes Value**, enter **0**
-    - In the column, **Header Attributes**, enter **SAP_EM_TOPIC**
+    - In the column, **Header Attributes**, enter **SAP\_EM\_TOPIC**
     - In the column, **Header Attributes Value**, enter **refappscf/ecc/123/BO/BusinessPartner/Changed** (enter the topic name created in Event Mesh Dashboard through CAP Application)
     - Press **Save**
     
@@ -131,7 +131,7 @@ You have already done the basic connection and configuration steps for the event
       - In the column, **Object Category** = **BOR Object Type**
       - In the column, **Object Type** = **BUS1006**
       - In the column, **Event** = **CHANGED**
-      - In the column, **Receiver Function Module** = **/ASADEV/ACI_EVENTS_TRIGGER**
+      - In the column, **Receiver Function Module** = **/ASADEV/ACI\_EVENTS\_TRIGGER**
       - The field **Global** is checked
       - The field **Type linkage active** is checked
      
@@ -142,12 +142,12 @@ You have already done the basic connection and configuration steps for the event
 1. Select the **Back** button to go to previous screen of **Display IMG**.
 2. Expand the following path: **SAP Customization Implementation Guide** --> **Integration with Other SAP components** --> **SAP NetWeaver AddOn for Event Enablement** and select the clock icon with tooltip **IMG:Activity** next to **Set the Cloud Connection Password**.
 3. In the screen, **Maintain the Cloud Shared Secret**:
-   - Select Cloud Instance **ACI_SAP_EM_CAL**.
+   - Select Cloud Instance **ACI\_SAP\_EM\_CAL**.
    - For the field **Cloud Shared Secret**, copy and paste the value of **clientsecret** from the Event Mesh Service Key which you copied in the beginning of this document.
 
      ![maintain Cloud Secret](./images/maintainCloudSecret.png)
 
-   - Choose **Execute** ( You will see a success Message---> **Shared Secret for ACI_SAP_EM_CAL was created successfully!**)
+   - Choose **Execute** ( You will see a success Message---> **Shared Secret for ACI\_SAP\_EM\_CAL was created successfully!**)
    	
      ![execute Cloud Secret](./images/executeCloudSecret.png)
  

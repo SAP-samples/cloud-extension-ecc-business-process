@@ -55,7 +55,7 @@ Let us test the end-to-end cloud application and also understand the entire flow
 Let us first check in the SAP S/4HANA backend if the event was sent to the cloud.
 
 1. Log in to your SAP S/4HANA system with **SAP Logon**.
-2. Go to transaction **/n/asadev/aci_monitor**. Choose the **Execute** or **F8** icon.
+2. Go to transaction **/n/asadev/aci\_monitor**. Choose the **Execute** or **F8** icon.
 3. You can see that the business partner was created and you have a response code of **204**. If you do not see a success response, see the troubleshooting section in the bottom of this page.
    
    ![monitorLogs01](./images/monitorLogs01.png)
@@ -113,7 +113,7 @@ Let us first check in the SAP S/4HANA backend if the event was sent to the cloud
 
     ![](./images/ds15.PNG)
 
-5. Like mentioned in the steps above for checking logs/trace for create event, you can also the view the logs and trace in the SAP S/4HANA system using the transaction **/n/asadev/aci_monitor**. 
+5. Like mentioned in the steps above for checking logs/trace for create event, you can also the view the logs and trace in the SAP S/4HANA system using the transaction **/n/asadev/aci\_monitor**. 
 6. Choose **Views** >  **Show Trace**.
 
   ![](./images/monitorLogs04.png)
