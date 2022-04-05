@@ -38,7 +38,7 @@
                 <Property Name="streetName" Type="Edm.String"/>
                 <Property Name="postalCode" Type="Edm.String"/>
                 <Property Name="isModified" Type="Edm.Boolean"/>
-                <NavigationProperty Name="bp" Type="SalesService.Notifications">
+                <NavigationProperty Name="bp" Type="SalesService.Notification">
                     <ReferentialConstraint Property="bp_businessPartner" ReferencedProperty="businessPartner"/>
                 </NavigationProperty>
                 <Property Name="bp_businessPartner" Type="Edm.String"/>
@@ -54,7 +54,7 @@
                 <Property Name="streetName" Type="Edm.String" MaxLength="60"/>
                 <Property Name="postalCode" Type="Edm.String" MaxLength="10"/>
             </EntityType>
-            <EntityType Name="Notifications">
+            <EntityType Name="Notification">
                 <Key>
                     <PropertyRef Name="businessPartner"/>
                 </Key>
@@ -108,29 +108,29 @@
                     </Record>
                 </Annotation>
             </Annotations>
-            <Annotations Target="SalesService.Notifications/createdBy">
+            <Annotations Target="SalesService.Notification/createdBy">
                 <Annotation Term="Common.Label" String="Created By"/>
                 <Annotation Term="Core.Computed" Bool="true"/>
                 <Annotation Term="Core.Description" String="A user's unique ID"/>
                 <Annotation Term="Core.Immutable" Bool="true"/>
                 <Annotation Term="UI.HiddenFilter" Bool="true"/>
             </Annotations>
-            <Annotations Target="SalesService.Notifications/modifiedAt">
+            <Annotations Target="SalesService.Notification/modifiedAt">
                 <Annotation Term="Common.Label" String="Changed On"/>
                 <Annotation Term="Core.Computed" Bool="true"/>
                 <Annotation Term="UI.HiddenFilter" Bool="true"/>
             </Annotations>
-            <Annotations Target="SalesService.Notifications/modifiedBy">
+            <Annotations Target="SalesService.Notification/modifiedBy">
                 <Annotation Term="Common.Label" String="Changed By"/>
                 <Annotation Term="Core.Computed" Bool="true"/>
                 <Annotation Term="Core.Description" String="A user's unique ID"/>
                 <Annotation Term="UI.HiddenFilter" Bool="true"/>
             </Annotations>
-            <Annotations Target="SalesService.Notifications/businessPartner">
+            <Annotations Target="SalesService.Notification/businessPartner">
                 <Annotation Term="Common.Label" String="BusinessPartner ID"/>
                 <Annotation Term="Core.Computed" Bool="true"/>
             </Annotations>
-            <Annotations Target="SalesService.Notifications/verificationStatus">
+            <Annotations Target="SalesService.Notification/verificationStatus">
                 <Annotation Term="Common.Label" String="Verfication Status"/>
             </Annotations>
         </Schema>

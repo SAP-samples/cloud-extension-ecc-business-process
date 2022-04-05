@@ -1,4 +1,3 @@
-
  using service.businessPartnerValidation.SalesService as my from './service';
 
 annotate my.Addresses with @(
@@ -11,11 +10,11 @@ annotate my.Addresses with @(
         SelectionFields: [ identifier, title, availability, price],
         LineItem: [
             {$Type: 'UI.DataField', Value: addressId},
-            {$Type: 'UI.DataField', Value: businessPartnerId},
-            {$Type: 'UI.DataField', Value: streetName},
+            {$Type: 'UI.DataField', Value: businessPartnerId}, 
+            {$Type: 'UI.DataField', Value: streetName,![@HTML5.CssDefaults] : {width : '100%'}},
             {$Type: 'UI.DataField', Value: cityName},
             {$Type: 'UI.DataField', Value: country},
-            {$Type: 'UI.DataField', Value: postalCode}
+            {$Type: 'UI.DataField', Value: postalCode},
         ],
         HeaderFacets: [
             {$Type: 'UI.ReferenceFacet', ID: 'BP', Target: '@UI.DataPoint#BP'},
@@ -51,9 +50,9 @@ annotate my.Notifications with @(
         },
          SelectionFields: [ businessPartnerId, businessPartnerName,verificationStatus_code],
         LineItem: [
-          {$Type: 'UI.DataField', Value: businessPartnerId},
-          {$Type: 'UI.DataField', Value: businessPartnerName},
-          {$Type: 'UI.DataField', Value: verificationStatus.value, Criticality: verificationStatus.criticality}
+          {$Type: 'UI.DataField', Value: businessPartnerId, ![@HTML5.CssDefaults] : {width : '33.33%'}},
+          {$Type: 'UI.DataField', Value: businessPartnerName, ![@HTML5.CssDefaults] : {width : '33.33%'}},
+          {$Type: 'UI.DataField', Value: verificationStatus.value, Criticality: verificationStatus.criticality,![@HTML5.CssDefaults] : {width : '33.33%'}}
           
         ],
          HeaderFacets: [
@@ -101,23 +100,3 @@ annotate my.StatusValues with {
     } @title :  'Code';
     value @title: 'Verification Status';
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

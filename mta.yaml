@@ -1,111 +1,157 @@
-## Generated mta.yaml based on template version 0.2.0
-## appName = BusinessPartnerValidation
-## language=nodejs; multiTenant=false
-## approuter=
-_schema-version: '3.1'
+_schema-version: "3.1"
 ID: BusinessPartnerValidation
+description: A simple CAP project.
 version: 1.0.0
-description: "A simple CAP project."
-parameters:
-  enable-parallel-deployments: true  
-build-parameters:
-  before-all:
-   - builder: custom
-     commands:
-      - npm install
-      - npx -p @sap/cds-dk cds build --production
-
 modules:
- # --------------------- SERVER MODULE ------------------------
- - name: BusinessPartnerValidation-srv
- # ------------------------------------------------------------
-   type: nodejs
-   path: gen/srv
-   parameters:
-     memory: 256MB
-   properties:
-     EXIT: 1  # required by deploy.js task to terminate 
-   requires:
-    # Resources extracted from CAP configuration
-    - name: BusinessPartnerValidation-db
-    - name: BusinessPartnerValidation-xsuaa
-    - name: BusinessPartnerValidation-dest
-    - name: BusinessPartnerValidation-ems
-    - name: BusinessPartnerValidation-cs
-   provides:
-    - name: srv-binding      # required by consumers of CAP services (e.g. approuter)
-      properties:
-        srv-url: ${default-url}
+  - name: BusinessPartnerValidation-srv
+    type: nodejs
+    path: gen/srv
+    properties:
+      EXIT: 1
+    requires:
+      - name: BusinessPartnerValidation-db
+      - name: BusinessPartnerValidation-xsuaa
+      - name: BusinessPartnerValidation-dest
+      - name: BusinessPartnerValidation-ems
+      - name: BusinessPartnerValidation-cs
+      - name: BusinessPartnerValidation-logs
+    provides:
+      - name: srv_api
+        properties:
+          srv-url: ${default-url}
+    parameters:
+      memory: 256MB
+  - name: db
+    type: hdb
+    path: gen/db
+    requires:
+      - name: BusinessPartnerValidation-db
+    parameters:
+      app-name: BusinessPartnerValidation-db
+      memory: 128MB
+  - name: BusinessPartnerValidation-launchpad
+    type: com.sap.application.content
+    requires:
+      - name: BusinessPartnerValidation-xsuaa
+        parameters:
+          service-key:
+            name: BusinessPartnerValidation-xsuaa-key
+      - name: BusinessPartnerValidation-html5-repo-host
+        parameters:
+          service-key:
+            name: BusinessPartnerValidation-html5-repo-host-key
+      - name: srv_api
+      - name: BusinessPartnerValidation-dest
+        parameters:
+          content-target: true
+    parameters:
+      content:
+        instance:
+          destinations:
+            - Authentication: OAuth2UserTokenExchange
+              Name: BusinessPartnerValidation-srv
+              TokenServiceInstanceName: BusinessPartnerValidation-xsuaa
+              TokenServiceKeyName: BusinessPartnerValidation-xsuaa-key
+              URL: ~{srv_api/srv-url}
+              sap.cloud.service: com.sap.bp.BusinessPartners.one
+            - Name: BusinessPartnerValidation-html5-repo-host
+              ServiceInstanceName: BusinessPartnerValidation-html5-repo-host
+              ServiceKeyName: BusinessPartnerValidation-html5-repo-host-key
+              sap.cloud.service: com.sap.bp.BusinessPartners.one
+            - Authentication: OAuth2UserTokenExchange
+              Name: BusinessPartnerValidation-xsuaa
+              ServiceInstanceName: BusinessPartnerValidation-xsuaa
+              ServiceKeyName: BusinessPartnerValidation-xsuaa-key
+              sap.cloud.service: com.sap.bp.BusinessPartners.one
+          existing_destinations_policy: update
+    build-parameters:
+      no-source: true
 
- # -------------------- SIDECAR MODULE ------------------------
- - name: db
- # ------------------------------------------------------------
-   type: hdb
-   path: gen/db  
-   parameters:
-     app-name: BusinessPartnerValidation-db
-     memory: 128MB  
-   requires:
-    # 'hana' and 'xsuaa' resources extracted from CAP configuration
-    - name: BusinessPartnerValidation-db
+  - name: BusinessPartnerValidation-app-content
+    type: com.sap.application.content
+    path: .
+    requires:
+      - name: BusinessPartnerValidation-html5-repo-host
+        parameters:
+          content-target: true
+    build-parameters:
+      build-result: resources
+      requires:
+        - artifacts:
+            - comsapbpBusinessPartners.zip
+          name: comsapbpBusinessPartners
+          target-path: resources/
 
-#UI Module
- - name: BusinessPartnerValidation-ui
-   type: html5
-   path: app/BusinessPartners
-   parameters:
-     disk-quota: 1024MB
-     memory: 128MB
-   build-parameters:
-     builder: npm
-    # commands:
-     #  - npm run-script build
-   requires:
-     - name: BusinessPartnerValidation-dest # <-- Destination Service
-     - name: BusinessPartnerValidation-xsuaa # <-- User Authentication and Authorization
-     - name: srv-binding
-       group: destinations
-       properties:
-         forwardAuthToken: true
-         name: srv-binding
-         url: '~{srv-url}'
+  - name: comsapbpBusinessPartners
+    type: html5
+    path: app/BusinessPartners
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+        - npm install
+        - npm run build
+      supported-platforms: []
 
 resources:
- # services extracted from CAP configuration
- # 'service-plan' can be configured via 'cds.requires.<name>.vcap.plan'
-# ------------------------------------------------------------
- - name: BusinessPartnerValidation-db
-# ------------------------------------------------------------
-   type: com.sap.xs.hdi-container
-   parameters:
-     service: hana  # or 'hanatrial' on trial landscapes
-     service-plan: hdi-shared
-   properties:
-     hdi-service-name: ${service-name}
+  - name: BusinessPartnerValidation-db
+    type: com.sap.xs.hdi-container
+    parameters:
+      service: hana
+      service-plan: hdi-shared
+    properties:
+      hdi-service-name: ${service-name}
+  - name: BusinessPartnerValidation-xsuaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      path: ./xs-security.json
+      service: xsuaa
+      service-plan: application
+  - name: BusinessPartnerValidation-dest
+    type: org.cloudfoundry.managed-service
+    parameters:
+      config:
+        HTML5Runtime_enabled: true
+        init_data:
+          instance:
+            destinations:
+              - Authentication: NoAuthentication
+                Name: ui5
+                ProxyType: Internet
+                Type: HTTP
+                URL: https://ui5.sap.com
+            existing_destinations_policy: update
+        version: 1.0.0
+      service: destination
+      service-plan: lite
+  - name: BusinessPartnerValidation-ems
+    type: org.cloudfoundry.managed-service
+    parameters:
+      path: ./em.json
+      service: enterprise-messaging
+      service-plan: default
+  - name: BusinessPartnerValidation-cs
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: connectivity
+      service-plan: lite
+  - name: BusinessPartnerValidation-logs
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: application-logs
+      service-plan: lite
 
-  # User Authentication and Authorization
- - name: BusinessPartnerValidation-xsuaa
-   parameters:
-     path: ./xs-security.json
-     service-plan: application
-     service: xsuaa
-   type: org.cloudfoundry.managed-service
-  # Destination Service
- - name: BusinessPartnerValidation-dest
-   parameters:
-     service: destination
-     service-plan: lite
-   type: org.cloudfoundry.managed-service
-# Enterprise Messaging Service
- - name: BusinessPartnerValidation-ems
-   parameters:
-     path: ./em.json 
-     service: enterprise-messaging
-     service-plan: default
-   type: org.cloudfoundry.managed-service
-# Enterprise Messaging Service
- - name: BusinessPartnerValidation-cs
-   parameters:
-     service: connectivity
-     service-plan: lite
-   type: org.cloudfoundry.managed-service
+  - name: BusinessPartnerValidation-html5-repo-host
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-host
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm install
+        - npx -p @sap/cds-dk cds build --production

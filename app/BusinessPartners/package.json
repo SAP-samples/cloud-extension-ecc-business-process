@@ -1,12 +1,19 @@
 {
-        "name": "business-partners",
-        "version": "1.0.0",
-        "description": "",
-        "scripts": {
-                "start": "node node_modules/@sap/approuter/approuter.js"
-        },
-        "license": "ISC",
-        "dependencies": {
-                "@sap/approuter": "^10"
-        }
+  "name": "business-partners",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "@ui5/cli": "1.13.0",
+    "@sap/ui5-builder-webide-extension": "1.0.x",
+    "ui5-task-zipper": "^0.3.1"
+  },
+  "scripts": {
+    "build": "ui5 build --clean-dest --include-task=generateManifestBundle generateCachebusterInfo"
+  },
+  "ui5": {
+    "dependencies": [
+      "ui5-task-zipper",
+      "@sap/ui5-builder-webide-extension"
+    ]
+  }
 }
