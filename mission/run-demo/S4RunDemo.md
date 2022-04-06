@@ -6,15 +6,9 @@ Let us test the end-to-end cloud application and also understand the entire flow
 
 1. Go to your subaccount in SAP BTP cockpit and choose **Space**.
 
-   ![](./images/demo-01.png)
+   ![](./images/openHTML5App.png)
 
-2. From your space, choose the tile of your application and then choose the link in the **Application Routes** section.
-
-   ![](./images/demo-02.png)
-
-   ![](./images/demo-03.png)
-
-3. Start the Business Partner Validation application.
+2. Start the Business Partner Validation application.
 
    ![](./images/ds1.PNG)
 
