@@ -19,15 +19,14 @@
     },
     "scripts": {
         "start": "npx cds run",
-        "test": "mocha tests/chai-test.js --timeout 15000 --exit"
+        "test": "mocha tests/mocha.test.js --timeout 28000"
     },
     "devDependencies": {
         "axios": "^0.21.1",
         "chai": "^4.3.4",
         "chai-http": "^4.3.0",
         "jest": "*",
-        "mocha": "^9.2.1",
-        "sqlite3": "^5.0.2"
+        "mocha": "^9.2.1"
     },
     "cds": {
         "features": {
@@ -53,7 +52,7 @@
                 }
             },
             "API_BUSINESS_PARTNER": {
-                "kind": "odata",
+                "kind": "odata-v2",
                 "model": "srv/external/API_BUSINESS_PARTNER",
                 "[production]": {
                     "credentials": {
