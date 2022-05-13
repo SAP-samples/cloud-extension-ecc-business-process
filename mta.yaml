@@ -33,4 +33,5 @@ resources:
   parameters:
     service: enterprise-messaging
     service-plan: default
+    path: ./em.json
   type: org.cloudfoundry.managed-service
