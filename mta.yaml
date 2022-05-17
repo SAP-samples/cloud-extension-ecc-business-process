@@ -18,6 +18,8 @@ modules:
     path: gen/srv
     parameters:
       buildpack: nodejs_buildpack
+      memory: 256MB
+      disk-quota: 256MB
     build-parameters:
       builder: npm-ci
     requires:
@@ -33,5 +35,4 @@ resources:
   parameters:
     service: enterprise-messaging
     service-plan: default
-    path: ./em.json
   type: org.cloudfoundry.managed-service
