@@ -19,7 +19,7 @@
     },
     "scripts": {
       "start": "npx cds run",
-      "test": "mocha tests/mocha.test.js --timeout 28000"
+      "test": "mocha tests/chai-test.js --timeout 28000"
     },
     "devDependencies": {
       "axios": "^0.21.1",
