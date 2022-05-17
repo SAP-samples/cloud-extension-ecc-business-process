@@ -19,7 +19,6 @@ modules:
     parameters:
       buildpack: nodejs_buildpack
       memory: 256MB
-      disk-quota: 256MB
     build-parameters:
       builder: npm-ci
     requires:
