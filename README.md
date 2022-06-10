@@ -2,14 +2,14 @@
 
 This is a Mock Server for OData API's (e.g. from S/4HANA, ECC etc.).
 
-This is a project fork from [this repo](https://github.tools.sap/refapps/s4hana-cloud-mock). This project implies to work as SAP S/4HANA Cloud Mock backend server for the Reference Applications use cases. The project is built on Cloud Application Programming ([CAP](https://cap.cloud.sap/docs/)) model with mocking capabilities.
+This project implies to work as SAP S/4HANA Cloud Mock backend server for the Reference Applications use cases. The project is built on Cloud Application Programming ([CAP](https://cap.cloud.sap/docs/)) model with mocking capabilities.
 
 ## Why to use
 
-1. Speed up mission implementation. Customer can get an overview of the scenario even without ERP/Cloud Connector configuration.
+1. Speed up mission implementation. SAP Customer can get an overview of the scenario even without ERP/Cloud Connector configuration.
 2. Troubleshooting. If something goes wrong it's nice to have an opportunity to limit the scope for cloud services only.
-3. Fully functioning deliverables. If the automated deployment is used (e.g. BTP Setup Automator Tool) it has to be expected that the result is ready to use (even if further configuration is needed)
-4. Automated integration tests
+3. Fully functioning deliverables. If the automated deployment is used (e.g. BTP Setup Automator Tool) it is expected that the resulting application is ready to use (even if further configuration is needed).
+4. Automated integration/E2E tests.
 
 ## Features
 General features:
@@ -17,25 +17,27 @@ General features:
 - CSV files for [mock data](https://cap.cloud.sap/docs/guides/using-services#local-mocking)
 - [Event emitting](https://cap.cloud.sap/docs/guides/messaging/#using-sap-event-mesh) on [data change](https://cap.cloud.sap/docs/guides/providing-services#registering-event-handlers)
 - Enhancement possibilities (adding new services)
-- In-memory [SQLite DB](https://cap.cloud.sap/docs/guides/databases#deploy-to-sqlite) is used (no DB instance is needed)
-
-New features added:
+- In-memory [SQLite DB](https://cap.cloud.sap/docs/guides/databases#deploy-to-sqlite) is used (no DB instance is needed -> low cost, no dependencies)
 - [SwaggerUI](https://cap.cloud.sap/docs/advanced/openapi#swagger-ui)
 - Emitting events compliant with the following Discover Center missions:
     - [S/4HANA Extension with Addon](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3730/3769/)
     - [ECC Extension](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3338/3384/)
     - [S/4HANA Extension](https://github.com/SAP-samples/cloud-extension-ecc-business-process/blob/main/srv/service.js)???
-- Hybrid Event Mesh [test](https://cap.cloud.sap/docs/advanced/hybrid-testing)
-- [MTA Deployment](https://cap.cloud.sap/docs/guides/deployment/)
-    - Event Mesh instance binding
-    - Change destination content - **NOT POSSIBLE FOR NO AUTHENTICATION :(**
+- Hybrid testing with Event Mesh [test](https://cap.cloud.sap/docs/advanced/hybrid-testing)
+- Includes a script for destination creation
 
 ## Quick deploy in Cloud Foundry Environment
 
 1. Clone this repository to your SAP Business Application Studio workspace
 2. Open cloned project folder
-3. Right click on *mta.yaml* file and select **Build MTA Project**. Note: if you have Event Mesh instance created during one of the Extension Missions, please use *mta_em.yaml* instead to build the project (you should rename it to *mta.yaml* beforehand).
-6. After build is done right click on mta_archives/Mockserver_1.0.0.mtar and select **Deploy MTA Archive**
+3. Right click on *mta.yaml* file and select **Build MTA Project**. The will generate an .MTAR file in mta_archives folder.
+4. After build is done right click on mta_archives/Mockserver_1.0.0.mtar and select **Deploy MTA Archive**
+    - You probably will be asked about Cloud Foundry login. Follow the instructions on the screen to enter you CF Endpoint and credentials. On the latest step you will choose your target SAP BTP Subaccount and CF Space.
+5. If you already have some Event Mesh instance you can bind it from terminal:
+    - Open new terminal window with Ctrl+`
+    - Enter the following command:
+    <code>cf bs mock-srv BusinessPartnerValidation-ems</code>
+    - NOTE: in the example above the name of Event Mesh service instance is BusinessPartnerValidation-ems. It can be different in your case!
 
 ## How to use
 
