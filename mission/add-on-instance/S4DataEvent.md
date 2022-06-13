@@ -153,7 +153,7 @@ You have already done the basic connection and configuration steps for the event
  
 
 ### Activation of Workflows
-For the generation of events the SAP S/4HANA Workflow Basics and the changepointer must be activated.
+For the generation of events the **SAP S/4HANA Workflow Basics** and the **Change Pointers** must be activated.
 
 Open transaction **SWU3** and check if the workflow system is activated.
 
@@ -163,7 +163,7 @@ Open transaction **SWU3** and check if the workflow system is activated.
 
    ![workflow](./images/workflow2.png)
 
- Also check transaction **BD61** if the activation for Change Pointers is done
+ Also check transaction **BD61** if the activation for Change Pointers is done.
    
    ![workflow](./images/workflow3.png)
 
