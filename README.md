@@ -32,12 +32,16 @@ General features:
 2. Open cloned project folder
 3. Right click on *mta.yaml* file and select **Build MTA Project**. The will generate an .MTAR file in mta_archives folder.
 4. After build is done right click on mta_archives/Mockserver_1.0.0.mtar and select **Deploy MTA Archive**
-    - You probably will be asked about Cloud Foundry login. Follow the instructions on the screen to enter you CF Endpoint and credentials. On the latest step you will choose your target SAP BTP Subaccount and CF Space.
-5. If you already have some Event Mesh instance you can bind it from terminal:
+    - You probably will be asked about Cloud Foundry login. Follow the instructions on the screen to enter you CF Endpoint and credentials. On the latest step you will choose your target CF Organization and CF Space.
+5. \[OPTIONAL\] If you already have some Event Mesh instance you can bind it from terminal after the deployment is successfully done:
     - Open new terminal window with Ctrl+`
     - Enter the following command:
-    <code>cf bs mock-srv BusinessPartnerValidation-ems</code>
+    <code>cf bs mock-srv BusinessPartnerValidation-ems && cf restart mock-srv</code>
     - NOTE: in the example above the name of Event Mesh service instance is BusinessPartnerValidation-ems. It can be different in your case!
+6. \[OPTIONAL\] You can also create a destination to the newly deployed Mock Server Application. It's only relevant if you have a destination service instance created in your CF space.  Go to terminal and start the following command:
+    <code>bash create-destination.sh bupa BusinessPartnerValidation-dest</code>
+    - NOTE: in the command above the destination name is "bupa". You can change it as you need.
+    - NOTE: in the command above the destination service instance is "BusinessPartnerValidation-dest". You can change it as you need.
 
 ## How to use
 

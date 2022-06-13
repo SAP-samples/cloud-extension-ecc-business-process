@@ -1,9 +1,9 @@
 const cds = global.cds || require('@sap/cds')
 module.exports = async srv => {
     
-    const messaging = await cds.connect.to('messaging')
-    if (!messaging.client){
-        console.log('No eventing client found -> events will not be generated');
+    const messaging = await cds.connect.to('messaging');
+    if (!messaging.options.credentials){
+        console.log('No eventing instance found -> events will not be generated!');
         return;
     }
 
