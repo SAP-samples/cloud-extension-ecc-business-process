@@ -152,6 +152,21 @@ You have already done the basic connection and configuration steps for the event
      ![execute Cloud Secret](./images/executeCloudSecret.png)
  
 
+### Activation of Workflows
+For the generation of events the SAP S/4HANA Workflow Basics and the changepointer must be activated.
+
+Open transaction **SWU3** and check if the workflow system is activated.
+
+   ![workflow](./images/workflow1.png)
+
+   If not follow the steps in [SAP Help](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/4cef93946a0b48ec89533b3c34443b85/4c2cace89bc74500a46fa0098c02810f.html)
+
+   ![workflow](./images/workflow2.png)
+
+ Also check transaction **BD61** if the activation for Change Pointers is done
+   
+   ![workflow](./images/workflow3.png)
+
 
 ## Summary
 
