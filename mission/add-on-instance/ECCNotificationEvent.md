@@ -166,7 +166,7 @@ You have done the basic connection and configuration steps for the eventing proc
      ![execute Cloud Secret](./images/executeCloudSecret.png)
  
 ### Activation of Workflows
-For the generation of events the the **Automatic Workflow Customizing** and the **Change Pointer** must be activated.
+For the generation of events the **Automatic Workflow Customizing** and the **Change Pointer** must be activated.
 
 Open transaction **SWU3** and check if the workflow system is activated.
 
