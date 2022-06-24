@@ -31,7 +31,7 @@ As the SAP ERP 6.0 system doesn't has an API OData services by default, we have 
      ![](./images/bupa-3.png)
 
 2. Logon to your ERP 6.0 system client 000 with the ABAP Dev user. Call transaction SEGW to create a new Project. Please set the following data:
-   * **Project:** *ZAPI_BUSINESS_PARTNER*
+   * **Project:** *ZAPI\_BUSINESS\_PARTNER*
    * **Description:** *Remote API for Business Partner*
    * **Package:** *$TMP*
 
@@ -43,7 +43,7 @@ As the SAP ERP 6.0 system doesn't has an API OData services by default, we have 
 
    ![](./images/segw_2.png)
 
-4. Import EDMX file of Downloaded API_BUSINESS_PARTNER using **Browse** and click on **Next**
+4. Import EDMX file of Downloaded API\_BUSINESS\_PARTNER using **Browse** and click on **Next**
 
    ![](./images/segw_3.png)
 
@@ -62,7 +62,7 @@ As the SAP ERP 6.0 system doesn't has an API OData services by default, we have 
 
    ![](./images/segw_6.png)
 
-7. Navigate to **Service -> Runtime Artifacts -> Right-click on 'ZCL_ZAPI_BUSINESS_PART_DPC_EXT' -> Select 'Go to ABAP Workbench'**. 
+7. Navigate to **Service -> Runtime Artifacts -> Right-click on 'ZCL\_ZAPI\_BUSINESS\_PART\_DPC\_EXT' -> Select 'Go to ABAP Workbench'**. 
 
     ![](images/pic1.png) 
 
@@ -72,13 +72,13 @@ As the SAP ERP 6.0 system doesn't has an API OData services by default, we have 
 
   ![](images/pic2.png)
 
-9. Find the first entity **A_BUSINESSPARTNE_GET_ENTITY** and redefine as shown below .
+Find the first entity **A\_BUSINESSPARTNE\_GET\_ENTITY** and redefine as shown below .
 
 ![](images/pic3.png)
 
-10. Copy and Paste the below Code in entity A_BUSINESSPARTNE_GET_ENTITY.
+10. Copy and Paste the below Code in entity A\_BUSINESSPARTNE\_GET\_ENTITY.
 
-A_BUSINESSPARTNE_GET_ENTITY
+A\_BUSINESSPARTNE\_GET\_ENTITY
 ------------------------
 `````abap
 METHOD a_businesspartne_get_entity.
@@ -141,13 +141,13 @@ ENDMETHOD.
    
     
 
-12. Find the Second entity **A_BUSINESSPARTNE_GET_ENTITYSET** and redefine as shown below .
+Find the Second entity **A\_BUSINESSPARTNE\_GET\_ENTITYSET** and redefine as shown below .
 
 ![](images/pic4.png)
    
-13. Copy and Paste the below Code in entity A_BUSINESSPARTNE_GET_ENTITYSET
+13. Copy and Paste the below Code in entity A\_BUSINESSPARTNE\_GET\_ENTITYSET
 
-A_BUSINESSPARTNE_GET_ENTITYSET
+A\_BUSINESSPARTNE\_GET\_ENTITYSET
 -----------------------
 `````abap
 METHOD a_businesspartne_get_entityset.
@@ -195,13 +195,13 @@ ENDMETHOD.
    ![](images/act2.png)
 
 
-15. Find the third entity **A_BUSINESSPARTNE_UPDATE_ENTITY** and redefine as shown below .
+15. Find the third entity **A\_BUSINESSPARTNE\_UPDATE\_ENTITY** and redefine as shown below .
 
    ![](images/pic5.png)
     
 16. Copy and Paste the below Code in entity A_BUSINESSPARTNE_UPDATE_ENTITY
 
-A_BUSINESSPARTNE_UPDATE_ENTITY
+A\_BUSINESSPARTNE\_UPDATE\_ENTITY
 --------------------
 
 `````abap
@@ -266,14 +266,14 @@ A_BUSINESSPARTNE_UPDATE_ENTITY
 
    ![](images/act3.png)
 
-18. Find the fourth entity **A_BUSINESSPART01_GET_ENTITY** and redefine as shown below .
+18. Find the fourth entity **A\_BUSINESSPART01\_GET\_ENTITY** and redefine as shown below .
 
 ![](images/pic6.png)
 
 
 19. Copy and Paste the below Code in entity A_BUSINESSPART01_GET_ENTITY.
 
-A_BUSINESSPART01_GET_ENTITY
+A\_BUSINESSPART01\_GET\_ENTITY
 ------------------------
 `````abap
 METHOD A_BUSINESSPART01_GET_ENTITY.
@@ -345,7 +345,7 @@ ENDMETHOD.
   
 22. Copy and Paste the below Code in entity A_BUSINESSPART01_GET_ENTITYSET
 
-A_BUSINESSPART01_GET_ENTITYSET
+A\_BUSINESSPART01\_GET\_ENTITYSET
 -----------------
 
 `````abap
@@ -413,13 +413,13 @@ A_BUSINESSPART01_GET_ENTITYSET
 
    ![](images/act5.png)
 
-24. Find the sixth entity **A_BUSINESSPART01_UPDATE_ENTITY** and redefine as shown below .
+24. Find the sixth entity **A\_BUSINESSPART01\_UPDATE\_ENTITY** and redefine as shown below .
 
    ![](images/attach27.png)
     
 25. Copy and Paste the below Code in entity A_BUSINESSPART01_UPDATE_ENTITY
 
-A_BUSINESSPART01_UPDATE_ENTITY
+A\_BUSINESSPART01\_UPDATE\_ENTITY
 -----------------
 
 `````abap
@@ -505,19 +505,19 @@ A_BUSINESSPART01_UPDATE_ENTITY
 
 29. Once it's registered, you will see the service in your gateway service catalog
 
-    ![](./images/segw_17.png)
+    ![Service Catalog](./images/segw_17.png)
 
 ## Test Your Service
 
-1. Double Click on **ZAPI_BUSINESS_PARTNER_SRV** and Click on **SAP Gateway Client**
+* Double Click on **ZAPI\_BUSINESS\_PARTNER\_SRV** and Click on **SAP Gateway Client**
 
     ![](./images/segw_18.png)
 
-30. Click on **Execute** and you will see *status code 200* in your response body. Status Code other than *200* means some error in service activation.
+* Click on **Execute** and you will see *status code 200* in your response body. Status Code other than *200* means some error in service activation.
 
     ![](./images/segw_19.png)
 
-31. Change the Requested URI and put **A_BusinessPartner** after service like below. Click on **Execute** and you will see *status code 200* in your response body. Status Code other than *200* means some error in service activation.
+* Change the Requested URI and put **A\_BusinessPartner** after service like below. Click on **Execute** and you will see *status code 200* in your response body. Status Code other than *200* means some error in service activation.
 
     ![](./images/attach37.png)
 
@@ -526,9 +526,11 @@ A_BUSINESSPART01_UPDATE_ENTITY
 If you get an *HTTP 40x error* check the following:
       ![](./images/bupa-error.png)
 
-* Call transaction **/nSICF** , click on 'clock' icon to 'Execute' the transaction. Then activate **sap/opu/odata/sap/zapi_business_partner** service
-
+* Call transaction **/nSICF** , click on 'clock' icon to 'Execute' the transaction. 
     ![](./images/bupa-add1.png)
+    
+* Then activate **sap/opu/odata/sap/zapi_business_partner** service
+  
 
     ![](./images/bupa-add2.png)
 
@@ -541,7 +543,7 @@ If you get an *HTTP 40x error* check the following:
     ![](./images/bupa-spro2.png)
 
 
-32.  Change the Requested URI and put **A_BusinessPartnerAddress** after Service like below. Click on **Execute** and you will see *status code 200*  in your response body. Status code other than *200* means some error in service activation.
+* Change the Requested URI and put **A\_BusinessPartnerAddress** after Service like below. Click on **Execute** and you will see *status code 200*  in your response body. Status code other than *200* means some error in service activation.
 
      ![](./images/attach36.png)
 
@@ -549,7 +551,7 @@ If you get an *HTTP 40x error* check the following:
 
 ### Optional:
 
-33. To see the metadata, add *$metadata* at the end of the URL. You will see **API_BUSINESS_PARTNER** namespace in EDMX.
+* To see the metadata, add *$metadata* at the end of the URL. You will see **API\_BUSINESS\_PARTNER** namespace in EDMX.
 
     ![](./images/segw_20.png)
 
