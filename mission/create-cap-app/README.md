@@ -114,13 +114,13 @@ File / Folder | Purpose
 	 ```bash
 		 cf services    
 		    
-		 cf service "<HANA Service>" --guid
+		 cf service "[HANA Service Name]" --guid
 	```
 
     With the guid we can create a hdi-shared database instance:
        
     ```bash
-       cf cs hana hdi-shared BusinessPartnerValidation-db -c '{"database_id" : "<guid of HANA Service>"}'
+       cf cs hana hdi-shared BusinessPartnerValidation-db -c '{"database_id" : "[guid of HANA Service]"}'
     ```   
             
    
