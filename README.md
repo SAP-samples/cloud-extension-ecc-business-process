@@ -12,6 +12,7 @@ This project implies to work as SAP S/4HANA Cloud Mock backend server for the Re
 4. Automated integration/E2E tests.
 
 ## Features
+
 General features:
 - OData Endpoints for both versions - [V2](https://cap.cloud.sap/docs/advanced/odata#v2-support) and V4
 - CSV files for [mock data](https://cap.cloud.sap/docs/guides/using-services#local-mocking)
@@ -25,6 +26,10 @@ General features:
     - [S/4HANA Extension](https://github.com/SAP-samples/cloud-extension-ecc-business-process/blob/main/srv/service.js)???
 - Hybrid testing with Event Mesh [test](https://cap.cloud.sap/docs/advanced/hybrid-testing)
 - Includes a script for destination creation
+
+## Prerequisites
+
+To deploy the mock server application it's necessary to have a Node.js runtime. For the moment the application is ready to be deployed in Cloud Foundry environment only. Kyma/K8s is temporarily out of scope.
 
 ## Quick deploy in Cloud Foundry Environment
 
