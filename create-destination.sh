@@ -8,6 +8,7 @@ then
     echo "[ERROR]: No app found"
     exit 1
 else 
+    ROUTE_TO_MOCKSERVER="http://${ROUTE_TO_MOCKSERVER}/op-api-business-partner-srv"
     echo "[SUCCESS]: Route to app: ${ROUTE_TO_MOCKSERVER}"
 fi
 
