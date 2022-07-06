@@ -66,6 +66,7 @@ To deploy the mock server application it's necessary to have a Cloud Foundry run
     {  
 	"BusinessPartner": "555",  
 	"BusinessPartnerName": "Max Mustermann",  
+	"BusinessPartnerFullName": "Max Mustermann",  
 	"FirstName": "Max",  
 	"LastName": "Mustermann",  
 	"BusinessPartnerIsBlocked": true,  
@@ -118,6 +119,21 @@ File or Folder | Purpose
 
 - Open a new terminal and run `cds watch` 
 - (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
+
+## Changing Mock Data
+
+If you want to deploy the Mock Server with other mock data you should change the corresponding CSV files in *srv/csv/* folder.
+
+For example to create a new business partner add a new line to *OP_API_BUSINESS_PARTNER_SRV-A_BusinessPartner.csv* file. The content of the line should exactly correspond to the header line of the file. Here is an example how to add a new business partner with the ID, name and category filled only:
+
+![New mock data line](img/new-mock-data-line.png)
+
+To add additional field to the mock data do the following: 
+- check the field name in the model file *srv/external/OP_API_BUSINESS_PARTNER_SRV.cds*:
+  ![Field Name in Model](img/model-file-example.png)
+- add the field name to the header and field value to the lines correspondingly:
+  ![New field data](img/new-field.png)
+- **[NOTE]:** you should adjust all the existing lines with the new field(s)!
 
 ## Adding own services
 
