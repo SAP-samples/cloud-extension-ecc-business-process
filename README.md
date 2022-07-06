@@ -29,7 +29,7 @@ General features:
 
 ## Prerequisites
 
-To deploy the mock server application it's necessary to have a Node.js runtime. For the moment the application is ready to be deployed in Cloud Foundry environment only. Kyma/K8s is temporarily out of scope.
+To deploy the mock server application it's necessary to have a Cloud Foundry runtime. For the moment the application is ready to be deployed in Cloud Foundry environment only. Kyma/K8s is temporarily out of scope.
 
 ## Quick deploy in Cloud Foundry Environment
 
