@@ -34,7 +34,8 @@ module.exports = async srv => {
             }]
         };
 
-        messaging.emit("refappscf/ecc/123/BO/BusinessPartner/Created", payload);
+        headers = { type: "sap.nw.ee.BusinessPartner.Created.v1" }
+        messaging.emit("refappscf/ecc/123/BO/BusinessPartner/Created", payload, headers);
     });
 
     srv.after("UPDATE", "A_BusinessPartner", data => {
@@ -50,6 +51,7 @@ module.exports = async srv => {
             }]
         };
 
-        messaging.emit("refappscf/ecc/123/BO/BusinessPartner/Changed", payload);
+        headers = { type: "sap.nw.ee.BusinessPartner.Changed.v1" }
+        messaging.emit("refappscf/ecc/123/BO/BusinessPartner/Changed", payload, headers);
     });
 }

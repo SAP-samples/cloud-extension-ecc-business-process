@@ -12,6 +12,7 @@ This project implies to work as SAP S/4HANA Cloud Mock backend server for the Re
 4. Automated integration/E2E tests.
 
 ## Features
+
 General features:
 - OData Endpoints for both versions - [V2](https://cap.cloud.sap/docs/advanced/odata#v2-support) and V4
 - CSV files for [mock data](https://cap.cloud.sap/docs/guides/using-services#local-mocking)
@@ -25,6 +26,10 @@ General features:
     - [S/4HANA Extension](https://github.com/SAP-samples/cloud-extension-ecc-business-process/blob/main/srv/service.js)???
 - Hybrid testing with Event Mesh [test](https://cap.cloud.sap/docs/advanced/hybrid-testing)
 - Includes a script for destination creation
+
+## Prerequisites
+
+To deploy the mock server application it's necessary to have a Cloud Foundry runtime. For the moment the application is ready to be deployed in Cloud Foundry environment only. Kyma/K8s is temporarily out of scope.
 
 ## Quick deploy in Cloud Foundry Environment
 
@@ -61,6 +66,7 @@ General features:
     {  
 	"BusinessPartner": "555",  
 	"BusinessPartnerName": "Max Mustermann",  
+	"BusinessPartnerFullName": "Max Mustermann",  
 	"FirstName": "Max",  
 	"LastName": "Mustermann",  
 	"BusinessPartnerIsBlocked": true,  
@@ -113,6 +119,21 @@ File or Folder | Purpose
 
 - Open a new terminal and run `cds watch` 
 - (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
+
+## Changing Mock Data
+
+If you want to deploy the Mock Server with other mock data you should change the corresponding CSV files in *srv/csv/* folder.
+
+For example to create a new business partner add a new line to *OP_API_BUSINESS_PARTNER_SRV-A_BusinessPartner.csv* file. The content of the line should exactly correspond to the header line of the file. Here is an example how to add a new business partner with the ID, name and category filled only:
+
+![New mock data line](img/new-mock-data-line.png)
+
+To add additional field to the mock data do the following: 
+- check the field name in the model file *srv/external/OP_API_BUSINESS_PARTNER_SRV.cds*:
+  ![Field Name in Model](img/model-file-example.png)
+- add the field name to the header and field value to the lines correspondingly:
+  ![New field data](img/new-field.png)
+- **[NOTE]:** you should adjust all the existing lines with the new field(s)!
 
 ## Adding own services
 
