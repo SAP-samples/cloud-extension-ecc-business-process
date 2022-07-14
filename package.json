@@ -46,6 +46,7 @@
     "requires": {
       "messaging": {
         "kind": "enterprise-messaging",
+        "format": "cloudevents",
         "[production]": {
           "kind": "enterprise-messaging",
           "format": "cloudevents"
@@ -57,6 +58,14 @@
       "OP_API_BUSINESS_PARTNER_SRV": {
         "kind": "odata-v2",
         "model": "srv/external/OP_API_BUSINESS_PARTNER_SRV"
+      },
+      "c4codata": {
+        "kind": "odata-v2",
+        "model": "srv/external/c4codata"
+      },
+      "API_BUSINESS_PARTNER": {
+        "kind": "odata-v2",
+        "model": "srv/external/API_BUSINESS_PARTNER"
       }
     }
   }
