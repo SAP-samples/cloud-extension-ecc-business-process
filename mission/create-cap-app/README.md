@@ -86,16 +86,8 @@ File / Folder | Purpose
 12.  Next you need to login to your Cloud Foundry account from SAP Business Application Studio:
  
    * Check if you are logged in to your account in SAP BTP from **SAP Business Application Studio**.
-     
-   * To log in to Cloud Foundry, choose **View** > **Find Command**.
-    
-   * Search for **CF Login**.
-    
-   * Choose **CF: Login on to Cloud Foundry**.
-
-     ![Login to CF](./images/loginToCF.png) 
-    
-   * Enter CF API endpoint or take the default suggested API endpoint. You can find the API endpoint of your region by switching into your subaccount in the SAP BTP cockpit that you should have opened in another browser tab and copy the API Endpoint. Write down the **Org Name** into a text editor of your choice which is needed for the next step.  
+   
+   * You can find the API endpoint of your region by switching into your subaccount in the SAP BTP cockpit that you should have opened in another browser tab and copy the API Endpoint. Write down the **Org Name** into a text editor of your choice which is needed for the next step.  
 
      ![copy Cloud Data](./images/copyCloudData.png)
     
@@ -103,9 +95,24 @@ File / Folder | Purpose
 
      ![copy Space Name](./images/copySpaceName.png)
      
-   * Enter **Email** and **Password** when prompted.
-   * Select your Cloud Foundry **Org** which you have noted down in the previous step. 
-   * Select the space name which you have noted down. Once you have selected the Org and Space, log in to your Cloud Foundry account from SAP Business Application Studio.
+   * Back in Business Application Studi- to log in to Cloud Foundry, choose **View** > **Find Command**.
+    
+   * Search for **CF Login**.
+    
+   * Choose **CF: Login on to Cloud Foundry**.
+
+     ![Login to CF](./images/loginToCF.png) 
+    
+      * Enter CF API endpoint which you copied or take the default suggested API endpoint.     
+   * Enter your SAP BTP account **Email** and **Password**.
+
+       ![Login to CF](./images/login1.png)
+   
+   * Select your Cloud Foundry **Org** which you have noted down. 
+   * Select the space name which you have noted down. Once you have selected the Org and Space, you would login to Cloud Foundry in SAP Business Application Studio.
+   * Now we have successfully created a workspace and pointed to our desired SAP BTP **Org** and **Space**.
+
+      ![Login to CF](./images/login2.png)
 
 
 13. For the next steps you need the terminal again. Choose **Terminal** > **New Terminal**.
