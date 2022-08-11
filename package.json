@@ -4,8 +4,10 @@
     "description": "A simple CAP project.",
     "license": "ISC",
     "dependencies": {
-        "@sap/cds": "5.9.8",
+        "@sap/cds": "6.0.4",
         "@sap/hana-client": "^2.8.20",
+        "@sap-cloud-sdk/http-client": "^2.6.0",
+        "@sap-cloud-sdk/util": "^2.6.0",
         "@sap/xb-msg-amqp-v100": "^0.9.51",
         "@sap/xsenv": "^3.1.0",
         "@sap/xssec": "^3.2.0",
