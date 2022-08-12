@@ -69,7 +69,7 @@ Unfortunately, the booster is not able to check this in advance, so it will fail
 5. Set up your subaccount.
    
 You find the list of the services that will be activated by this booster. For this mission, the **SAP Continuous Integration & Delivery** service is optional. Remove it if you don't want to use it.
-Services like **Application Autoscaler**, **Application Logging**, **Extension Center**, **Extension Factory serverless runtime** and the **SAP Cloud Transport Management Service** are not used in this  mission, you can remove them.     
+Services like **Application Autoscaler**, **Application Logging**, and the **SAP Cloud Transport Management Service** are not used in this  mission, you can remove them.     
    
    ![Booster](./images/booster-05.png)
 
@@ -105,13 +105,14 @@ Services like **Application Autoscaler**, **Application Logging**, **Extension C
     ![Booster](./images/booster-10.png)
 
 10. To check your subaccount, choose **Security** > **Role Collection**.
-    You will find the **Extension_App_Administrator** and the **Extension_App_Developer** role collections. If you want to add more users to the mission, you have to assign to their users one of these role collections.
+    You will find the **Extension\_App\_Administrator** and the **Extension\_App\_Developer** role collections. If you want to add more users to the mission, you have to assign to their users one of these role collections.
 
     ![Booster](./images/booster-11.png)
 
     Go to **Instances and Subscriptions** and choose the **Subscription** tab. Check if the following subscriptions are enabled:
     * SAP Business Application Studio
     * SAP Event Mesh
+    * SAP Launchpad service
     * SAP Continuous Integration & Delivery (only when selected in the booster)   
     
     ![Booster](./images/booster-12.png)
@@ -138,7 +139,6 @@ Services like **Application Autoscaler**, **Application Logging**, **Extension C
    > For more information, see [Creating SAP HANA Cloud Instances](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/784a1dbb421a4da29fb1e3bdf5f198ec.html).
 
    
-
 
 ### B: Create a SAP HANA Cloud Service Instance
 
