@@ -114,32 +114,31 @@ File / Folder | Purpose
 
       ![Login to CF](./images/login2.png)
 
-
-13. > **SAP BTP Trial only:**: Open the em.json file and replace the content to the following to work with the SAP Event Mesh service (dev plan). Change "\<emname\> to a meaningful value, for example, eccevent.
-    
-        >   ```json
-        >   { "emname": "<emname>",
-        >     "options": {
-        >       "management": true,
-        >       "messagingrest": true,
-        >       "messaging": true
-        >   }
-        > }
-        > ```
+13. For **SAP BTP Trial only**:
+>  Open the em.json file and replace the content to the following to work with the SAP Event Mesh service (dev plan). Change \<emname\> to a meaningful value, for example, eccevent.
+>
+>   ```json
+>   { "emname": "<emname>",
+>     "options": {
+>       "management": true,
+>       "messagingrest": true,
+>       "messaging": true
+>   }
+> }
+> ```
+ 
+> **SAP BTP Trial only:**: Open srv >service.js file and search for messaging.on. Replace the topic name (refappscf/ecc/123/BO/BusinessPartner/Changed) with the customized one.
+> Ex:- \<emname\>/BO/BusinessPartner/Created and \<emname\>/BO/BusinessPartner/Changed
         
-     
-        > **SAP BTP Trial only:**: Open srv >service.js file and search for messaging.on. Replace the topic name (refappscf/ecc/123/BO/BusinessPartner/Changed) with the customized one.
-        > Ex:- \<emname\>/BO/BusinessPartner/Created and \<emname\>/BO/BusinessPartner/Changed
-        
-        > **SAP BTP Trial only:** In the mta.yml file, change the service plan name to dev for BusinessPartnerValidation-ems
-        >```
-        >  - name: BusinessPartnerValidation-ems
-        >    parameters:
-        >    path: ./em.json 
-        >    service: enterprise-messaging
-        >    service-plan: default
-        > type: org.cloudfoundry.managed-service 
-        > ```
+> **SAP BTP Trial only:** In the mta.yml file, change the service plan name to dev for BusinessPartnerValidation-ems
+>```
+>  - name: BusinessPartnerValidation-ems
+>    parameters:
+>    path: ./em.json 
+>    service: enterprise-messaging
+>    service-plan: default
+> type: org.cloudfoundry.managed-service 
+> ```
 
 14. Generate the MTAR file. Alternatively, you can also right-click on **mta.yaml** file in the Explorer view and select **Build MTA Project** to build the project.
     
