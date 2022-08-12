@@ -115,33 +115,8 @@ File / Folder | Purpose
       ![Login to CF](./images/login2.png)
 
 
-13. For the next steps you need the terminal again. Choose **Terminal** > **New Terminal**.
-    - Create a hdi-shared database instance. To do that, you need the guid of the SAP HANA Cloud service that you have created at the [SAP BTP Setup](../scp-setup/README.md). You can find the service name in the list of services.
-      
-	 ```bash
-		 cf services    
-		    
-		 cf service "[HANA Service Name]" --guid
-	```
-
-    With the guid we can create a hdi-shared database instance:
-       
-    ```bash
-       cf cs hana hdi-shared BusinessPartnerValidation-db -c '{"database_id" : "[guid of HANA Service]"}'
-    ```   
-            
-   
-    - In the next step, you will create a number of service instances such as SAP Connectivity and SAP Event Mesh services. You will do this by executing the following Cloud Foundry create service instance commands.
+13. > **SAP BTP Trial only:**: Open the em.json file and replace the content to the following to work with the SAP Event Mesh service (dev plan). Change "\<emname\> to a meaningful value, for example, eccevent.
     
-
-   
-      * Create enterprise-messaging instance using the em.json configuration file in your project.
-     
-        ```bash
-         cf cs enterprise-messaging default BusinessPartnerValidation-ems -c em.json
-        ```
-        
-        > When you are using **SAP BTP trial** then you have to use the dev service plan. The em.json file should have the following parameters to work with the SAP Event Mesh service (dev plan). Change "\<emname\> to a meaningful value, for example, eccevent.
         >   ```json
         >   { "emname": "<emname>",
         >     "options": {
@@ -151,11 +126,9 @@ File / Folder | Purpose
         >   }
         > }
         > ```
-        >
-        >```bash
-        >   cf cs enterprise-messaging dev BusinessPartnerValidation-ems -c em.json
         
-        > **SAP BTP Trial only:** Open srv >service.js file and search for messaging.on. Replace the topic name (refappscf/ecc/123/BO/BusinessPartner/Changed) with the customized one.
+     
+        > **SAP BTP Trial only:**: Open srv >service.js file and search for messaging.on. Replace the topic name (refappscf/ecc/123/BO/BusinessPartner/Changed) with the customized one.
         > Ex:- \<emname\>/BO/BusinessPartner/Created and \<emname\>/BO/BusinessPartner/Changed
         
         > **SAP BTP Trial only:** In the mta.yml file, change the service plan name to dev for BusinessPartnerValidation-ems
@@ -168,68 +141,25 @@ File / Folder | Purpose
         > type: org.cloudfoundry.managed-service 
         > ```
 
-      * Create a Destination service instance
-  
-        ```bash
-        cf cs destination lite BusinessPartnerValidation-dest
-        ```
-
-      * Create an SAP Authorization and Trust Management service instance using the xs-security.json configuration file in your project.
-    
-        ```bash
-        cf cs xsuaa application BusinessPartnerValidation-xsuaa -c xs-security.json
-        ```    
-
-      * Create an SAP Connectivity service instance for accessing the Cloud Connector.  
- 
-        ```bash
-        cf cs connectivity lite BusinessPartnerValidation-cs        
-        ```
-
-      * Generate a service key that you will need later for binding service intances.
-   
-        ```bash
-         cf create-service-key BusinessPartnerValidation-ems emkey
-        ```
-
-      * Build the application.
-    
-        ```bash
-        cds build --production
-        ```
-
-
-    
-14. Open the gen/srv/manifest.yaml file and add your service names / replace existing ones with your services: ems, dest, xsuaa, database.  
-Set the Memory to 256MB.
-
-    > Hint: To make sure that the services names match, execute the CF command **cf services** which lists the services you have created including their names.
-
-    ![Edit manifest](./images/dev-cap-app-12.png)
- 
-15. Go back to the terminal and run following commands:
-
-    ```bash
-       //generate the database instance deploy the database content
-       cf p -f gen/db
-       
-       //generate the service instances and deploy the service
-       cf p -f gen/srv --random-route
-    ```
- 
-16. Generate the MTAR file. Alternatively, you can also right-click on **mta.yaml **file in the Explorer view and select **Build MTA Project** to build the project.
+14. Generate the MTAR file. Alternatively, you can also right-click on **mta.yaml** file in the Explorer view and select **Build MTA Project** to build the project.
     
     ```bash
       mbt build -p=cf
     ```
 
-17. Deploy the application to your Cloud Foundry space with the MTAR. Alternatively, You can expand the folder **mta\_archives** in Explorer view and right-click on file **BusinessPartnerValidation\_1.0.0.mtar** and choose **Deploy MTA Archive**.
+15. Deploy the application to your Cloud Foundry space with the MTAR. Alternatively, You can expand the folder **mta\_archives** in Explorer view and right-click on file **BusinessPartnerValidation\_1.0.0.mtar** and choose **Deploy MTA Archive**.
 
     ```bash
-    cf deploy mta_archives/BusinessPartnerValidation_1.0.0.mtar
+       cf deploy mta_archives/BusinessPartnerValidation_1.0.0.mtar
     ```
     
-18. Check if the deployment finished successfully without giving any errors.
+16. Generate a service key for configuring event communication between SAP system and SAP Event Mesh.
+   
+    ```bash
+       cf create-service-key BusinessPartnerValidation-ems emkey
+    ```
+    
+17. Check if the deployment finished successfully without giving any errors.
 
 ### Test your application
 
