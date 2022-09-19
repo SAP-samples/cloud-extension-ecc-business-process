@@ -146,7 +146,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
     
 2. Click on field **New Entries**.
 3. Add the following two Message types,
-   - Enter Message Type: **Z\_ACI\_MSG\_CREATE**
+   - Enter Message Type: **Z\_ACI\_MSG\_CREATED**
    - Enter Any Meanigful for field **Short Text**
    - Add another Message Type: **Z\_ACI\_MSG\_CHANGED**
    - Enter Any Meanigful **Short Text**	
@@ -174,7 +174,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    ![activate Change Pointer1](./images/activateChangePointer1.png)
 
 3. Add the following 2 change pointers for message types:
-   - Add Message Type **Z\_ACI\_MSG\_CREATE**
+   - Add Message Type **Z\_ACI\_MSG\_CREATED**
    - Click the checkbox as **Active** next to the message type
    - Add second Message Type **Z\_ACI\_MSG\_CHANGED**
    - Click the checkbox as **Active** next to also this message type
@@ -198,7 +198,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
    - For field **Object Category**, select **BOR Object Type**
    - For field **Object Type**, select **BUS1006**
    - For field **Event**, select **CREATED**
-   - For field **Receiver type**, select **Z\_ACI\_MSG\_CREATE**
+   - For field **Receiver type**, select **Z\_ACI\_MSG\_CREATED**
    - For field **Receiver Function Module**, select **/ASADEV/ACI\_EVENTS\_TRIGGER**
    - Check the checkbox **Linkage Activated**
    - Click **Save** icon
@@ -306,7 +306,7 @@ WE81 (Logical message types) is a standard SAP parameter transaction code that i
 9. In the opened screen, **Change View Outbound Objects: Details**, enter the following values:
    - Enter Object as **BUSINESSPARTNER\_CREATED**
    - Enter Extraction Function Module Name **/ASADEV/ACI\_SIMPLE\_NOTIFY**
-   - Enter Message Type as **Z\_ACI\_MSG\_CREATE**
+   - Enter Message Type as **Z\_ACI\_MSG\_CREATED**
    - Select Load Type as **Incremental Load**
    - Enter Event **API**
    - Check the **Trace** Checkbox	
