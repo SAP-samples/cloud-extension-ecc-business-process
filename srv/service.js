@@ -8,7 +8,7 @@ module.exports = async srv => {
   srv.on("READ", BusinessPartnerAddress, req => bupaSrv.run(req.query))
   srv.on("READ", BusinessPartner, req => bupaSrv.run(req.query))
 
-  messaging.on("refappscf/ecc/123/BO/BusinessPartner/Created", async msg => {
+  messaging.on(["refappscf/ecc/123/BO/BusinessPartner/Created","refappscf/ecc/123/ce/BO/BusinessPartner/Created"], async msg => {
     console.log("<< event caught", msg.event);
     let BUSINESSPARTNER = "";
     if(msg.headers && msg.headers.type == "sap.nw.ee.BusinessPartner.Created.v1"){
@@ -36,7 +36,7 @@ module.exports = async srv => {
       }  
   });
 
-  messaging.on("refappscf/ecc/123/BO/BusinessPartner/Changed", async msg => {
+  messaging.on(["refappscf/ecc/123/BO/BusinessPartner/Changed","refappscf/ecc/123/ce/BO/BusinessPartner/Changed"], async msg => {
     let BUSINESSPARTNER = "";
     if(msg.headers && msg.headers.type == "sap.nw.ee.BusinessPartner.Changed.v1"){
        //> SP3 version
