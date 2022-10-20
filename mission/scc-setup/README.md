@@ -54,7 +54,7 @@ In the **Overview** page of your subaccount in the SAP BTP cockpit, you can find
 
    ![Select Protocol](./images/cloud-connector-4.png)
 
-   >Hint: To find out the HTTP port number of your SAP ERP system, refer to the [Find your system's HTTP and HTTPS port](../ecc-setup/README.md#check-your-http-and-https-ports-in-smicm) page.
+   >Hint: To find out the HTTP port number of your SAP ERP system, refer to the [Find your system's HTTP and HTTPS port](https://github.com/SAP-samples/cloud-extension-ecc-business-process/tree/mission/mission/ecc-setup#check-your-http-and-https-ports-in-smicm) page.
    
 9. Enter values for the fields: **Internal Host** and **Internal Port**. Then, choose **Next**. 
    To learn more details about internal host, see [Configure Access Control (HTTP)](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e7d4927dbb571014af7ef6ebd6cc3511.html). You can also execute transaction **/nOS01** in your SAP backend system to find out the host name of your SAP ERP system.
