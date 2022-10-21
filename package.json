@@ -4,15 +4,17 @@
     "description": "A simple CAP project.",
     "license": "ISC",
     "dependencies": {
-        "@sap/cds": "6.0.4",
+        "@sap/cds": "6.2.2",
         "@sap/hana-client": "^2.4.182",
+        "@sap-cloud-sdk/http-client": "^2.6.0",
+        "@sap-cloud-sdk/util": "^2.6.0",
         "@sap/xb-msg-amqp-v100": "^0.9.39",
         "@sap/xsenv": "^3.1.1",
         "@sap/xssec": "^3.2.2",
         "cf-nodejs-logging-support": "^6.5.0",
         "express": "^4",
         "grunt": "^1.1.0",
-        "passport": "^0.4.1",
+        "passport": "^0.6.0",
         "postcode-validator": "^3.1.1"
     },
     "engines": {
@@ -25,7 +27,7 @@
     "devDependencies": {
         "axios": "^0.21.1",
         "jest": "*",
-        "mocha": "^8.3.2",
+        "mocha": "^9.2.1",
         "chai": "^4.3.4",
         "chai-http": "^4.3.0",
         "sqlite3": "^5.0.0"
