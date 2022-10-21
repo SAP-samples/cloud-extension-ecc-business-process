@@ -24,29 +24,17 @@ In this section, you will learn how to configure your on-premise backend system 
    
    ![copy EM Token Endpoint](./images/copyEMTokenEndpoint.png)
    
-5. Once you open the Token Endpoint URL, choose **Cancel** in the popup and select on view site information button (lock symbol on top left corner), then choose **Certificate**.
+5. Once you open the Token Endpoint URL, choose **Cancel** in the popup and select on view site information button (lock symbol on top left corner), then choose **Connection is secure**. To show the certificate, choose the icon next to **Certificate is valid** with tooltip **Show certificate**.
 
    ![download Certificate1](./images/downloadCertificate1.png)
    
-6. Select **Details** and choose **Copy to files**.
+6. Select **Details** and choose **Export selected certificate**.
 
    ![download Certificate2](./images/downloadCertificate2.png)
    
-7. When the **Certificate Export Wizard** opens, choose **Next**.
+7. Specify the file name and for **Save as type**, choose **DER encoded binary, single certificate** and choose **Save**.
 
    ![download Certificate3](./images/downloadCertificate3.png)
-   
-8. Select the format as **DER encoded binary X.509 (.CER)** and choose **Next**.
-
-    ![download Certificate4](./images/downloadCertificate4.png)
-    
-9. Select a folder to export the certificate and choose **Next**.
-   
-   ![download Certificate5](./images/downloadCertificate5.png)
-   
-10. Select **Finish** to export the certificate. You have exported the SAP Event Mesh certificate.
-
-    ![download Certificate6](./images/downloadCertificate6.png)
     
 	
 ### Create a Node for Standard SSL Client
