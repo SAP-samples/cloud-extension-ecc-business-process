@@ -95,7 +95,7 @@ This user can than also be used as technical user for the connection between the
 
 1. Navigate to Transaction **/N/IWFND/VIRUS_SCAN** 
 2. Check ** Virus Scan Switched Off**
-3. Save your changes
+3. Execute your changes
    
    ![](images/virus.png)
   
