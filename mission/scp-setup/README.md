@@ -144,9 +144,9 @@ Services like **Application Autoscaler**, **Application Logging**, and the **SAP
 
 For this mission, an SAP HANA service for SAP BTP is necessary. Use the following steps create a SAP HANA Cloud instance:
 
-1. In your SAP BTP Cockpit, navigate to your sub-account and to the space which you have created. Choose **Services** > **Service Marketplace** and then choose the tile **SAP HANA Cloud**. 
+1. In your SAP BTP Cockpit, navigate to your sub-account and to the space which you have created. 
   
-2. Choose **Create** and in the drop-down, select **SAP HANA Database**.
+2. Choose **SAP HANA Cloud** in the left navigation pane and Choose **Create** and in the drop-down, select **SAP HANA Database**.
 
     ![HANA](./images/createDatabase.png)
 
