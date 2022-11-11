@@ -142,53 +142,35 @@ Services like **Application Autoscaler**, **Application Logging**, and the **SAP
 
 ### B: Create a SAP HANA Cloud Service Instance
 
-For this mission, an SAP HANA service for SAP BTP is necessary. Use the following steps enable it:
+For this mission, an SAP HANA service for SAP BTP is necessary. Use the following steps create a SAP HANA Cloud instance:
 
-1. Choose **Services** > **Service Marketplace** and then choose the tile **SAP HANA Cloud**. 
-
-    ![HANA](./images/hana-01.png)
-    
-
-2. Choose **Create**.
-   
-    ![HANA](./images/hana-02.png)
-
-3. In the **New Instance** screen, select:
-    * Service = SAP HANA Cloud
-    * Service Plan = hana
-    * Runtime Environment = Cloud Foundry
-    * Space = the space you have created with the Booster
-   
-    Click the link **here** to create a Database first before creating an instance.
-   
-
-    ![HANA](./images/hana-03.png)
-
-4. Choose **Create** and in the drop-down, select **SAP HANA Database**.
+1. In your SAP BTP Cockpit, navigate to your sub-account and to the space which you have created. Choose **Services** > **Service Marketplace** and then choose the tile **SAP HANA Cloud**. 
+  
+2. Choose **Create** and in the drop-down, select **SAP HANA Database**.
 
     ![HANA](./images/createDatabase.png)
 
-5. Choose the type of the SAP HANA Cloud Instance as **SAP HANA Cloud, SAP HANA Database** and select **Next Step**.
+3. Choose the type of the SAP HANA Cloud Instance as **SAP HANA Cloud, SAP HANA Database** and select **Next Step**.
 
    ![HANA](./images/createDatabase02.png)
    
-6. In the next tab, choose the SAP BTP **Organization** and **Space** from the drop-down box. Enter an **Instance name**, also enter a valid database **Administrator Password** and select **Next Step**.
+4. In the next tab, choose the SAP BTP **Organization** and **Space** from the drop-down box. Enter an **Instance name**, also enter a valid database **Administrator Password** and select **Next Step**.
 
    ![HANA](./images/createDatabase03.png)
 
-7. Select the **Memory** and **Storage** capacity for your SAP HANA Cloud database instance. For this mission, you can choose the minimum capacity and select **Next Step**.
+5. Select the **Memory** and **Storage** capacity for your SAP HANA Cloud database instance. For this mission, you can choose the minimum capacity and select **Next Step**.
 
    ![HANA](./images/createDatabase04.png) 
   
-8. In the tab for Availability Zone and Replicas, you can leave the defaults and choose **Next Step**. 
+6. In the tab for Availability Zone and Replicas, you can leave the defaults and choose **Next Step**. 
 
    ![HANA](./images/createDatabase05.png)    
    
-9. In the tab for SAP HANA Advanced Settings, you can leave the default values to **Allow only SAP BTP IP Addresses** and choose **Review and Create**.
+7. In the tab for SAP HANA Advanced Settings, you can leave the default values to **Allow only SAP BTP IP Addresses** and choose **Review and Create**.
 
    ![HANA](./images/createDatabase06.png)
 
-10. Choose **Create Instance** to create an instance of SAP HANA Cloud Database instance.
+8. Choose **Create Instance** to create an instance of SAP HANA Cloud Database instance.
 
     ![HANA](./images/createDatabase07.png)
 
