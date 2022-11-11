@@ -6,5 +6,4 @@ Access the following materials to learn about SAP Enterprise Messaging and what 
 
 * Start by looking at [About CAP](https://cap.cloud.sap/docs/about/)
 * Learn [how to get started](https://cap.cloud.sap/docs/get-started/)
-* Check out further materials at https://cap.cloud.sap/ 
 * Read the [CAP Walkthrough](https://github.com/SAP-archive/cloud-cap-walkthroughs)
