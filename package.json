@@ -4,7 +4,7 @@
     "description": "A simple CAP project.",
     "license": "ISC",
     "dependencies": {
-        "@sap/cds": "6.3.1",
+        "@sap/cds": "6.4.0",
         "@sap/hana-client": "^2.8.20",
         "@sap-cloud-sdk/http-client": "^2.6.0",
         "@sap-cloud-sdk/util": "^2.6.0",
