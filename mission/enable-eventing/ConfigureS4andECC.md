@@ -89,7 +89,13 @@ In this section, you will learn how to configure your on-premise backend system 
 
 4. Choose **Continue** for the popup that says information **HTTP Connections may not be secure**.
 5. Switch to the text editor where you have copied the Service Key of the SAP Event Mesh service instance in the first section above. Copy the value of **uri** for the protocol **httprest**.
-6. Switch back to the **RFC Destination** tab and in the field **Target Host**, enter the URI which you copied excluding **https://**, for example: enterprise-messaging-pubsub.cfapps.eu10.hana.ondemand.com. Choose the **Save** icon and then choose **Connection Test**.
+6. Switch back to the **RFC Destination** tab and in the field **Target Host**, enter the URI which you copied excluding **https://**, for example: enterprise-messaging-pubsub.cfapps.eu10.hana.ondemand.com. 
+
+7. Choose tabulator **Logon & Security** and scroll-down to Security options and select the radio button **active** for field **SSL** and for field **SSL Certificate**, select **Anonym SSL Certificate (Anonymous)** from the dropdown menu.
+
+    ![create RFC Destination23](./images/createRFCDestination231.png)
+    
+8. Choose the **Save** icon and then choose **Connection Test**.
 
    ![create RFC Destination12](./images/createRFCDestination12.png)
    

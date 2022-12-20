@@ -80,7 +80,7 @@ File / Folder | Purpose
 
     ![Open Workspace](./images/dev-cap-app-7.png)
  
-11.	 Open the project by choosing **projects** > **cloud-extension-ecc-business-process** and choose **Open**.
+11.	 Open the folder **/home/user/projects/cloud-extension-ecc-business-process/** and choose **OK**.
  
 
 12.  Next you need to login to your Cloud Foundry account from SAP Business Application Studio:
