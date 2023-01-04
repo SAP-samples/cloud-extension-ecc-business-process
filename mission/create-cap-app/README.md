@@ -52,7 +52,18 @@ File / Folder | Purpose
       ![Configure Dev Space](./images/dev-cap-app-4.png)
       
  
-6.	Your Dev Space is now being created. As soon as the Dev Space is available, you can choose your Dev Space's name to access it.
+Your Dev Space is now being created. As soon as the Dev Space is available, you can choose your Dev Space's name to access it.
+
+6. The first step in the dev space is to to make the menu bar visible: 
+    
+    Select **Customize Layout** 
+    ![Set menu](./images/setmenue1.png) 
+
+    Choose **Menue Bar**
+
+    ![Set menu](./images/setmenue2.png) 
+
+
 
 7.	Choose **Terminal** > **New Terminal** in the menu on the top of your screen.
 
