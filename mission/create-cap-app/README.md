@@ -56,10 +56,11 @@ Your Dev Space is now being created. As soon as the Dev Space is available, you 
 
 6. The first step in the dev space is to to make the menu bar visible: 
     
-    Select **Customize Layout** 
+    Select the **Customize Layout** icon.
+
     ![Set menu](./images/setmenue1.png) 
 
-    Choose **Menue Bar**
+    Choose **Menu Bar**
 
     ![Set menu](./images/setmenue2.png) 
 
