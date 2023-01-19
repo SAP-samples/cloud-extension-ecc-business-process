@@ -31,9 +31,6 @@
         "mocha": "^9.2.1"
     },
     "cds": {
-        "features": {
-            "fetch_csrf": true
-        },
         "hana": {
             "deploy-format": "hdbtable"
         },
@@ -56,6 +53,8 @@
             "API_BUSINESS_PARTNER": {
                 "kind": "odata",
                 "model": "srv/external/API_BUSINESS_PARTNER",
+                "csrf": true,
+                "csrfInBatch": true,
                 "[production]": {
                     "credentials": {
                         "destination": "bupa",
