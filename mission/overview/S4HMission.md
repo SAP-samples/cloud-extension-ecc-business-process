@@ -12,7 +12,7 @@
 * [Discover the Cloud Platform Application Programming Model (CAP)](./../discover/CAP.md)
 * [Discover the SAP HANA Cloud Database](./../discover/HANA.md)
 * [Learn about DevOps and  Continuous Integration & Delivery](../discover/DevOps.md)
-* [Learn about SAP Launchpad service](https://github.com/SAP-samples/cloud-extension-html5-sample/blob/mission/mission/discover/Launchpad.md)
+* [Learn about SAP Build Work Zone, standard Edition](https://github.com/SAP-samples/cloud-extension-html5-sample/blob/mission/mission/discover/Launchpad.md)
 
 ## Landscape Setup
 * [Create a CAL Instance (optional)](../cal-setup/CALS4H.md)
@@ -29,6 +29,6 @@
 * [Create Link between Business Partner Change Document and Change Event](../change-event-linkage/README.md)
 * [Setup Connection and Replication Object for Event Enablement Header](../add-on-instance/S4DataEvent.md)
 * [Optional: Integrate the SAP Continous Integration & Delivery Service](https://github.com/SAP-samples/cloud-sf-extension-cap-sample/blob/mission/mission/cicd/README.md)
-* [Optional: Integrate the Application to SAP Launchpad](https://github.com/SAP-samples/cloud-extension-s4hana-business-process/blob/mission/mission/create-launchpad-app/README.md)
+* [Optional: Integrate the Application to SAP Build Work Zone, standard Edition](https://github.com/SAP-samples/cloud-extension-s4hana-business-process/blob/mission/mission/create-launchpad-app/README.md)
 * [Run the Demo Application](../run-demo/S4RunDemo.md)
 

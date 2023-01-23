@@ -17,7 +17,7 @@ Ensure that all required systems and components are in place. This means:
   * SAP Event Mesh, 
   * Cloud Foundry Runtime
   * SAP HANA Cloud, 
-  * Launchpad
+  * SAP Build Work Zone, standard Edition
   * SAP Business Application Studio
   * SAP Continuous Integration and Delivery (optionally).
 

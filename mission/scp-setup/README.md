@@ -8,7 +8,7 @@ For running the Extend SAP S/4HANA on SAP BTP Using SAP Netweaver Event Enableme
 * SAP Business Application Studio
 * SAP Event Mesh
 * SAP BTP, Cloud Foundry runtime
-* SAP Launchpad service
+* SAP Build Work Zone, standard Edition
 * SAP HANA service for SAP BTP
 * SAP Continuous Integration & Delivery service (optional)
 

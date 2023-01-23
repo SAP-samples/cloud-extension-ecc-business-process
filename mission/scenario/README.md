@@ -61,18 +61,18 @@ The Business Partner Validation application is developed using [SAP Cloud Applic
 
 The application requires below set of SAP BTP entitlements/quota
 
-| Service                           | Plan       | Number of Instances |
-|-----------------------------------|------------|:-------------------:|
-| Event Mesh                        | default    |          1          |
-| Launchpad                         | default    |          1          |
-| SAP Hana Cloud                    | hana       |          1          |
-| SAP HANA Schemas & HDI Containers | hdi-shared |          1          |
-| Cloud Foundry Runtime             | MEMORY     |          3          |
-| Destination                       | lite       |          1          |
+| Service                              | Plan       | Number of Instances |
+|--------------------------------------|------------|:-------------------:|
+| Event Mesh                           | default    |          1          |
+| SAP Build Work Zone, standard Edition| default    |          1          |
+| SAP Hana Cloud                       | hana       |          1          |
+| SAP HANA Schemas & HDI Containers    | hdi-shared |          1          |
+| Cloud Foundry Runtime                | MEMORY     |          3          |
+| Destination                          | lite       |          1          |
 | SAP Continuous Integration and Delivery (Optional)| default     |          1          |
 
 
-For the development we use SAP Business Application Studio.
+For the development we use **SAP Business Application Studio**.
 
 ### Demo Project Structure
 
