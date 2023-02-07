@@ -88,9 +88,9 @@ Your Dev Space is now being created. As soon as the Dev Space is available, you 
     git clone -b s4h-addon https://github.com/SAP-samples/cloud-extension-ecc-business-process.git
     ```
  
-10. Choose **File** in the menu on the top and then select **Open Workspace** from the dropdown menu.
+10. Choose **File** in the menu on the top and then select **Open Folder** from the dropdown menu.
 
-    ![Open Workspace](./images/dev-cap-app-7.png)
+    ![Open Folder](./images/dev-cap-app-7.png)
  
 11.	 Open the folder **/home/user/projects/cloud-extension-ecc-business-process/** and choose **OK**.
  
