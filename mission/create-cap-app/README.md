@@ -92,9 +92,9 @@ Your Dev Space is now being created. As soon as the Dev Space is available, you 
     git clone -b s4h-addon https://github.com/SAP-samples/cloud-extension-ecc-business-process.git
     ```
 
-   To copy and paste the code line to the terminal you need to allow it.
-
-    ![Images](./images/dev-cap-app-21.png) 
+    To copy and paste the code line to the terminal you need to allow it.
+       
+       ![Images](./images/dev-cap-app-21.png) 
 
  
 11. Choose **File** in the menu on the top and then select **Open Folder** from the dropdown menu.
