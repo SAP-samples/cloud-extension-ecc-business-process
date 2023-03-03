@@ -54,7 +54,11 @@ File / Folder | Purpose
  
 Your Dev Space is now being created. As soon as the Dev Space is available, you can choose your Dev Space's name to access it.
 
-6. The first step in the dev space is to to make the menu bar visible: 
+6. If the **Create Project** screen appear select **Cancel**
+
+   ![cancel project](./images/dev-cap-app-20.png)
+
+7. The first step in the dev space is to to make the menu bar visible: 
     
     Select the **Customize Layout** icon.
 
@@ -66,17 +70,17 @@ Your Dev Space is now being created. As soon as the Dev Space is available, you 
 
 
 
-7.	Choose **Terminal** > **New Terminal** in the menu on the top of your screen.
+8.	Choose **Terminal** > **New Terminal** in the menu on the top of your screen.
 
     ![Open Terminal](./images/dev-cap-app-5.png)
  
-8. Go to projects folder.
+9. Go to projects folder.
 
    ```bash
    cd projects
    ``` 
  
-9. Clone the project from the SAP samples application repository. When you are working with SAP ERP 6.0 (ECC) as a backend system, use the main branch and use the following command:
+10. Clone the project from the SAP samples application repository. When you are working with SAP ERP 6.0 (ECC) as a backend system, use the main branch and use the following command:
 
     ```bash
     git clone https://github.com/SAP-samples/cloud-extension-ecc-business-process.git
@@ -87,15 +91,20 @@ Your Dev Space is now being created. As soon as the Dev Space is available, you 
     ```bash
     git clone -b s4h-addon https://github.com/SAP-samples/cloud-extension-ecc-business-process.git
     ```
+
+   To copy and paste the code line to the terminal you need to allow it.
+
+    ![Images](./images/dev-cap-app-21.png) 
+
  
-10. Choose **File** in the menu on the top and then select **Open Folder** from the dropdown menu.
+11. Choose **File** in the menu on the top and then select **Open Folder** from the dropdown menu.
 
     ![Open Folder](./images/dev-cap-app-7.png)
  
-11.	 Open the folder **/home/user/projects/cloud-extension-ecc-business-process/** and choose **OK**.
+12.	 Open the folder **/home/user/projects/cloud-extension-ecc-business-process/** and choose **OK**.
  
 
-12.  Next you need to login to your Cloud Foundry account from SAP Business Application Studio:
+13.  Next you need to login to your Cloud Foundry account from SAP Business Application Studio:
  
    * Check if you are logged in to your account in SAP BTP from **SAP Business Application Studio**.
    
@@ -126,7 +135,7 @@ Your Dev Space is now being created. As soon as the Dev Space is available, you 
 
       ![Login to CF](./images/login2.png)
 
-13. For **SAP BTP Trial only**:
+14. For **SAP BTP Trial only**:
 >  Open the em.json file and replace the content to the following to work with the SAP Event Mesh service (dev plan). Change \<emname\> to a meaningful value, for example, eccevent.
 >
 >   ```json
@@ -152,25 +161,25 @@ Your Dev Space is now being created. As soon as the Dev Space is available, you 
 > type: org.cloudfoundry.managed-service 
 > ```
 
-14. Generate the MTAR file. Alternatively, you can also right-click on **mta.yaml** file in the Explorer view and select **Build MTA Project** to build the project.
+15. Generate the MTAR file. Alternatively, you can also right-click on **mta.yaml** file in the Explorer view and select **Build MTA Project** to build the project.
     
     ```bash
       mbt build -p=cf
     ```
 
-15. Deploy the application to your Cloud Foundry space with the MTAR. Alternatively, You can expand the folder **mta\_archives** in Explorer view and right-click on file **BusinessPartnerValidation\_1.0.0.mtar** and choose **Deploy MTA Archive**.
+16. Deploy the application to your Cloud Foundry space with the MTAR. Alternatively, You can expand the folder **mta\_archives** in Explorer view and right-click on file **BusinessPartnerValidation\_1.0.0.mtar** and choose **Deploy MTA Archive**.
 
     ```bash
        cf deploy mta_archives/BusinessPartnerValidation_1.0.0.mtar
     ```
     
-16. Generate a service key for configuring event communication between SAP system and SAP Event Mesh.
+17. Generate a service key for configuring event communication between SAP system and SAP Event Mesh.
    
     ```bash
        cf create-service-key BusinessPartnerValidation-ems emkey
     ```
     
-17. Check if the deployment finished successfully without giving any errors.
+18. Check if the deployment finished successfully without giving any errors.
 
 ### Test your application
 
