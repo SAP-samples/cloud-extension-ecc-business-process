@@ -2,7 +2,7 @@
 
 **Legal terms:**
 
-Please note that the sample code provided in this SAP BTP mission is provided under the attached SAP Sample Code License Agreement. The code is sample code and is not intended for productive use (see [SAP SAMPLE CODE LICENSE AGREEMENT](./SAP%20SAMPLE%20CODE%20LICENSE%20AGREEMENT.pdf)).
+Please note that the sample code provided in this SAP BTP mission is provided under the attached SAP Sample Code License Agreement. The code is sample code and is not intended for productive use (see [SAP SAMPLE CODE LICENSE AGREEMENT](https://github.com/SAP-samples/cloud-extension-ecc-business-process/blob/mission/mission/scenario/SAP%20SAMPLE%20CODE%20LICENSE%20AGREEMENT.pdf)).
 
 ------------------------------------------------------------------------------------
 
