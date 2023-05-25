@@ -15,8 +15,8 @@ As the SAP ERP 6.0 system doesn't has an API OData services by default, we have 
 4. Copy the keys which will be needed for the next step.
 5. [Look for external videos](https://www.youtube.com/watch?v=iKVRX0Kvz14) for more information to generate the Access Key.
 
-### Create a custom Service using SAP Gateway Servic Builder            
-1. Navigate to [SAP API Hub - Business Partner (A2X) API ](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) for  downloading EDMX file of Business Partner from API Business Hub. We will use this as a template for creating a custom OData service.
+### Create a custom Service using SAP Gateway Service Builder            
+1. Navigate to [SAP Business Accelerator Hub  - Business Partner (A2X) API ](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) for  downloading EDMX file of Business Partner from SAP Business Accelerator Hub. We will use this as a template for creating a custom OData service.
 
    * Login with your SAP user
      
