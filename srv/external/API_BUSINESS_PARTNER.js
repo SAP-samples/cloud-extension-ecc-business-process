@@ -1,6 +1,6 @@
 const cds = global.cds || require('@sap/cds')
 module.exports = async srv => {
-    
+    let IDRange = 170000, addressIdRange = 1000
     const messaging = await cds.connect.to('messaging')
     // Mock events for s4
     srv.after("CREATE", "A_BusinessPartner", data => {
@@ -14,4 +14,35 @@ module.exports = async srv => {
         messaging.emit("sap.s4.beh.businesspartner.v1.BusinessPartner.Changed.v1", payload);
         console.log('<< event emitted', payload);
     });
+
+    srv.before("CREATE", "A_BusinessPartner", (req, data) => {
+        const {BusinessPartner} = req.data
+        if(!BusinessPartner){
+            IDRange++
+            req.data.BusinessPartner = IDRange.toString()
+        }
+        const {to_BusinessPartnerAddress} = req.data
+
+        if(to_BusinessPartnerAddress){
+            to_BusinessPartnerAddress.forEach(element => {
+                if(element.AddressId){
+                    return 
+                }
+                else{
+                    addressIdRange++
+                    element.AddressId = addressIdRange
+                }
+            });
+        }
+    })
+
+    srv.before("CREATE", "A_BusinessPartnerAddress", (req, data) => {
+        const {AddressId} = req.data
+        if(!AddressId){
+            addressIdRange++
+            req.data.AddressId = addressIdRange.toString()
+        }
+    })
+
+    
 }
