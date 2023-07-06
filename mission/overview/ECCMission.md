@@ -30,4 +30,5 @@
 * [Optional: Integrate the SAP Continous Integration & Delivery Service](https://github.com/SAP-samples/cloud-sf-extension-cap-sample/blob/mission/mission/cicd/README.md)
 * [Optional: Integrate the Application to SAP Build Work Zone, standard Edition](https://github.com/SAP-samples/cloud-extension-s4hana-business-process/blob/mission/mission/create-launchpad-app/README.md)
 * [Run the Demo Application](../run-demo/README.md)
+* [Optional: Configure and Test using Mock Server](https://github.com/SAP-samples/cloud-extension-ecc-business-process/blob/mission/mission/mock-server-setup/README.md)
 
