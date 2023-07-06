@@ -1,9 +1,3 @@
-# OData Mock Server
-
-This is a Mock Server for OData API's (e.g. from S/4HANA, ECC etc.).
-
-This project implies to work as SAP S/4HANA Cloud Mock backend server for the Reference Applications use cases. The project is built on Cloud Application Programming (CAP) model with mocking capabilities.
-
 # Set Up Mock Server
 
 ## Clone the Mock Server
@@ -87,7 +81,7 @@ cf bs mock-srv BusinessPartnerValidation-ems && cf restart mock-srv
 
 You need to create a destination to the newly deployed Mock Server Application.
 
-#### Configure destination
+#### Configure destination using script
 
 > It's only relevant if you have a destination service instance created in your CF space. 
 
@@ -154,37 +148,3 @@ https://someDomain/v2/op-api-business-partner-srv`
 You should get a response with the code 201. This means that the entry was created in the database and the corresponding event was triggered (if the Event Mesh instance is binded).
 
 7. Now, go back to the Business Partner application to see if the new Business Partner has been updated in the UI.
-
-### Hybrid test
-
-With the hybrid testing capabilities, you stay in your local development environment and avoid long turn-around times of cloud deployment and you can use Event Mesh instance from the cloud.
-
-It's assumed that the Event Mesh service and its key is already created beforehand.
-
-Before the test you should be logged in to the Cloud Foundry Environment. To do it use Ctrl+Shift+P and select CF: Login To Cloud Foundry. Follow the next instructions on the screen.
-
-To bind the Event Mesh service use the following command in terminal:
-
-```
-cds bind messaging -2 BusinessPartnerValidation-ems:emkey
-```
-
-After that the file .cdsrc-private.json will be created/updated with the corresponding information.
-
-To start the Mock Server in hybrid mode use the following command:
-
-```
-cds watch --profile hybrid
-```
-
-### Project Structure
-
-File / Folder | Purpose
-----------|------------
-`app/` | Contains content for the UI frontend (SAP Fiori elements)
-`img/` | Images for README.md
-`srv/` | Service models, CSV data and code
-`package.json` | Contains the project metadata and configuration
-`readme.md`	| Getting started guide
-`mta.yaml` | Contains the multitarget application build file
-`server.js`	| ...
