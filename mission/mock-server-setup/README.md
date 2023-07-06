@@ -1,4 +1,4 @@
-# Set Up Mock Server
+# Configure and Test using Mock Server
 
 ## Clone the Mock Server
 
