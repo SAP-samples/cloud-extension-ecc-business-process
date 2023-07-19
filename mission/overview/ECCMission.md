@@ -32,3 +32,10 @@
 * [Run the Demo Application](../run-demo/README.md)
 * [Optional: Configure and Test using Mock Server](https://github.com/SAP-samples/cloud-extension-ecc-business-process/blob/mission/mission/mock-server-setup/README.md)
 
+
+## Configure and Test using Mock Server
+* [Prepare and Configure BTP](../mock-server-setup/configure-BTP/README.md)
+* [Setup CAP Application](../mock-server-setup/Setup-CAP-app/README.md)
+* [Mock Server Setup](../mock-server-setup/mock-server-setup/README.md)
+* [Integrate with SAP Build Work Zone, standard edition](../mock-server-setup/create-launchpad/README.md)
+* [Test the scenario](../mock-server-setup/test-scenario/README.md)
