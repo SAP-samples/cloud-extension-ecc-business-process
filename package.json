@@ -6,16 +6,16 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@sap/cds": "^5",
+    "@sap/cds": ">=7",
     "@sap/cds-odata-v2-adapter-proxy": "^1.8.19",
     "@sap/xb-msg-amqp-v100": "^0.9.58",
-    "cds-swagger-ui-express": "^0.3.0",
+    "cds-swagger-ui-express": "^0.6.0",
     "express": "^4",
-    "sqlite3": "^5.0.2"
+    "@cap-js/sqlite":"^1.0.1"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "NODE_ENV=development cds run --with-mocks --in-memory"
+    "start": "NODE_ENV=development cds-serve --with-mocks --in-memory"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
@@ -43,6 +43,9 @@
     }
   },
   "cds": {
+    "features": {
+      "serve_on_root": true
+    },
     "requires": {
       "messaging": {
         "kind": "enterprise-messaging",
