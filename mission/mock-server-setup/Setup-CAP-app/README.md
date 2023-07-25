@@ -87,7 +87,13 @@ Now we will setup the SAP Business Application Studio and use it to develop our 
     ```
     cds build --production
     ```
-  
+
+### MTA Based Deployment
+1. Create mta.yaml 
+   ```
+   cds add mta
+   ``` 
+
 ###  Manifest-Based Deployment
 1. Create manifest.yaml and services-manifest.yaml file
 
@@ -171,19 +177,7 @@ Now we will setup the SAP Business Application Studio and use it to develop our 
     cf create-service-push
     ```
 
-### MTA Based Deployment
-1. Create mta.yaml 
-   ```
-   cds add mta
-   ``` 
-
 ### Build and Deploy to cf
-
-1. Use terminal to create service key
-  
-    ```
-    cf create-service-key BusinessPartnerValidation-ems emkey
-    ``` 
 
 1. Build using following command:
     ```
@@ -199,3 +193,8 @@ Now we will setup the SAP Business Application Studio and use it to develop our 
 
      ![cf deploy](./images/dev-cap-app-10.png)
                
+3. (Optional) After successful deployment, use terminal to create service key
+  
+    ```
+    cf create-service-key BusinessPartnerValidation-ems emkey
+    ``` 
