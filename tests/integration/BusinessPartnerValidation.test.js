@@ -297,7 +297,6 @@ describe("Validate Business Partner Address", () => {
 
   it("Verify whether BusinessPartnerAddress is updated for newly created Business Partner", async () => {
     const response = await GET("/sales/BusinessPartnerAddress", basicAuth);
-    console.log(response.data);
     expect(response.status).to.eql(200);
   });
 });
