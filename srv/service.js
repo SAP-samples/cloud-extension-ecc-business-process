@@ -72,13 +72,28 @@ module.exports = async srv => {
     req.data.isModified = true;
   });
 
-  srv.after("PATCH", "Addresses", (data, req) => {
-    const isValidPinCode = postcodeValidator(data.postalCode, data.country);
-    if(!isValidPinCode){
-      return req.error({code: '400', message: "invalid postal code", numericSeverity:2, target: 'postalCode'});
-    } 
-    return req.info({numericSeverity:1, target: 'postalCode'});  
+  srv.after("PATCH", "Addresses", async (data, req) => {
+    console.log("Received address in PATCH", data);
+    let isValidPinCode = true;
+    if(data && data.postalCode){
+      isValidPinCode = await validatePostcode(data);
+    }
+    
+    if(!isValidPinCode) {
+      return req.error({ code: '400', message: "invalid postal code", numericSeverity: 2, target: 'postalCode' });
+    }
+    return req.info({ numericSeverity: 1, target: 'postalCode' });
   });
+
+  async function validatePostcode(data){
+    let isValidPinCode;
+    if(data.postalCode){
+      const address = await SELECT.one(Addresses).where({ ID: data.ID });
+      isValidPinCode = postcodeValidator(data.postalCode, address.country);
+      console.log("isValidPinCode",isValidPinCode);
+      return isValidPinCode;
+    }
+  }
 
   async function emitEvent(result, req){
     const resultJoin =  await cds.run(SELECT.one("my.businessPartnerValidation.Notifications as N").leftJoin("my.businessPartnerValidation.Addresses as A").on("N.businessPartnerId = A.businessPartnerId").where({"N.ID": result.ID}));
