@@ -131,7 +131,7 @@ describe("Business Partner Validation", () => {
 				}
 			});
 		});
-		/*it("+ Activate the draft", (done) => {
+		it("+ Activate the draft", (done) => {
 			chai.request(app)
 			.post("/sales/Notifications(ID=2c728381-72ce-4fdd-8293-8add71579666,IsActiveEntity=false)/service.businessPartnerValidation.SalesService.draftActivate")
 			.send({ "SideEffectsQualifier": "" })
@@ -159,7 +159,7 @@ describe("Business Partner Validation", () => {
 					done(error);
 				}
 			});
-		});*/
+		});
 
 	});
 
