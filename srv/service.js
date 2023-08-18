@@ -82,7 +82,6 @@ module.exports = async srv => {
     if(!isValidPinCode) {
       return req.error({ code: '400', message: "invalid postal code", numericSeverity: 2, target: 'postalCode' });
     }
-    return req.info({ numericSeverity: 1, target: 'postalCode' });
   });
 
   async function validatePostcode(data){
