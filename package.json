@@ -22,8 +22,7 @@
     "scripts": {
         "start": "npx cds run",
         "test": "npm install sqlite3 && npm run test:integration",
-        "test:integration": "jest tests/integration/BusinessPartnerValidation.test.js",
-        "test:rest-api": "mocha tests/chai-test.js --timeout 28000"
+        "test:integration": "jest tests/integration/BusinessPartnerValidation.test.js"
     },
     "devDependencies": {
         "axios": "^0.21.1",
