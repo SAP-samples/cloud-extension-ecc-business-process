@@ -4,7 +4,7 @@ module.exports = async srv => {
     // Mock events for s4
     srv.after("CREATE", async data => {
         const payload = {event: "CREATED", objectId: data.BusinessPartner};
-        messaging.emit("refappscf/ecc/123/BO/BusinessPartner/Created", JSON.stringify(payload));
+        await messaging.emit("refappscf/ecc/123/BO/BusinessPartner/Created", JSON.stringify(payload));
         console.log('<< event emitted', payload);
     });
 

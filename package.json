@@ -21,14 +21,16 @@
     },
     "scripts": {
         "start": "npx cds run",
-        "test": "mocha tests/chai-test.js --timeout 2800 --exit"
+        "test": "npm install sqlite3 && npm run test:integration",
+        "test:integration": "jest tests/integration/BusinessPartnerValidation.test.js"
     },
     "devDependencies": {
         "axios": "^0.21.1",
         "chai": "^4.3.4",
         "chai-http": "^4.3.0",
         "jest": "*",
-        "mocha": "^9.2.1"
+        "mocha": "^9.2.1",
+        "sqlite3": "^5.1.6"
     },
     "cds": {
         "hana": {
