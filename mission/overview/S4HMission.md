@@ -40,3 +40,6 @@
 * [Mock Server Setup](../mock-server-setup/mock-server-setup/README.md)
 * [Optional: Integrate the Application to SAP Build Work Zone, standard Edition](https://github.com/SAP-samples/cloud-extension-s4hana-business-process/blob/mission/mission/create-launchpad-app/README.md)
 * [Test the scenario](../mock-server-setup/test-scenario/README.md)
+
+## Advanced Pilot Phase
+* [Run Integration Test](../create-integration-tests/README.md) 
