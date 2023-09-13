@@ -895,7 +895,7 @@ entity API_BUSINESS_PARTNER.A_BusinessPartnerAddress {
   @cds.ambiguous : 'missing on condition?'
   to_EmailAddress : 
   // Association to many API_BUSINESS_PARTNER.A_AddressEmailAddress {  };
-  Association to many API_BUSINESS_PARTNER.A_AddressEmailAddress
+  Composition of many API_BUSINESS_PARTNER.A_AddressEmailAddress
     on to_EmailAddress.AddressID = AddressID;
   @cds.ambiguous : 'missing on condition?'
   to_FaxNumber : Association to many API_BUSINESS_PARTNER.A_AddressFaxNumber {  };
