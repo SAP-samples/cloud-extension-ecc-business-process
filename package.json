@@ -22,7 +22,7 @@
     },
     "scripts": {
         "start": "npx cds-serve",
-        "test": "npm install sqlite3 && npm run test:integration",
+        "test": "npm run test:integration",
         "test:integration": "jest tests/integration/BusinessPartnerValidation.test.js"
     },
     "devDependencies": {
