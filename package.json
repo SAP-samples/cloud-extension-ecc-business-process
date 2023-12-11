@@ -5,7 +5,7 @@
     "license": "ISC",
     "dependencies": {
         "@sap/cds": "^7",
-        "@sap/hana": "^2",
+        "@sap/cds-hana": "^2",
         "@sap-cloud-sdk/http-client": "^3.2.0",
         "@sap-cloud-sdk/resilience": "^3.3.0",
         "@sap-cloud-sdk/util": "^3.2.0",
