@@ -16,6 +16,9 @@
         "passport": "^0.6.0",
         "postcode-validator": "^3.6.6"
     },
+    "engines": {
+        "node": "18.x"
+    },
     "scripts": {
         "start": "npx cds-serve",
         "test": "npm install @cap-js/sqlite && npm run test:integration",
