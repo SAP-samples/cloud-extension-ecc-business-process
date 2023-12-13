@@ -12,7 +12,7 @@
         "ach": "CA-UI5-FE",
         "dataSources": {
             "mainService": {
-                "uri": "/sales/",
+                "uri": "/odata/v4/sales/",
                 "type": "OData",
                 "settings": {
                     "annotations": [

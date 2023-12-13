@@ -3,8 +3,8 @@
     "authenticationMethod": "route",
     "routes": [
       {
-        "source": "^/sales/(.*)$",
-        "target": "/sales/$1",
+        "source": "^/odata/v4/sales/(.*)$",
+        "target": "/odata/v4/sales/$1",
         "destination": "BusinessPartnerValidation-srv",
         "authenticationType": "xsuaa",
         "csrfProtection": false
