@@ -28,7 +28,7 @@ module.exports = async srv => {
       const result = await cds.run(INSERT.into(Notifications).entries({businessPartnerId:bpEntity.businessPartnerId, verificationStatus_code:'N', businessPartnerName:bpEntity.businessPartnerName}));     
       const address = await bupaSrv.run(SELECT.one(BusinessPartnerAddress).where({businessPartnerId: bpEntity.businessPartnerId}));
       // for the address to notification association - extra field
-      if(address) {  
+      if(address) {   
       const notificationObj = await cds.run(SELECT.one(Notifications).columns("ID").where({businessPartnerId: bpEntity.businessPartnerId}));
       address.notifications_ID=notificationObj.ID;
       const res = await cds.run(INSERT.into(Addresses).entries(address));
@@ -95,16 +95,27 @@ module.exports = async srv => {
   }
 
   async function emitEvent(result, req){
-    const resultJoin =  await cds.run(SELECT.one("my.businessPartnerValidation.Notifications as N").leftJoin("my.businessPartnerValidation.Addresses as A").on("N.businessPartnerId = A.businessPartnerId").where({"N.ID": result.ID}));
+    //const resultJoin =  await cds.run(SELECT.one("my.businessPartnerValidation.Notifications as N").leftJoin("my.businessPartnerValidation.Addresses as A").on("N.businessPartnerId = A.businessPartnerId").where({"N.ID": result.ID}));
+    //const {BusinessPartner, BusinessPartnerAddress, Notifications} = this.entities;
+    const resultJoin = await cds.run(
+      SELECT.one(Notifications, notification => {
+          notification('*'),
+          notification.addresses((addresses) => {
+              addresses('*')
+            });
+        })
+        .where({"ID": result.ID})
+    )
+    const addressResult = resultJoin.addresses[0];
     const statusValues={"N":"NEW", "P":"PROCESS", "INV":"INVALID", "V":"VERIFIED"}
 
-    if(resultJoin.isModified){
+    if(addressResult.isModified){
       let payload = {
-        streetName: resultJoin.streetName,
-        postalCode: resultJoin.postalCode
+        streetName: addressResult.streetName,
+        postalCode: addressResult.postalCode
       }
       console.log("<<<<payload address", payload)
-      let res = await bupaSrv.run(UPDATE(BusinessPartnerAddress).set(payload).where({businessPartnerId:resultJoin.businessPartnerId, addressId:resultJoin.addressId}));
+      let res = await bupaSrv.run(UPDATE(BusinessPartnerAddress).set(payload).where({businessPartnerId:resultJoin.businessPartnerId, addressId:addressResult.addressId}));
       //let res =  await bupaSrv.run(UPDATE(BusinessPartnerAddress, resultJoin.businessPartnerId ).with(payload)); 
       console.log("address update to ECC", res);
     }

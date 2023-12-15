@@ -4,33 +4,33 @@
     "description": "A simple CAP project.",
     "license": "ISC",
     "dependencies": {
-        "@sap/cds": "6.8.1",
-        "@sap/hana-client": "^2.8.20",
-        "@sap-cloud-sdk/http-client": "^2.13.0",
-        "@sap-cloud-sdk/util": "^2.13.0",
-        "@sap/xb-msg-amqp-v100": "^0.9.51",
-        "@sap/xsenv": "^3.4.0",
+        "@sap-cloud-sdk/http-client": "^3.2.0",
+        "@sap-cloud-sdk/util": "^3.2.0",
+        "@sap/cds": "^7",
+        "@sap/cds-hana": "^2",
+        "@sap/xb-msg-amqp-v100": "^0.9.39",
+        "@sap/xsenv": "^3.1.1",
         "@sap/xssec": "^3.6.0",
         "express": "^4",
-        "grunt": "^1.1.0",
+        "grunt": "^1.5.3",
         "passport": "^0.6.0",
         "postcode-validator": "^3.6.6"
     },
     "engines": {
-        "node": "16.x"
+        "node": "18.x"
     },
     "scripts": {
-        "start": "npx cds run",
-        "test": "npm install sqlite3 && npm run test:integration",
+        "start": "npx cds-serve",
+        "test": "npm install @cap-js/sqlite && npm run test:integration",
         "test:integration": "jest tests/integration/BusinessPartnerValidation.test.js"
     },
     "devDependencies": {
+        "@cap-js/sqlite": "^1.4.0",
         "axios": "^0.21.1",
         "chai": "^4.3.4",
         "chai-http": "^4.3.0",
         "jest": "*",
-        "mocha": "^9.2.1",
-        "sqlite3": "^5.1.6"
+        "mocha": "^9.2.1"
     },
     "cds": {
         "hana": {
