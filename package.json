@@ -17,7 +17,7 @@
         "postcode-validator": "^3.6.6"
     },
     "engines": {
-        "node": "18.x"
+        "node": ">=16.17.1 <19.0.0"
     },
     "scripts": {
         "start": "npx cds-serve",
