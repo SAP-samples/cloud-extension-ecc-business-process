@@ -37,8 +37,8 @@ module.exports = async srv => {
     })
 
     srv.before("CREATE", "A_BusinessPartnerAddress", (req, data) => {
-        const {AddressId} = req.data
-        if(!AddressId){
+        const {AddressID} = req.data
+        if(!AddressID){
             addressIdRange++
             req.data.AddressID = addressIdRange.toString()
         }
