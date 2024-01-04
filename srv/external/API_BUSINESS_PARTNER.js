@@ -25,12 +25,12 @@ module.exports = async srv => {
 
         if(to_BusinessPartnerAddress){
             to_BusinessPartnerAddress.forEach(element => {
-                if(element.AddressId){
+                if(element.AddressID){
                     return 
                 }
                 else{
                     addressIdRange++
-                    element.AddressId = addressIdRange
+                    element.AddressID = addressIdRange
                 }
             });
         }
@@ -40,7 +40,7 @@ module.exports = async srv => {
         const {AddressId} = req.data
         if(!AddressId){
             addressIdRange++
-            req.data.AddressId = addressIdRange.toString()
+            req.data.AddressID = addressIdRange.toString()
         }
     })
 
