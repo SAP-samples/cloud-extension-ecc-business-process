@@ -25,22 +25,22 @@ module.exports = async srv => {
 
         if(to_BusinessPartnerAddress){
             to_BusinessPartnerAddress.forEach(element => {
-                if(element.AddressId){
+                if(element.AddressID){
                     return 
                 }
                 else{
                     addressIdRange++
-                    element.AddressId = addressIdRange
+                    element.AddressID = addressIdRange
                 }
             });
         }
     })
 
     srv.before("CREATE", "A_BusinessPartnerAddress", (req, data) => {
-        const {AddressId} = req.data
-        if(!AddressId){
+        const {AddressID} = req.data
+        if(!AddressID){
             addressIdRange++
-            req.data.AddressId = addressIdRange.toString()
+            req.data.AddressID = addressIdRange.toString()
         }
     })
 
