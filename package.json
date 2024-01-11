@@ -7,7 +7,6 @@
   "private": true,
   "dependencies": {
     "@sap/cds": ">=7",
-    "@cap-js-community/odata-v2-adapter": "^1.12.1",
     "@sap/xb-msg-amqp-v100": "^0.9.58",
     "cds-swagger-ui-express": "^0.6.0",
     "express": "^4",
