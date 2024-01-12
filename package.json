@@ -6,13 +6,13 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@cap-js-community/odata-v2-adapter": "^1.12.2",
+    "@cap-js/sqlite": "^1.0.1",
     "@sap/cds": ">=7",
     "@sap/xb-msg-amqp-v100": "^0.9.58",
     "cds-swagger-ui-express": "^0.6.0",
-    "express": "^4",
-    "@cap-js/sqlite":"^1.0.1"
+    "express": "^4"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "NODE_ENV=development cds-serve --with-mocks --in-memory"
   },
@@ -45,8 +45,8 @@
     "features": {
       "serve_on_root": true
     },
-    "cov2ap" : {
-      "plugin" : true
+    "cov2ap": {
+      "plugin": true
     },
     "requires": {
       "messaging": {
