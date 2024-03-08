@@ -15,4 +15,4 @@ Also, in the section **Access Points** of your SAP Cloud Appliance Library image
 You find more information about the SAP S/4HANA trial systems in the following blog post and the Getting Started Guide:
 
 * [Blog post: SAP S/4HANA Fully-Activated Appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/)
-* [Getting Started Guide](https://www.sap.com/cmp/oth/crm-s4hana/s4hana-on-premise-trial.html?pdf-asset=4276422b-487d-0010-87a3-c30de2ffd8ff&page=20)
+* [Getting Started Guide](https://www.sap.com/documents/2019/04/4276422b-487d-0010-87a3-c30de2ffd8ff.html#page=20)
