@@ -5,7 +5,7 @@
 
 **DevOps**
 * [DevOps with SAP BTP](https://help.sap.com/viewer/product/DEVOPS_OVERVIEW/Cloud/en-US?task=discover_task)
-* [Introduction to DevOps](https://open.sap.com/courses/devops1)
+* [Introduction to DevOps](https://sapvideoa35699dc5.hana.ondemand.com/?entry_id=1_nfas9ixp)
 
 **CI/CD**
 * [Continuous Integration and Delivery by SAP](https://help.sap.com/viewer/product/CICD_OVERVIEW/Cloud/en-US?task=discover_task)
