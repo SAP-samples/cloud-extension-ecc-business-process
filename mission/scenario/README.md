@@ -34,7 +34,7 @@ For the complete installation, configuration and implementation of this scenario
 
   ![solution diagram](./images/solution-diagram.png)
 
-The Business Partner Validation application is developed using [SAP Cloud Application programming Model (CAP)](https://cap.cloud.sap/docs/) and runs on the SAP BTP Cloud Foundry Environment. It consist of 3 modules: database, service and UI. It consumes platform services like Event Mesh, SAP HANA and Connectivity. The events generated in the SAP ERP system are inserted into the Event Mesh queue. The application running in Cloud Foundry polls the queue for these messages and inserts them into the HANA database. The Business Partner Validation Application uses custom OData services to read data from Business Partner Data from SAP ERP system - thoses services uses the S/4HANA APIs as a template. 
+The Business Partner Validation application is developed using [SAP Cloud Application programming Model (CAP)](https://cap.cloud.sap/docs/) and runs on the SAP BTP Cloud Foundry Environment. It consist of 3 modules: database, service and UI. It consumes platform services like Event Mesh, SAP HANA and Connectivity. The events generated in the SAP ERP system are inserted into the Event Mesh queue. The application running in Cloud Foundry polls the queue for these messages and inserts them into the HANA database. The Business Partner Validation Application uses custom OData services to read data from Business Partner Data from SAP ERP system - those services uses the S/4HANA APIs as a template. 
 
 
    ![tam diagram](./images/TAMDiagram.png)
