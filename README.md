@@ -58,7 +58,7 @@ To deploy the mock server application it's necessary to have a Cloud Foundry run
 
 3. If you need V2 Endpoint please add '/v2' to the endpoint URL to get something like that:
 
-    <code>https://someDomain/v2/op-api-business-partner-srv</code>
+    <code>https://someDomain/odata/v2/op-api-business-partner-srv</code>
 
 3. On the index page there is also a link to SwaggerUI: *Open API Preview*. Open it and go to the section *POST /A_BusinessPartner*. Click the button *Try it out*. Use the following JSON as a payload (replace the proposed one):
 
@@ -164,3 +164,18 @@ entity API_BUSINESS_PARTNER.A_BusinessPartner{
 ```
 
 The difference between compositions and association read [here](https://cap.cloud.sap/docs/cds/cdl#associations).
+
+## Available APIs
+
+**V2:**
+ ```
+/odata/v2/op-api-business-partner-srv
+/odata/v2/api-business-partner
+/odata/v2/c4codata
+ ```
+**V4:**
+ ```
+/odata/v4/op-api-business-partner-srv
+/odata/v4/api-business-partner
+/odata/v4/c4codata
+```
