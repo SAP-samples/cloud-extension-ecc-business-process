@@ -14,12 +14,14 @@ For running the Extend SAP S/4HANA on SAP BTP Using SAP Netweaver Event Enableme
 
 The entitlement differs for the pricing option of your account:
 
+
 **Consumption-based account in SAP BTP:** 
 No entitlement is necessary. Be sure that you have enough credits to run the services.
 
 **Subscription-based account in SAP BTP:** 
 You have to create entitlements for the services above. See [Entitlements and Quotas](https://help.sap.com/viewer/df50977d8bfa4c9a8a063ddb37113c43/Cloud/en-US/38ecf59cdda64150a102cfaa62d5faab.html#loio363f0f68f9704830ac65c87a2562559b).
 
+**SAP BTP Enterprise Aggreement**: :exclamation: This mission does not support the BTPEA pricing model.
 
 [Check the costs with the SAP BTP Estimator Tool](https://www.sap.com/products/cloud-platform/pricing/estimator-tool.html?blueprintId=a0ad3bc5-4fcb-4008-b109-bd8f70634d6c)
 
