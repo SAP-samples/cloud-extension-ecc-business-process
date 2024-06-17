@@ -48,8 +48,8 @@ The Business Partner Validation application is developed using [SAP Cloud Applic
 ### Local Development (not part of this mission):
 * [Node js](https://nodejs.org/en/download/)
 * [Cloud Foundry Command Line Interface (CLI)](https://github.com/cloudfoundry/cli#downloads)
-* [Visual Studio Code](https://cap.cloud.sap/docs/get-started/in-vscode)
-* [cds-dk](https://cap.cloud.sap/docs/get-started/)
+* [Visual Studio Code](https://cap.cloud.sap/docs/get-started/jumpstart#_6-install-visual-studio-code)
+* [cds-dk]([https://cap.cloud.sap/docs/get-started/](https://cap.cloud.sap/docs/get-started/jumpstart#_2-install-cap-s-cds-dk))
 * [SQLite ](https://sqlite.org/download.html)
 * To build the multitarget application, you need the [Cloud MTA Build tool](https://sap.github.io/cloud-mta-build-tool/), download the tool from [Cloud MTA Build Tool download page](https://sap.github.io/cloud-mta-build-tool/download/)
 * For Windows system, install 'MAKE' from https://sap.github.io/cloud-mta-build-tool/makefile/   
