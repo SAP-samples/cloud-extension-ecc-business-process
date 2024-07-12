@@ -101,7 +101,7 @@
         },
         "routing": {
             "routes": [{
-                    "pattern": "",
+                    "pattern": ":?query:",
                     "name": "NotificationList",
                     "target": [
                         "NotificationList"
