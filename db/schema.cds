@@ -28,5 +28,5 @@ entity StatusValues {
 
 annotate Notifications with {
   businessPartnerId @title:'BusinessPartner ID' @readonly;
-  verificationStatus @title:'Verfication Status' @assert.enum;
+  verificationStatus @title:'Verfication Status';
 }
