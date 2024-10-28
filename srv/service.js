@@ -22,7 +22,7 @@ module.exports = async srv => {
     console.log("<<< Received Created Business Partner Id" + BUSINESSPARTNER);
       const bpEntity = await bupaSrv.run(SELECT.one(BusinessPartner).where({businessPartnerId: BUSINESSPARTNER}));
       if(!bpEntity){
-        log.info(`BP doesn't exist in the given destination`);
+        console.log("BP doesn't exist in the given destination");
         return;
       }
       const result = await cds.run(INSERT.into(Notifications).entries({businessPartnerId:bpEntity.businessPartnerId, verificationStatus_code:'N', businessPartnerName:bpEntity.businessPartnerName}));     
@@ -67,7 +67,7 @@ module.exports = async srv => {
     }
   });
 
-  srv.before("PATCH", "Addresses", req => {
+  srv.before("UPDATE", "Addresses.drafts", req => {
     // To set whether address is Edited
     req.data.isModified = true;
   });
@@ -109,7 +109,7 @@ module.exports = async srv => {
     const addressResult = resultJoin.addresses[0];
     const statusValues={"N":"NEW", "P":"PROCESS", "INV":"INVALID", "V":"VERIFIED"}
 
-    if(addressResult.isModified){
+    if(addressResult && addressResult.isModified){
       let payload = {
         streetName: addressResult.streetName,
         postalCode: addressResult.postalCode
