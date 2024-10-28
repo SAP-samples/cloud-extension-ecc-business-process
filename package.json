@@ -9,7 +9,6 @@
         "@sap-cloud-sdk/http-client": "^3.19.0",
         "@sap-cloud-sdk/util": "^3.19.0",
         "@sap/xb-msg-amqp-v100": "^0.9.51",
-        "@sap/xsenv": "^3.4.0",
         "@sap/xssec": "^4",
         "express": "^4",
         "grunt": "^1.1.0",
