@@ -114,7 +114,7 @@ Services like **Application Autoscaler**, **Application Logging**, and the **SAP
     Go to **Instances and Subscriptions** and choose the **Subscription** tab. Check if the following subscriptions are enabled:
     * SAP Business Application Studio
     * SAP Event Mesh
-    * SAP Launchpad service
+    * SAP Build Work Zone, standard Edition
     * SAP Continuous Integration & Delivery (only when selected in the booster)   
     
     ![Booster](./images/booster-12.png)
