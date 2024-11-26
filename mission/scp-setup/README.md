@@ -193,12 +193,12 @@ For this mission we have to activate the following services:
 * [Set Up SAP Event Mesh](https://help.sap.com/viewer/bf82e6b26456494cbdd197057c09979f/Cloud/en-US/7e504322652d4791ade0ca2bbc5a6443.html)
     * See the setup for the deprecated Lite Service Plan.
 
-* [Set Up SAP Continous Integration and Delivery](https://help.sap.com/viewer/99c72101f7ee40d0b2deb4df72ba1ad3/Cloud/en-US/719acaf61e4b4bf0a496483155c52570.html)
+* [Set Up SAP Continuous Integration and Delivery](https://help.sap.com/viewer/99c72101f7ee40d0b2deb4df72ba1ad3/Cloud/en-US/719acaf61e4b4bf0a496483155c52570.html)
   
     * Enabling the service
     * Assigning Roles and Permissions
 
-* [Setup HANA Cloud Trial](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html)
+*  HANA Cloud Trial
   
-    * For the setup, see **Section B**.
+    * For the setup, see [Section B](#b-create-a-sap-hana-cloud-service-instance)
 
