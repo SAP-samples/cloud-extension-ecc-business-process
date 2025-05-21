@@ -20,10 +20,6 @@ General features:
 - Enhancement possibilities (adding new services)
 - In-memory [SQLite DB](https://cap.cloud.sap/docs/guides/databases#deploy-to-sqlite) is used (no DB instance is needed -> low cost, no dependencies)
 - [SwaggerUI](https://cap.cloud.sap/docs/advanced/openapi#swagger-ui)
-- Emitting events compliant with the following Discover Center missions:
-    - [S/4HANA Extension with Addon](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3730/3769/)
-    - [ECC Extension](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3338/3384/)
-    - [S/4HANA Extension](https://github.com/SAP-samples/cloud-extension-ecc-business-process/blob/main/srv/service.js)???
 - Hybrid testing with Event Mesh [test](https://cap.cloud.sap/docs/advanced/hybrid-testing)
 - Includes a script for destination creation
 
